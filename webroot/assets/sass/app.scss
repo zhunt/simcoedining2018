@@ -167,7 +167,6 @@ $offWhite: #f1f1f1;
 
 $almostBlack: shade( $primary, 95);
 
-
 nav.navbar-dark {
     background-color: $primary;
     color: white;
@@ -185,6 +184,17 @@ p {
 body {
     background-color: #fff;
 }
+
+.section-header.display-4 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+
+h3.section-header small { opacity: .5; color: #000; }
+
+
+// home page
 
 .title-banner {
     background-color: $secondary;
@@ -223,6 +233,20 @@ body {
     }
 }
 
+.rating {
+    background-color: green;
+    font-size: 2rem;
+    padding: 0.5rem;
+    color: white;
+    margin: 2rem 0 0 1rem;
+
+    span {
+        font-size: 1.5rem;
+    }
+}
+
+// -------------
+
 .footer {
     background: shade($primary,90);
     color: white;
@@ -234,6 +258,19 @@ body {
     font-weight: 400;
 }
 
+// -- city home page --
+
+.cusines-types {
+
+    li {
+        padding-bottom: 1rem;
+    }
+    li:last-child {
+        padding-bottom: 0;
+    }
+}
+
+
 
 // --------------------------------------------
 
@@ -244,15 +281,26 @@ body {
     background: $secondaryLight;
     //box-shadow: none;
     //margin: 1rem 0;
-    padding: .5rem;
+    //padding: .5rem;
     border-radius: 0;
     border: 1px solid $secondaryDark;
-    transition: background-color .5s ease
+    transition: background-color .5s ease;
+
+    a {
+        flex-grow: 1;
+    }
+
+    a:hover{
+        // color: $primaryLight;
+        text-decoration: none;
+        color: white;
+    }
 }
 
 .ui.segment:hover {
     background-color: $secondaryDark;
     color: white;
+
 
 }
 
@@ -275,14 +323,6 @@ i.icon {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-
-a:hover{
-   // color: $primaryLight;
-    text-decoration: none;
-    color: white;
-}
-
-
 
 i.icon.angle.right:before {
     content: "\f105";
