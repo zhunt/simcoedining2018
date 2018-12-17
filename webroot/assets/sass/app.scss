@@ -1,3 +1,54 @@
+
+/* Coolors Exported Palette - coolors.co/086788-1c3144-ffba08-07a0c3-091540 */
+/*
+// HSL
+$color1: hsla(195%, 89%, 28%, 1);
+$color2: hsla(209%, 42%, 19%, 1);
+$color3: hsla(43%, 100%, 52%, 1);
+$color4: hsla(191%, 93%, 40%, 1);
+$color5: hsla(227%, 75%, 14%, 1);
+
+// RGB
+$color1: rgba(8, 103, 136, 1);
+$color2: rgba(28, 49, 68, 1);
+$color3: rgba(255, 186, 8, 1);
+$color4: rgba(7, 160, 195, 1);
+$color5: rgba(9, 21, 64, 1);
+*/
+
+/*
+$darkBlue: #046abf;
+$mediumBlue: #0277c2;
+$lighBlue: #05c5f7;
+$darkRed: #ba3228;
+$offWhite: ##f1f1f1;
+
+ */
+
+// new
+// https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=90A4AE&secondary.color=0D47A1  (SimcoeDining scheme)
+// https://material.io/tools/color/#!/?view.left=0&view.right=1&primary.color=f1f1f1&secondary.color=0d47a1 (SimcoeDining light - alternate)
+
+// https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=D50000&secondary.color=FFD600 (Fashion)
+
+// https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=546E7A&secondary.color=B71C1C (tech?)
+
+// https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=fcce15&secondary.color=CDDC39 (FindPhoneFixer)
+
+$primary: #0d47a1;
+$primaryLight: #5472d3;
+$primaryDark: #002171;
+/*
+$secondary: #0d47a1;
+$secondaryLight: #5472d3;
+$secondaryDark: #002171;
+*/
+$secondary: #90a4ae;
+$secondaryLight: #c1d5e0;
+$secondaryDark: #62757f;
+
+
+
 //@import "~bootstrap/scss/bootstrap";
 //@import "customVariables";
 
@@ -20,6 +71,21 @@
     @return mix(black, $color, $percentage);
 }
 
+/*
+$blueGrey: #c9c6db;
+$blueWhite: #e9e9f3;
+$lightBlue: #94b5f1;
+$darkBlue: #4785da;
+$brownish: #402828;
+
+// from https://color.adobe.com/create/image/ (simcoeDining.com image)
+$darkBlue: #046abf;
+$mediumBlue: #0277c2;
+$lighBlue: #05c5f7;
+$darkRed: #ba3228;
+$offWhite: #f1f1f1;
+
+*/
 
 @import "~bootstrap/scss/functions";
 //@import "~bootstrap/scss/variables";
@@ -58,24 +124,169 @@
 @import "~bootstrap/scss/utilities";
 //@import "~bootstrap/scss/print";
 
-p { color: palevioletred; }
+// from Zomat0
+
+.res-rating {
+
+}
+
+.fontsize5 {
+    font-size: 12px;
+}
+
+.grey-text, .zdark {
+    color: #89959B;
+}
+
+.ta-right {
+    text-align: right;
+}
+
+
+.rrw-aggregate {
+    width: 80px;
+    float: right;
+    border-radius: .28571429rem;
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px; // font-size: 30px;
+    line-height: 39px;
+}
+
+.level-7 {
+    background: #5BA829;
+    border-color: #5BA829 !important;
+}
+
+
+// end
+
+.breadcrumb { background-color: transparent}
+
+// -------------- new
+
+$almostBlack: shade( $primary, 95);
+
+
+nav.navbar-dark {
+    background-color: $primary;
+    color: white;
+}
+
+
+h1, h2, h3, h4, h5 {
+    color: black;
+}
+
+p {
+    color: shade( $secondary, 90);
+}
+
 body {
-  margin: 0;
-  background-color: #1cc7ff;
+    background-color: #fff;
+}
 
-  h1 {
-    background-color: red;
-    margin: 0;
-  }
+.title-banner {
+    background-color: $secondary;
+    background-image: url('/img/dev/close-up-cooking-cuisine-958545.jpg');
+    background-size: cover;
+    background-position: bottom;
+    h1 {
+        color: $secondary;
+    }
+    p {
+        color: #fff;
+        font-weight: 600;
+    }
 
-  h2 {
-    background-color: red;
-    margin: 0;
-  }
+    .container {
+        background-color: rgba(0,0,0,.5);
+    }
 
-  h3 {
-    background-color: red;
-    margin: 0;
-  }
+    .search-field {
+        width: 30rem;
+    }
+}
 
+.cities-list {
+
+    background-color: $secondaryLight;
+    li {
+        padding-bottom: 1rem;
+    }
+    li:last-child {
+        padding-bottom: 0;
+    }
+
+    h3 {
+        color: $secondary;
+    }
+}
+
+.footer {
+    background: shade($primary,90);
+    color: white;
+}
+
+.card-title small {
+    opacity: .5;
+    color: #000;
+    font-weight: 400;
+}
+
+
+// --------------------------------------------
+
+// copy from Zoomato
+
+.ui.segment {
+    position: relative;
+    background: $secondaryLight;
+    //box-shadow: none;
+    //margin: 1rem 0;
+    padding: .5rem;
+    border-radius: 0;
+    border: 1px solid $secondaryDark;
+    transition: background-color .5s ease
+}
+
+.ui.segment:hover {
+    background-color: $secondaryDark;
+    color: white;
+
+}
+
+i.icon {
+   // display: inline-block;
+   // opacity: 1;
+    margin: 0 .25rem 0 0;
+    width: 1.18em;
+    height: 1em;
+   // font-family: zombatsregular;
+   // content: attr(data-icon);
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: inherit;
+    text-align: center;
+    speak: none;
+    font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+a:hover{
+   // color: $primaryLight;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+i.icon.angle.right:before {
+    content: "\f105";
+}
+i.icon:before {
+    background: 0 0!important;
 }
