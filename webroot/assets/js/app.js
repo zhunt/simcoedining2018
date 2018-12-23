@@ -4,6 +4,7 @@
 
 // import 'bootstrap';
 
+/*
 let hello = () => {
     console.log('Hello');
 };
@@ -22,7 +23,7 @@ const var1 = [1,2,3];
 let var2 = [...var1].splice(',');
 
 console.log(var2);
-
+*/
 
 $(function () {
     'use strict'
