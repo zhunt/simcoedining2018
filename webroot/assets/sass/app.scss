@@ -168,7 +168,7 @@ $offWhite: #f1f1f1;
 $almostBlack: shade( $primary, 95);
 
 nav.navbar-dark {
-    background-color: $primary;
+    background-color: $primary !important;
     color: white;
 }
 
@@ -220,7 +220,7 @@ h3.section-header small { opacity: .5; color: #000; }
 
 .cities-list {
 
-    background-color: $secondaryLight;
+    // background-color: tint($primary,80);
     li {
         padding-bottom: 1rem;
     }
@@ -229,7 +229,7 @@ h3.section-header small { opacity: .5; color: #000; }
     }
 
     h3 {
-        color: $secondary;
+        color: shade($primary,30);
     }
 }
 
@@ -278,12 +278,12 @@ h3.section-header small { opacity: .5; color: #000; }
 
 .ui.segment {
     position: relative;
-    background: $secondaryLight;
+    background: tint($primary,50);
     //box-shadow: none;
     //margin: 1rem 0;
     //padding: .5rem;
     border-radius: 0;
-    border: 1px solid $secondaryDark;
+    border: 1px solid $primaryDark;
     transition: background-color .5s ease;
 
     a {
@@ -298,7 +298,7 @@ h3.section-header small { opacity: .5; color: #000; }
 }
 
 .ui.segment:hover {
-    background-color: $secondaryDark;
+    background-color: shade($primary,30);
     color: white;
 
 
@@ -354,7 +354,7 @@ body {
         padding-left: 1rem;
         overflow-y: auto;
         visibility: hidden;
-        background-color: #343a40;
+        background-color: shade($primary, 30); // #343a40;
         transition-timing-function: ease-in-out;
         transition-duration: .3s;
         transition-property: left, visibility;

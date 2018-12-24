@@ -8,35 +8,53 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <a class="navbar-brand" href="#">SimcoeDining</a>
+<body class="bg-light">
 
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow">
+    <a class="navbar-brand mr-auto mr-lg-0" href="/">SimcoeDining</a>
+    <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="collapse navbar-collapse float-right" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-
+    <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/home_page.html">Home <span class="sr-only">(current)</span></a>
+            </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Language
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">EN</a>
-                    <a class="dropdown-item" href="#">FR</a>
+                <a class="nav-link dropdown-toggle" href="/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cities</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#">Barrie</a>
+                    <a class="dropdown-item" href="#">Toronto</a>
+                    <a class="dropdown-item" href="#">Ottawa</a>
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="#">Switch account</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#">English</a>
+                    <a class="dropdown-item" href="#">French</a>
+                </div>
+            </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </div>
-
-
 </nav>
+
+<!-- end nav bar -->
 
 <div class="container-fluid">
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb small pl-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="/home_page.html">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Canada</a></li>
             <li class="breadcrumb-item"><b>Toronto</b></a></li>
         </ol>
@@ -100,7 +118,7 @@
 
 
 <!-- brands / Chains  -->
-<div class="container-fluid mt-4">
+<div class="container mt-4">
     <div class="row">
 
         <div class="col">
@@ -118,35 +136,57 @@
 
             <!-- citis in Ontario start -->
             <div class="row">
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2 ">
+                <div class="col">
                     <ul class="list-unstyled">
                         <li>
-                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Brazilian</a>
+                            <a class="" href="#">Second Cup</a>
                         </li>
                         <li>
-                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Brazilian</a>
+                            <a class="" href="#">The Keg</a>
                         </li>
                     </ul>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2 ">
+                <div class="col">
                     <ul class="list-unstyled">
                         <li>
-                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Brazilian</a>
+                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Kelsy's</a>
                         </li>
                         <li>
-                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Brazilian</a>
+                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Milestones</a>
                         </li>
                     </ul>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2 ">
+                <div class="col">
                     <ul class="list-unstyled">
                         <li>
-                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Brazilian</a>
+                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Firkin Pubs</a>
                         </li>
                         <li>
-                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Brazilian</a>
+                            <a class="col-l-1by3 col-s-8 pbot0" href="#">The Cheesecake Factory</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Firkin Pubs</a>
+                        </li>
+                        <li>
+                            <a class="col-l-1by3 col-s-8 pbot0" href="#">The Cheesecake Factory</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Kelsy's</a>
+                        </li>
+                        <li>
+                            <a class="col-l-1by3 col-s-8 pbot0" href="#">Milestones</a>
                         </li>
                     </ul>
                 </div>
@@ -156,6 +196,26 @@
         </div>
     </div>
 </div>
+
+<!-- alt list -->
+<div class="nav-scroller bg-white shadow-sm">
+    <nav class="nav nav-underline">
+        <a class="nav-link active" href="#">Chains</a>
+
+        <a class="nav-link" href="#">The Cheesecake Factory</a>
+        <a class="nav-link" href="#">Firkin Pubs</a>
+        <a class="nav-link" href="#">Milestones</a>
+        <a class="nav-link" href="#">Kelsy's</a>
+        <a class="nav-link" href="#">The Keg</a>
+        <a class="nav-link" href="#">Starbucks</a>
+        <a class="nav-link" href="#">Second Cup</a>
+        <a class="nav-link" href="#">Swiss Chalet</a>
+
+    </nav>
+</div>
+
+
+
 
 <!-- newest -->
 <div class="container-fluid mt-4">
@@ -232,8 +292,7 @@
     <div class="card cusines-types">
 
         <div class="card-body">
-
-            <h4 class="card-title">Restaurants</h4>
+h            <h4 class="card-title">Restaurants</h4>
 
             <!-- citis in Ontario start -->
             <div class="row">
