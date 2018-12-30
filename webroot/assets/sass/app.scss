@@ -360,6 +360,13 @@ h3.section-header small { opacity: .5; color: #000; }
             width: 100%;
         }
     }
+
+    &.panel {
+        background: tint($primary,95);
+        border-radius: 0;
+        border: 1px solid rgba($primaryDark,0.1);
+        padding: 1.25rem;
+    }
 }
 
 
