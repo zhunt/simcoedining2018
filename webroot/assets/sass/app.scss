@@ -280,8 +280,12 @@ h3.section-header small { opacity: .5; color: #000; }
 
 // -------------
 
-.footer {
+.footer-wrapper {
     background: shade($primary,50);
+}
+
+.footer {
+    background-color: shade($primary,50);
     color: white;
 
     h5 {
@@ -339,6 +343,24 @@ h3.section-header small { opacity: .5; color: #000; }
     }
 }
 
+// search results
+
+.search-results li {
+    display: flex;
+    flex-direction: row;
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+    }
+
+    img {
+        max-height: 200px;
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+    }
+}
 
 
 // --------------------------------------------

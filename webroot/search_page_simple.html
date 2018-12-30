@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Home</title>
+    <title>Search Page</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body class="bg-light">
 
+<!--
+City Page
+    “Barrie/London/Toronto/Kitchener Eats” top banner
+    Popular Searches list
+        Sports Bars in Barrie, Breakfast places,
+    Latest articles for the city
+    List of regions / neighbourhoods
+    Sections:
+        Best Of Barrie lists (links to article)
+        Best Sports bars in Barrie
+
+
+-->
+
+
+
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow">
-    <a class="navbar-brand mr-auto mr-lg-0" href="/">SimcoeDining</a>
+    <a class="navbar-brand mr-auto mr-lg-0" href="/home_page_simple.html">SimcoeDining</a>
     <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,20 +55,133 @@
 
 <div class="jumbotron jumbotron-fluid title-banner">
     <div class="container ">
-        <h1 class="display-4 text-center">Simcoe Dining</h1>
-        <p class="lead text-center pb-2">Places to Eat in Ontario</p>
-
-        <!-- search form -->
 
     </div>
 </div>
 <!-- end top banner -->
 
-<div class="container-fluid">
+<!-- about barrie -->
+<div class="container">
+    <div class="row">
+        <!--  city row -->
+        <div class="col">
+            <h2 class="display-4 section-header">Search for: Italian, Barrie</h2>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Popular Searches -->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="mt-4 section-header">Popular Searches</h3>
+            <p>Discover restaurants in Barrie by type of meal</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+
+            <ul class="list-unstyled p-1 search-results">
+                <li class="media card mb-3">
+                    <img class="mr-3" src="https://b.zmtcdn.com/data/collections/532af3ab24d29dbddcdcd16921ada06f_1535628640.jpg?fit=around%7C300%3A250&crop=300%3A250%3B%2A%2C%2A" alt="Generic placeholder image">
+                    <div class="media-body card-body">
+                        <small>CASUAL DINING</small>
+                        <h5 class="mt-0 mb-1"><a href="/venue_page.html">Joe's Bar</a> </h5>
+
+                        <b>Yonge Street, Richmond Hill</b><br>
+
+                        <small>10815 Yonge Street, Richmond Hill</small>
+
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                    </div>
+                </li>
+
+                <li class="media card mb-3">
+
+                    <div class="media-body card-body">
+                        <small>CASUAL DINING</small>
+                        <h5 class="mt-0 mb-1"><a href="/venue_page.html">Joe's Bar</a> </h5>
+
+                        <b>Yonge Street, Richmond Hill</b><br>
+
+                        <small>10815 Yonge Street, Richmond Hill</small>
+
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                    </div>
+                </li>
+
+                <li class="media card mb-3">
+
+                    <div class="media-body card-body">
+                        <small>CASUAL DINING</small>
+                        <h5 class="mt-0 mb-1"><a href="/venue_page.html">Joe's Bar</a> </h5>
+
+                        <b>Yonge Street, Richmond Hill</b><br>
+
+                        <small>10815 Yonge Street, Richmond Hill</small>
+
+                    </div>
+                </li>
+
+                <li class="media card mb-3">
+
+                    <div class="media-body card-body">
+
+                        <h5 class="mt-0 mb-1"><a href="/venue_page.html">Joe's Bar</a></h5>
+                        <small>10815 Yonge Street, Richmond Hill</small>,<br> <small>CASUAL DINING</small>
+                        <b>Yonge Street, Richmond Hill</b><br>
+
+
+
+                    </div>
+                </li>
+                
+                
+
+            </ul>
+
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item disabled"><a class="page-link" href="">&lt; previous</a></li>
+                    <li class="page-item"><a class="page-link" href="/search?city=langley">1</a></li>
+                    <li class="page-item"><a class="page-link" href="/search?city=langley&amp;page=2">2</a></li>
+                    <li class="page-item"><a class="page-link" href="/search?city=langley&amp;page=2">next &gt;</a></li>
+                </ul>
+            </nav>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- cusines and best of -->
+
+
+<!-- Neighbourhoods and regions list section -->
+
+
+
+
+
+
+
+
+
+<!-- latest articles -->
+
+<div class="container-fluid mt-4">
     <div class="row justify-content-center">
         <div class="col">
             <h2 class="display-4 section-header">The Latest</h2>
-            <h5>From All Accross SimcoeDining</h5>
+            <h5>From Barrie, Ontario</h5>
         </div>
     </div>
 
@@ -115,133 +244,13 @@
     </div>
 </div>
 
+</div>
 
-
-<!-- Cities list section -->
-
-<div class="container">
-    <div class="row">
-        <!--  city row -->
-        <div class="col">
-            <h2 class="mt-4 display-4 section-header">Popular locations in Canada</h2>
-            <p>From swanky upscale restaurants to the cosiest hidden gems serving the most incredible food, Zomato covers it all. Explore menus, and millions of restaurant photos and reviews from users just like you, to find your next great meal.</p>
-        </div>
-    </div>
-
-    <div class="row">
-
-        <div class="card w-100 cities-list">
-
-            <div class="card-body">
-
-                <div class="row">
-                    <div class="col">
-                        <h3>ONTARIO</h3>
-                    </div>
-                </div>
-
-                <!-- citis in Ontario start -->
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
-                        <ul class="list-unstyled">
-
-                            <li>
-                                <div class="ui segment d-flex p-1">
-                                    <a class="pl-2" href="/city_page_simple.html">Toronto Restaurants</a>
-                                    <i class="material-icons icon float-right">keyboard_arrow_right</i>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="ui segment d-flex p-1">
-                                    <a class="pl-2" href="/city_page_simple.html">Kingston, Ontario Restaurants</a>
-                                    <i class="material-icons icon float-right">keyboard_arrow_right</i>
-                                </div>
-                            </li>
-
-                            <li><a href="#">Cambridge, Ontario Restaurants</a></li>
-
-                            <li><a href="#">London, Ontario Restaurants</a></li>
-
-                            <li><a href="#">Brantford Restaurants</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
-                        <ul class="list-unstyled">
-                            <li>Toronto Restaurants</li>
-
-                            <li>Kingston, Ontario Restaurants</li>
-
-                            <li>Cambridge, Ontario Restaurants</li>
-
-                            <li>London, Ontario Restaurants</li>
-
-                            <li>Brantford Restaurants</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-4">
-                        <ul class="list-unstyled">
-                            <li>Toronto Restaurants</li>
-
-                            <li>Kingston, Ontario Restaurants</li>
-
-                            <li>Cambridge, Ontario Restaurants</li>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <!--  city row -->
-                <div class="row mt-2">
-                    <div class="col">
-                        <h3>QUEBEC</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
-                        <ul class="list-unstyled">
-                            <li>Toronto Restaurants</li>
-
-                            <li>Kingston, Ontario Restaurants</li>
-
-                            <li>Cambridge, Ontario Restaurants</li>
-
-                            <li>London, Ontario Restaurants</li>
-
-                            <li>Brantford Restaurants</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
-                        <ul class="list-unstyled">
-                            <li>Toronto Restaurants</li>
-
-                            <li>Kingston, Ontario Restaurants</li>
-
-                            <li>Cambridge, Ontario Restaurants</li>
-
-                            <li>London, Ontario Restaurants</li>
-
-                            <li>Brantford Restaurants</li>
-                        </ul>
-                    </div>
-
-                </div> <!--  city row end -->
-
-            </div> <!-- card body -->
-
-        </div> <!-- end of cities list -->
-        <!-- -->
-
-
-
-    </div> <!-- end of row -->
-
-</div> <!-- end of container -->
-
+<!-- end if articles -->
 
 <div class="container-fluid footer-wrapper">
 
-    <footer class="footer pt-2 pb-2 mt-4 container">
+<footer class="footer pt-2 pb-2 mt-4 container">
     <div class="row">
         <div class="col-12 col-md">
             <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg> -->
@@ -286,8 +295,10 @@
             </ul>
         </div>
     </div>
-    </footer>
+</footer>
+
 </div>
+
 
 </body>
 
