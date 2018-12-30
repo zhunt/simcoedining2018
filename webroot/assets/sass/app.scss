@@ -194,8 +194,13 @@ body {
 h3.section-header small { opacity: .5; color: #000; }
 
 
-// home page
+// home page ----------------------------------------------------------------
 
+.card {
+    background: tint($primary,95);
+    border-radius: 0;
+    border: 1px solid rgba($primaryDark,0.1);
+}
 .title-banner {
     background-color: $secondary;
     background-image: url('https://res.cloudinary.com/yyztech-group-media/image/upload/c_lfill,f_auto,w_1200/v1545607369/close-up-cooking-cuisine-958545_npxtdg.jpg');
@@ -231,6 +236,34 @@ h3.section-header small { opacity: .5; color: #000; }
     h3 {
         color: shade($primary,30);
     }
+
+    .ui.segment {
+        position: relative;
+        background: tint($primary,95);
+        //box-shadow: none;
+        //margin: 1rem 0;
+        //padding: .5rem;
+        border-radius: 0;
+        border: 1px solid rgba($primaryDark,0.1);
+
+        transition: background-color .5s ease;
+
+        a {
+            flex-grow: 1;
+        }
+
+        a:hover{
+            // color: $primaryLight;
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    .ui.segment:hover {
+        background-color: shade($primary,30);
+        color: white;
+    }
+
 }
 
 .rating {
@@ -248,8 +281,16 @@ h3.section-header small { opacity: .5; color: #000; }
 // -------------
 
 .footer {
-    background: shade($primary,90);
+    background: shade($primary,50);
     color: white;
+
+    h5 {
+        color: white;
+    }
+
+    .text-muted {
+        color: tint( $primary,70) !important;
+    }
 }
 
 .card-title small {
@@ -258,7 +299,12 @@ h3.section-header small { opacity: .5; color: #000; }
     font-weight: 400;
 }
 
-// -- city home page --
+// -- city home page -----------------------------------------------------
+
+
+.popular-searches {
+
+}
 
 .cusines-types {
 
@@ -270,39 +316,36 @@ h3.section-header small { opacity: .5; color: #000; }
     }
 }
 
+.regions-list {
+
+    // override display block for this class
+    @include media-breakpoint-up(md) {
+        .d-md-block {
+            display: initial !important;
+        }
+    }
+
+
+    // background-color: tint($primary,80);
+    li {
+        padding-bottom: 1rem;
+    }
+    li:last-child {
+        padding-bottom: 0;
+    }
+
+    h4 {
+        color: shade($primary, 30);
+    }
+}
+
 
 
 // --------------------------------------------
 
 // copy from Zoomato
 
-.ui.segment {
-    position: relative;
-    background: tint($primary,50);
-    //box-shadow: none;
-    //margin: 1rem 0;
-    //padding: .5rem;
-    border-radius: 0;
-    border: 1px solid $primaryDark;
-    transition: background-color .5s ease;
 
-    a {
-        flex-grow: 1;
-    }
-
-    a:hover{
-        // color: $primaryLight;
-        text-decoration: none;
-        color: white;
-    }
-}
-
-.ui.segment:hover {
-    background-color: shade($primary,30);
-    color: white;
-
-
-}
 
 i.icon {
    // display: inline-block;
