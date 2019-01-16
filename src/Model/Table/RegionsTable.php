@@ -11,6 +11,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\ProvincesTable|\Cake\ORM\Association\BelongsTo $Provinces
  * @property \App\Model\Table\CitiesTable|\Cake\ORM\Association\HasMany $Cities
+ * @property \App\Model\Table\VenuesTable|\Cake\ORM\Association\HasMany $Venues
  *
  * @method \App\Model\Entity\Region get($primaryKey, $options = [])
  * @method \App\Model\Entity\Region newEntity($data = null, array $options = [])
@@ -37,14 +38,16 @@ class RegionsTable extends Table
         $this->setTable('regions');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
-
-        $this->addBehavior('Muffin/Slug.Slug');
+        $this->addBehaviors( ['Muffin/Slug.Slug'] );
 
         $this->belongsTo('Provinces', [
             'foreignKey' => 'province_id',
             'joinType' => 'INNER'
         ]);
         $this->hasMany('Cities', [
+            'foreignKey' => 'region_id'
+        ]);
+        $this->hasMany('Venues', [
             'foreignKey' => 'region_id'
         ]);
     }
@@ -76,7 +79,7 @@ class RegionsTable extends Table
             ->scalar('administrative_area_level_2')
             ->maxLength('administrative_area_level_2', 50)
             ->requirePresence('administrative_area_level_2', 'create')
-            ->allowEmptyString('administrative_area_level_2', false);
+            ->allowEmptyString('administrative_area_level_2', true);
 
         return $validator;
     }

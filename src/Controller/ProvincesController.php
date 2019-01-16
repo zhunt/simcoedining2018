@@ -35,7 +35,7 @@ class ProvincesController extends AppController
     public function view($id = null)
     {
         $province = $this->Provinces->get($id, [
-            'contain' => []
+            'contain' => ['Regions']
         ]);
 
         $this->set('province', $province);

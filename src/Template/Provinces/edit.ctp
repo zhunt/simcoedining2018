@@ -14,6 +14,8 @@
             )
         ?></li>
         <li><?= $this->Html->link(__('List Provinces'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Regions'), ['controller' => 'Regions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Region'), ['controller' => 'Regions', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="provinces form large-9 medium-8 columns content">

@@ -62,7 +62,15 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    //$routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    $routes->connect('/', ['controller' => 'Homepage', 'action' => 'index']);
+
+    $routes->connect('/city/:slug', ['controller' => 'Homepage', 'action' => 'city_homepage'])
+        ->setPatterns(['slug' => '[a-z0-9\-]{4,50}'])
+        ->setPass(['slug']);
+
+
+
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.

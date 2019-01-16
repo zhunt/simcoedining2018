@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Provinces Model
  *
+ * @property \App\Model\Table\RegionsTable|\Cake\ORM\Association\HasMany $Regions
+ *
  * @method \App\Model\Entity\Province get($primaryKey, $options = [])
  * @method \App\Model\Entity\Province newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Province[] newEntities(array $data, array $options = [])
@@ -35,7 +37,11 @@ class ProvincesTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
-        $this->addBehavior('Muffin/Slug.Slug');
+        $this->addBehaviors( ['Timestamp', 'Muffin/Slug.Slug'] );
+
+        $this->hasMany('Regions', [
+            'foreignKey' => 'province_id'
+        ]);
     }
 
     /**
@@ -59,13 +65,13 @@ class ProvincesTable extends Table
             ->scalar('slug')
             ->maxLength('slug', 50)
             ->requirePresence('slug', 'create')
-            ->allowEmptyString('slug', 'create'); // only on create - slugger will fill in
+            ->allowEmptyString('slug', 'create');
 
         $validator
             ->scalar('administrative_area_level_1')
             ->maxLength('administrative_area_level_1', 50)
             ->requirePresence('administrative_area_level_1', 'create')
-            ->allowEmptyString('administrative_area_level_1', true); // was false
+            ->allowEmptyString('administrative_area_level_1', true);
 
         return $validator;
     }

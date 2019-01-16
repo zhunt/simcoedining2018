@@ -14,6 +14,7 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\Province $province
  * @property \App\Model\Entity\City[] $cities
+ * @property \App\Model\Entity\Venue[] $venues
  */
 class Region extends Entity
 {
@@ -33,6 +34,7 @@ class Region extends Entity
         'province_id' => true,
         'administrative_area_level_2' => true,
         'province' => true,
-        'cities' => true
+        'cities' => true,
+        'venues' => true
     ];
 }

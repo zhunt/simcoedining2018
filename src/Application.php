@@ -34,6 +34,9 @@ class Application extends BaseApplication
      */
     public function bootstrap()
     {
+        // use cake bake plugin load to set-up, add rote and bootstrap so it uses file in bootstrap
+        $this->addPlugin('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
+
         // Call parent to load bootstrap from files.
         parent::bootstrap();
 

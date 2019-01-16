@@ -14,6 +14,10 @@ use Cake\ORM\Entity;
  * @property string $locality
  *
  * @property \App\Model\Entity\Region $region
+ * @property \App\Model\Entity\CityNeighbourhood[] $city_neighbourhoods
+ * @property \App\Model\Entity\CityRegion[] $city_regions
+ * @property \App\Model\Entity\Intersection[] $intersections
+ * @property \App\Model\Entity\Venue[] $venues
  */
 class City extends Entity
 {
@@ -33,6 +37,10 @@ class City extends Entity
         'venue_count' => true,
         'region_id' => true,
         'locality' => true,
-        'region' => true
+        'region' => true,
+        'city_neighbourhoods' => true,
+        'city_regions' => true,
+        'intersections' => true,
+        'venues' => true
     ];
 }

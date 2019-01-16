@@ -10,6 +10,10 @@ use Cake\Validation\Validator;
  * Cities Model
  *
  * @property \App\Model\Table\RegionsTable|\Cake\ORM\Association\BelongsTo $Regions
+ * @property \App\Model\Table\CityNeighbourhoodsTable|\Cake\ORM\Association\HasMany $CityNeighbourhoods
+ * @property \App\Model\Table\CityRegionsTable|\Cake\ORM\Association\HasMany $CityRegions
+ * @property \App\Model\Table\IntersectionsTable|\Cake\ORM\Association\HasMany $Intersections
+ * @property \App\Model\Table\VenuesTable|\Cake\ORM\Association\HasMany $Venues
  *
  * @method \App\Model\Entity\City get($primaryKey, $options = [])
  * @method \App\Model\Entity\City newEntity($data = null, array $options = [])
@@ -37,11 +41,23 @@ class CitiesTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
-        $this->addBehavior('Muffin/Slug.Slug');
+        $this->addBehaviors( ['Muffin/Slug.Slug'] );
 
         $this->belongsTo('Regions', [
             'foreignKey' => 'region_id',
             'joinType' => 'INNER'
+        ]);
+        $this->hasMany('CityNeighbourhoods', [
+            'foreignKey' => 'city_id'
+        ]);
+        $this->hasMany('CityRegions', [
+            'foreignKey' => 'city_id'
+        ]);
+        $this->hasMany('Intersections', [
+            'foreignKey' => 'city_id'
+        ]);
+        $this->hasMany('Venues', [
+            'foreignKey' => 'city_id'
         ]);
     }
 
@@ -75,7 +91,7 @@ class CitiesTable extends Table
             ->scalar('locality')
             ->maxLength('locality', 50)
             ->requirePresence('locality', 'create')
-            ->allowEmptyString('locality', false);
+            ->allowEmptyString('locality', true);
 
         return $validator;
     }

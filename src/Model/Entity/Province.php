@@ -10,6 +10,8 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property string $slug
  * @property string $administrative_area_level_1
+ *
+ * @property \App\Model\Entity\Region[] $regions
  */
 class Province extends Entity
 {
@@ -26,6 +28,7 @@ class Province extends Entity
     protected $_accessible = [
         'name' => true,
         'slug' => true,
-        'administrative_area_level_1' => true
+        'administrative_area_level_1' => true,
+        'regions' => true
     ];
 }

@@ -38,7 +38,7 @@ class RegionsController extends AppController
     public function view($id = null)
     {
         $region = $this->Regions->get($id, [
-            'contain' => ['Provinces', 'Cities']
+            'contain' => ['Provinces', 'Cities', 'Venues']
         ]);
 
         $this->set('region', $region);

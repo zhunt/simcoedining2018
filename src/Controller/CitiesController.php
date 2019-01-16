@@ -38,7 +38,7 @@ class CitiesController extends AppController
     public function view($id = null)
     {
         $city = $this->Cities->get($id, [
-            'contain' => ['Regions']
+            'contain' => ['Regions', 'CityNeighbourhoods', 'CityRegions', 'Intersections', 'Venues']
         ]);
 
         $this->set('city', $city);
