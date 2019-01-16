@@ -102,6 +102,22 @@ return [
             'prefix' => '*',
             'extension' => '*',
             'plugin' => '*',
+            'controller' => 'CityRegions',
+            'action' => '*'
+        ],
+        [
+            'role' => 'author',
+            'prefix' => '*',
+            'extension' => '*',
+            'plugin' => '*',
+            'controller' => 'CityNeighbourhoods',
+            'action' => '*'
+        ],
+        [
+            'role' => 'author',
+            'prefix' => '*',
+            'extension' => '*',
+            'plugin' => '*',
             'controller' => 'Regions',
             'action' => '*'
         ],

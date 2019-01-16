@@ -50,8 +50,12 @@ class HomepageController extends AppController {
         $this->loadModel('VenueProducts');
         $this->loadModel('VenueServices');
 
+        // probably going to remove sub-types
+        //$this->loadModel('VenueTypes');
+        //$venueTypesList = $this->VenueTypes->getVenueTypesWithVenues(1)->toArray();
 
-        $cuisinesList = $this->VenueProducts->getProductsWithVenues($cityId = 1 )->toArray();
+        // done in Cell now
+        //$cuisinesList = $this->VenueProducts->getProductsWithVenues($cityId = 1 )->toArray();
 
         $city = $this->Cities->find('all', [
             'conditions' => ['Cities.slug' => $slug],

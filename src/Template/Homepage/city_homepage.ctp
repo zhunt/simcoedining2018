@@ -85,6 +85,8 @@
 
     <!-- Neighbourhoods and regions list section end -->
 
+<?php echo $this->cell('HomepageCityVenueTypes', [$city, $city->id] );  ?>
+
 <!-- blog entries -->
 
 <!-- latest articles -->

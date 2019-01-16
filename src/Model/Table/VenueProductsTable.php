@@ -98,11 +98,12 @@ class VenueProductsTable extends Table
             ->leftJoinWith('Venues')
             ->group(['VenueProducts.id'])
             ->having('total_venues > 0 ' )
-            ->where(['Venues.city_id' => $cityId]) // remove this if not by city
+           // ->where(['Venues.city_id' => $cityId]) // remove this if not by city
             ->order('total_venues DESC');
-        //->enableAutoFields(true);
 
-        // debug($query->toArray());
+        if ( $cityId > 0) {
+            $query->where(['Venues.city_id' => $cityId]);
+        }
 
         return $query;
     }
