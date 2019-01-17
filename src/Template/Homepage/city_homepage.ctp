@@ -87,6 +87,9 @@
 
 <?php echo $this->cell('HomepageCityVenueTypes', [$city, $city->id] );  ?>
 
+
+<?php echo $this->cell('HomepageCityNeighbourhoods', [$city, $city->id] );  ?>
+
 <!-- blog entries -->
 
 <!-- latest articles -->

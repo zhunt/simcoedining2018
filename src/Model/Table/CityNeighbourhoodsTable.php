@@ -87,4 +87,23 @@ class CityNeighbourhoodsTable extends Table
 
         return $rules;
     }
+
+    // custom functions
+
+    public function getNeighbourhoodsWithVenues($cityId = 0 ) { // $cityId
+        $query = $this->find();
+        $query->select(['total_venues' => $query->func()->count('Venues.id'), 'CityNeighbourhoods.name', 'CityNeighbourhoods.slug', 'Venues.city_id'])
+            ->leftJoinWith('Venues')
+            ->group(['CityNeighbourhoods.id'])
+            ->having('total_venues > 0 ' )
+            // ->where(['Venues.city_id' => $cityId]) // remove this if not by city
+            ->order('total_venues DESC');
+
+        if ( $cityId > 0) {
+            $query->where(['Venues.city_id' => $cityId]);
+        }
+
+        return $query;
+    }
+
 }
