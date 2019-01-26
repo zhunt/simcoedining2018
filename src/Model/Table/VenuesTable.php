@@ -191,4 +191,59 @@ class VenuesTable extends Table
 
         return $rules;
     }
+
+    // Custom functions
+
+    // used for right column, hardcoded to 5 for now
+    public function getNewestVenues() {
+        $query = $this->find();
+
+        $query->select(['Venues.id', 'Venues.slug', 'Venues.name', 'Venues.sub_name',
+            'Venues.address', 'Cities.name', 'Venues.last_verified'])
+            ->where([ 'Venues.publish_state_id' => 3 ])
+            ->contain([
+                //'VenueDetails' => ['fields' => ['VenueDetails.last_verified']],
+                'Cities' => ['fields' => [ 'id', 'name'] ]
+            ])
+            ->orderDesc('Venues.last_verified')
+            ->limit(5); // ->enableAutoFields(true);
+
+        // debug($query->toArray());
+
+        return $query;
+
+    }
+
+    /* based on the latt/long passed in, get a list of venues a distance from that point
+     * function returns distance in Km (i.e. 0.162 = 162 metres )
+     */
+    public function getNearbyVenues( $lat = 0, $lng = 0, $venueId = null) { // debug( " $lat, $lng, $venueId ");
+        $distance = 10; // 1 = 1000 metres, 10 = 10km
+        $limit = 10;
+
+        $venueLat = floatval($lat);
+        $venueLng = floatval($lng);
+
+        $query = $this->find();
+
+        $query->select(['Venues.id', 'Venues.name', 'Venues.sub_name', 'Venues.slug',
+            'Venues.address', 'Venues.geo_lat',
+            'Venues.geo_lng',
+            'distance' => '(6371 * acos( cos( radians(' . $venueLat . ') ) * cos( radians( Venues.geo_lat ) ) *
+                                cos( radians( Venues.geo_lng ) - radians('. $venueLng .') ) + sin( radians(' . $venueLat . ') ) *
+                                sin( radians( Venues.geo_lat ) ) ) )'
+        ])
+            ->contain(['Cities' => ['fields' => ['name']]])
+            ->where([
+                'Venues.publish_state_id' => 3,
+                'Venues.id !=' => $venueId ])
+            ->group('Venues.id')
+            ->having( ['distance <=' => $distance ] )
+            ->order('distance')
+            ->limit($limit);
+
+        return $query;
+
+    }
+
 }

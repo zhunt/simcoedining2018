@@ -89,4 +89,33 @@ class VenueServicesTable extends Table
 
         return $rules;
     }
+
+    // gets all the cities with more than one venue
+    public function getServicesWithVenues($cityId = 0) {
+        $query = $this->find();
+        // ->select(['id', 'name', 'slug']);
+
+        /* Condition to filter by city
+                    ->leftJoinWith('Venues', function ($q) {
+                return $q->where(['Venues.city_id' => 2]);
+            })
+
+         */
+
+        $query->select(['total_venues' => $query->func()->count('Venues.id'), 'VenueServices.name', 'VenueServices.slug'])
+            ->leftJoinWith('Venues')
+            ->group(['VenueServices.id'])
+            ->having('total_venues > 0 ' )
+            ->order('total_venues DESC')
+            ->enableAutoFields(true);
+
+        // debug($query->toArray());
+
+        if ( $cityId > 0) {
+            $query->where(['Venues.city_id' => $cityId]);
+        }
+
+        return $query;
+    }
+
 }

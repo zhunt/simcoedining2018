@@ -109,4 +109,26 @@ class CitiesTable extends Table
 
         return $rules;
     }
+
+    // Custom functions
+    // gets all the cities with more than one venue
+    public function getCitiesWithVenues($params = null) {
+        $query = $this->find()
+            ->select(['id', 'name', 'slug']);
+
+        if ( isset( $params['order'] ) ) {
+            $orderBy = $params['order'];
+        } else {
+            $orderBy = 'total_venues DESC';
+        }
+        $query->select(['total_venues' => $query->func()->count('Venues.id')])
+            ->leftJoinWith('Venues')
+            ->group(['Cities.id'])
+            ->having('total_venues > 0 ' )
+            ->order($orderBy);
+//            ->enableAutoFields(true);
+
+        return $query;
+    }
+
 }

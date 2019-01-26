@@ -70,6 +70,16 @@ Router::scope('/', function (RouteBuilder $routes) {
         ->setPass(['slug']);
 
 
+    $routes->connect('/search/*', ['controller' => 'Search', 'action' => 'search']);
+
+
+    $routes->connect('/:citySlug/:slug', ['controller' => 'Homepage', 'action' => 'viewVenue'])
+        ->setPatterns([
+            'citySlug' => '[a-z0-9\-]{4,50}',
+            'slug' => '[a-z0-9\-]{4,50}'
+        ])
+        ->setPass([ 'slug', 'citySlug']);
+
 
 
     /**

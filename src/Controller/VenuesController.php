@@ -38,7 +38,9 @@ class VenuesController extends AppController
     public function view($id = null)
     {
         $venue = $this->Venues->get($id, [
-            'contain' => ['Regions', 'Cities', 'CityRegions', 'CityNeighbourhoods', 'Intersections', 'PublishStates', 'Chains', 'ClientTypes', 'VenueAmenities', 'VenueProducts', 'VenueServices', 'VenueSubtypes', 'VenueTypes', 'VenueDetails', 'RestaurantHours', 'Comments', 'VenueMetas', 'VenueRatings', 'VenueViews', 'VssPages']
+            'contain' => ['Regions', 'Cities', 'CityRegions', 'CityNeighbourhoods', 'Intersections', 'PublishStates',
+                'Chains', 'ClientTypes', 'VenueAmenities', 'VenueProducts', 'VenueServices', 'VenueSubtypes', 'VenueTypes',
+                /* 'RestaurantHours', */ 'Comments', 'VenueMetas', 'VenueRatings', 'VenueViews', 'VssPages']
         ]);
 
         $this->set('venue', $venue);

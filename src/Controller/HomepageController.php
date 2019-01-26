@@ -67,7 +67,7 @@ class HomepageController extends AppController {
     }
 
 
-    public function viewVenue($slug) {
+    public function viewVenue($slug, $citySlug) {  debug($slug); debug($citySlug);
 
         $slug = filter_var($slug, FILTER_SANITIZE_STRING, FILTER_FLAG_ENCODE_LOW|FILTER_FLAG_ENCODE_HIGH );
 
@@ -76,15 +76,14 @@ class HomepageController extends AppController {
 
         $venue = $this->Venues->find('all',
             ['conditions' => [ 'Venues.slug' => $slug, 'Venues.publish_state_id' => 3 ] ])
-            ->contain(['VenueDetails', 'RestaurantHours', 'VenueSubtypes', 'VenueProducts', 'VenueServices',
-                'Cities', 'CityRegions', 'CityNeighbourhoods', 'Intersections', 'Chains'])
-            ->first();
+           ->contain([ 'VenueSubtypes', 'VenueProducts', 'VenueServices', 'Cities']) //  fix these: 'Intersections', 'Chains' 'CityRegions', 'CityNeighbourhoods'
+            ->first(); // debug($venue->toArray() );
 
         if (!$venue) {
             $this->redirect('/');
         }
-
-        debug( " $venue->geo_lat, $venue->geo_lat, $venue->id");
+//debug($venue);
+//        debug( " $venue->geo_lat, $venue->geo_lat, $venue->id");
 
         $nearbyVenues = $this->Venues->getNearbyVenues($venue->geo_lat, $venue->geo_lng, $venue->id);
 
@@ -93,6 +92,7 @@ class HomepageController extends AppController {
         $canonical = Configure::read('siteUrlFull') . '/' . $venue->slug;
 
         $this->set( compact(  'newVenues', 'venue', 'nearbyVenues', 'canonical') );
+
     }
 
 }
