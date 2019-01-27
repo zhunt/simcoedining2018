@@ -34,7 +34,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/search?city=<?= $venue['city']['slug'] ?>"><?= $venue['city']['name'] ?></a></li>
+                        <li class="breadcrumb-item"><a href="/search/?city=<?= $venue['city']['slug'] ?>"><?= $venue['city']['name'] ?></a></li>
                         <li class="breadcrumb-item active" aria-current="page"><?= "{$venue['name']} {$venue['sub_name']}" ?></li>
                     </ol>
                 </nav>
@@ -56,13 +56,13 @@
                         <p><?= $venue['venue_detail']['last_verified'] ?></p>
 
                         <b class="category-title">Store Type:</b>
-                        <?= $this->Homepage->listOfSubcategories($venue['venue_subtypes'], 'store-type') ?>
+                        <?= $this->Homepage->listOfSubcategories($venue['venue_subtypes'], $venue['city']['slug'], 'store-type') ?>
 
                         <b class="category-title">Products:</b>
-                        <?= $this->Homepage->listOfSubcategories($venue['venue_products'], 'product') ?>
+                        <?= $this->Homepage->listOfSubcategories($venue['venue_products'], $venue['city']['slug'], 'product') ?>
 
                         <b class="category-title">Services:</b>
-                        <?= $this->Homepage->listOfSubcategories($venue['venue_services'], 'service') ?>
+                        <?= $this->Homepage->listOfSubcategories($venue['venue_services'], $venue['city']['slug'], 'service') ?>
 
 
                     </div>
@@ -90,11 +90,11 @@
                             </div>
 
                             <div class="col">
-                                <p><b>Chain:</b> <?= "<a href=\"/search?chain={$venue['chain']['slug']}\">{$venue['chain']['name']}</a>"; ?></p>
+                                <p><b>Chain:</b> <?= "<a href=\"/search/?chain={$venue['chain']['slug']}&city={$venue['city']['slug']}\">{$venue['chain']['name']}</a>"; ?></p>
 
                                 <p><b>Phone:</b>  <?= $venue['phone']?></p>
 
-                                <p><b>NCIX website <?= $venue['venue_detail']['website_url'] ?> </b></p>
+                                <p><b>Website <?= $venue['venue_detail']['website_url'] ?> </b></p>
 
                             </div>
                         </div>

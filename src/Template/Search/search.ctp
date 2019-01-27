@@ -52,7 +52,7 @@
                             <?php foreach ($venues as $venue): ?>
 
                                 <tr>
-                                    <th scope="row"><a href="/<?= $venue->slug ?>"><?= h($venue->name) ?></a></th>
+                                    <th scope="row"><a href="/<?= $venue->city->slug ?>/<?= $venue->slug ?>"><?= h($venue->name) ?></a></th>
                                     <td><?= h($venue->address) ?></td>
                                     <td><?= h($venue->city->name) ?></td>
                                 </tr>

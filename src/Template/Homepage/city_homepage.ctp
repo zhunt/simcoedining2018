@@ -51,23 +51,23 @@
                 <div class="n/av-scroller">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="/search/city:<?= $city['slug'] ?>&feature:sports-bar">Sports Bars <i class="material-icons icon float-right">keyboard_arrow_right</i></a>
+                            <a class="nav-link" href="/search/?city=<?= $city['slug'] ?>&feature=sports-bar">Sports Bars <i class="material-icons icon float-right">keyboard_arrow_right</i></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/search/city:<?= $city['slug'] ?>&feature:breakfast">Breakfast Places <i class="material-icons icon float-right">keyboard_arrow_right</i></a>
+                            <a class="nav-link" href="/search/?city=<?= $city['slug'] ?>&feature=breakfast">Breakfast Places <i class="material-icons icon float-right">keyboard_arrow_right</i></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/search/city:<?= $city['slug'] ?>&feature:open-late">Late Eats <i class="material-icons icon float-right">keyboard_arrow_right</i></a>
+                            <a class="nav-link" href="/search/?city=<?= $city['slug'] ?>&feature=open-late">Late Eats <i class="material-icons icon float-right">keyboard_arrow_right</i></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/search/city:<?= $city['slug'] ?>&feature:delivery">Delivery <i class="material-icons icon float-right">keyboard_arrow_right</i></a>
+                            <a class="nav-link" href="/search/?city=<?= $city['slug'] ?>&feature=delivery">Delivery <i class="material-icons icon float-right">keyboard_arrow_right</i></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/search/city:<?= $city['slug'] ?>&feature:take-away">Take Away <i class="material-icons icon float-right">keyboard_arrow_right</i></a>
+                            <a class="nav-link" href="/search/?city=<?= $city['slug'] ?>&feature=take-away">Take Away <i class="material-icons icon float-right">keyboard_arrow_right</i></a>
                         </li>
                     </ul>
                 </div>

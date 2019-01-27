@@ -24,7 +24,7 @@
                         <ul class="list-unstyled">
                             <?php foreach ($venueTypeList[0] as $venueType): ?>
                                 <li>
-                                    <a title="<?= $venueType['name'] ?> in <?= $city ?>" href="/search/venueType=<?= $venueType['slug'] ?>&city=<?= $citySlug ?>"><?= $venueType['name'] ?> <small class="text-muted d-none d-md-block">(<?= $venueType['total_venues'] ?> places)</small></a>
+                                    <a title="<?= $venueType['name'] ?> in <?= $city ?>" href="/search/?venueType=<?= $venueType['slug'] ?>&city=<?= $citySlug ?>"><?= $venueType['name'] ?> <small class="text-muted d-none d-md-block">(<?= $venueType['total_venues'] ?> places)</small></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -33,7 +33,7 @@
                         <ul class="list-unstyled">
                             <?php foreach ($venueTypeList[1] as $venueType): ?>
                                 <li>
-                                    <a title="<?= $venueType['name'] ?> in <?= $city ?>" href="/search/venueType=<?= $venueType['slug'] ?>&city=<?= $citySlug ?>"><?= $venueType['name'] ?> <small class="text-muted d-none d-md-block">(<?= $venueType['total_venues'] ?> places)</small></a>
+                                    <a title="<?= $venueType['name'] ?> in <?= $city ?>" href="/search/?venueType=<?= $venueType['slug'] ?>&city=<?= $citySlug ?>"><?= $venueType['name'] ?> <small class="text-muted d-none d-md-block">(<?= $venueType['total_venues'] ?> places)</small></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -42,7 +42,7 @@
                         <ul class="list-unstyled">
                             <?php foreach ($venueTypeList[2] as $venueType): ?>
                                 <li>
-                                    <a title="<?= $venueType['name'] ?> in <?= $city ?>" href="/search/venueType=<?= $venueType['slug'] ?>&city=<?= $citySlug ?>"><?= $venueType['name'] ?> <small class="text-muted d-none d-md-block">(<?= $venueType['total_venues'] ?> places)</small></a>
+                                    <a title="<?= $venueType['name'] ?> in <?= $city ?>" href="/search/?venueType=<?= $venueType['slug'] ?>&city=<?= $citySlug ?>"><?= $venueType['name'] ?> <small class="text-muted d-none d-md-block">(<?= $venueType['total_venues'] ?> places)</small></a>
                                 </li>
                             <?php endforeach; ?>
 

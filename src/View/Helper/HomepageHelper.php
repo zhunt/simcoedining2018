@@ -34,7 +34,7 @@ class HomepageHelper extends Helper
                 $html .= "<li class=\"list-inline-item\"><a href=\"/city/\">More</a></li>";
                 break;
             }
-            $html .= "<li class=\"list-inline-item\"><a href=\"/search?city={$city['slug']}\">{$city['name']}</a></li>";
+            $html .= "<li class=\"list-inline-item\"><a href=\"/search/?city={$city['slug']}\">{$city['name']}</a></li>";
             $counter++;
         }
         $html .= '</ul>';
@@ -53,7 +53,7 @@ class HomepageHelper extends Helper
                 $html .= "<li class=\"list-inline-item\"><a href=\"/product/\">More Products</a></li>";
                 break;
             }
-            $html .= "<li class=\"list-inline-item\"><a href=\"/search?product={$product['slug']}\">{$product['name']}</a> ({$product['total_venues']})</li>";
+            $html .= "<li class=\"list-inline-item\"><a href=\"/search/?product={$product['slug']}\">{$product['name']}</a> ({$product['total_venues']})</li>";
             $counter++;
         }
         $html .= '</ul>';
@@ -66,7 +66,7 @@ class HomepageHelper extends Helper
                 $html .= "<li class=\"list-inline-item\"><a href=\"/service/\">More Services</a></li>";
                 break;
             }
-            $html .= "<li class=\"list-inline-item\"><a href=\"/search?service={$service['slug']}\">{$service['name']}</a> ({$product['total_venues']})</li>";
+            $html .= "<li class=\"list-inline-item\"><a href=\"/search/?service={$service['slug']}\">{$service['name']}</a> ({$product['total_venues']})</li>";
             $counter++;
         }
 
@@ -81,7 +81,7 @@ class HomepageHelper extends Helper
         $html = '';
         foreach ($venues as $venue) {
             $html .= "
-                        <a href=\"/{$venue['slug']}\"><b>{$venue['name']} {$venue['sub_name']}</b></a><br>
+                        <a href=\"/{$venue['city']['slug']}/{$venue['slug']}\"><b>{$venue['name']} {$venue['sub_name']}</b></a><br>
                                     {$venue['address']},<br>
                                     {$venue['city']['name']}<br>
                                     {$venue['venue_detail']['last_verified']}
@@ -105,7 +105,7 @@ class HomepageHelper extends Helper
             }
 
             $html .= "
-                        <a href=\"/{$venue['slug']}\"><b>{$venue['name']} {$venue['sub_name']}</b></a><br>
+                        <a href=\"/{$venue['city']['slug']}/{$venue['slug']}\"><b>{$venue['name']} {$venue['sub_name']}</b></a><br>
                                     {$venue['address']},<br>
                                     {$venue['city']['name']}<br>
                                     {$distanceText}
@@ -128,16 +128,15 @@ class HomepageHelper extends Helper
 
 
     // return a list of items as a link
-    public function listOfSubcategories( $category, $urlBase = null) {
+    public function listOfSubcategories( $category, $citySlug, $urlBase = null) {
         if ( is_array($category) ) {
             $html = '<ul class="list-inline">';
             foreach ( $category as $i => $row) {
                 if ( !empty($urlBase)) {
-                    $html .= '<li class="list-inline-item"><a href="/search/?' . $urlBase . '=' .  $row['slug'] . '">' . $row['name'] . '</a></li>';
+                    $html .= "<li class=\"list-inline-item\"><a href=\"/search/?{$urlBase}={$row['slug']}&city={$citySlug}\">{$row['name']}</a></li>";
                 } else {
-                    $html .= '<li class="list-inline-item">' . $row['name'] . '</li>';
+                    $html .= '<li class="list-inline-item">' . $row['name'] . '</li>'; // what is this for?
                 }
-
             }
 
             $html .= '</ul>';

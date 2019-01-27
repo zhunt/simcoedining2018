@@ -203,7 +203,7 @@ class VenuesTable extends Table
             ->where([ 'Venues.publish_state_id' => 3 ])
             ->contain([
                 //'VenueDetails' => ['fields' => ['VenueDetails.last_verified']],
-                'Cities' => ['fields' => [ 'id', 'name'] ]
+                'Cities' => ['fields' => [ 'id', 'name', 'slug'] ]
             ])
             ->orderDesc('Venues.last_verified')
             ->limit(5); // ->enableAutoFields(true);
@@ -233,7 +233,7 @@ class VenuesTable extends Table
                                 cos( radians( Venues.geo_lng ) - radians('. $venueLng .') ) + sin( radians(' . $venueLat . ') ) *
                                 sin( radians( Venues.geo_lat ) ) ) )'
         ])
-            ->contain(['Cities' => ['fields' => ['name']]])
+            ->contain(['Cities' => ['fields' => [ 'id', 'name', 'slug']]])
             ->where([
                 'Venues.publish_state_id' => 3,
                 'Venues.id !=' => $venueId ])

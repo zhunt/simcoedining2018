@@ -25,7 +25,7 @@
                         <ul class="list-unstyled">
                             <?php foreach ($cuisinesList[0] as $cuisine): ?>
                                 <li>
-                                    <a title="<?= $cuisine['name'] ?> Restaurants in <?= $city ?>" href="/search/neighbourhood=<?= $cuisine['slug'] ?>&city=<?= $citySlug ?>"><?= $cuisine['name'] ?> <small class="text-muted d-none d-md-block">(<?= $cuisine['total_venues'] ?> places)</small></a>
+                                    <a title="<?= $cuisine['name'] ?> Restaurants in <?= $city ?>" href="/search/?neighbourhood=<?= $cuisine['slug'] ?>&city=<?= $citySlug ?>"><?= $cuisine['name'] ?> <small class="text-muted d-none d-md-block">(<?= $cuisine['total_venues'] ?> places)</small></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -34,7 +34,7 @@
                         <ul class="list-unstyled">
                             <?php foreach ($cuisinesList[1] as $cuisine): ?>
                                 <li>
-                                    <a title="<?= $cuisine['name'] ?> Restaurants in <?= $city ?>" href="/search/neighbourhood=<?= $cuisine['slug'] ?>&city=<?= $citySlug ?>"><?= $cuisine['name'] ?> <small class="text-muted d-none d-md-block">(<?= $cuisine['total_venues'] ?> places)</small></a>
+                                    <a title="<?= $cuisine['name'] ?> Restaurants in <?= $city ?>" href="/search/?neighbourhood=<?= $cuisine['slug'] ?>&city=<?= $citySlug ?>"><?= $cuisine['name'] ?> <small class="text-muted d-none d-md-block">(<?= $cuisine['total_venues'] ?> places)</small></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -43,7 +43,7 @@
                         <ul class="list-unstyled">
                             <?php foreach ($cuisinesList[2] as $cuisine): ?>
                                 <li>
-                                    <a title="<?= $cuisine['name'] ?> Restaurants in <?= $city ?>" href="/search/neighbourhood=<?= $cuisine['slug'] ?>&city=<?= $citySlug ?>"><?= $cuisine['name'] ?> <small class="text-muted d-none d-md-block">(<?= $cuisine['total_venues'] ?> places)</small></a>
+                                    <a title="<?= $cuisine['name'] ?> Restaurants in <?= $city ?>" href="/search/?neighbourhood=<?= $cuisine['slug'] ?>&city=<?= $citySlug ?>"><?= $cuisine['name'] ?> <small class="text-muted d-none d-md-block">(<?= $cuisine['total_venues'] ?> places)</small></a>
                                 </li>
                             <?php endforeach; ?>
 
