@@ -56,6 +56,8 @@ class SearchController extends AppController
         $this->loadModel('VenueProducts');
         $this->loadModel('VenueServices');
 
+        $searchParamCity = null;
+
         $cities = $this->Cities->getCitiesWithVenues(); //debug($citiesList);
         $productsList = $this->VenueProducts->getProductsWithVenues(); //debug( $productsList );
         $servicesList = $this->VenueServices->getServicesWithVenues(); //debug( $servicesList );
@@ -83,6 +85,8 @@ class SearchController extends AppController
             $result = $this->Venues->Cities->find()->where(['slug' => $slug])->first();
             $cityId = $result->id; debug( $cityId);
             $seoTags[] = $result['name'];
+
+            $searchParamCity = [ 'name' => $result['name'],  'slug' => $slug ];
 
             $conditions[] = ['Venues.city_id' => $cityId];
         }
@@ -126,11 +130,22 @@ class SearchController extends AppController
             });
         }
 
+        if ( $this->request->getQuery('neighbourhood') ) {
+            $slug = $this->request->getQuery('neighbourhood'); debug($slug);
+            $result = $this->Venues->CityNeighbourhoods->find()->where(['slug' => $slug])->first();
+            $seoTags[] = $result['name'];
+
+            $query->matching('CityNeighbourhoods', function ($q) use ($slug){
+                return $q->where(['CityNeighbourhoods.slug' => $slug] );  // http://localhost:8085/search/service=pc-repair
+            });
+        }
 
         $query->where($conditions)->contain(['Cities'])->order('Venues.name ASC');
 
-
+// searchParamCity
 // debug($seoTags);
+
+        if ( empty($seoTags) ) return $this->redirect('/');
 
         //$venues = $this->paginate($query);
         //$this->set(compact('venues'));
@@ -139,7 +154,7 @@ class SearchController extends AppController
 
         try {
             $venues = $this->paginate($query);
-            $this->set(compact('venues'));
+            $this->set(compact('venues', 'searchParamCity' ));
         } catch (NotFoundException $e) {
             // Do something here like redirecting to first or last page.
             // $this->request->getParam('paging') will give you required info.

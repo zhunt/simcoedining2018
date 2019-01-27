@@ -34,7 +34,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/search/?city=<?= $venue['city']['slug'] ?>"><?= $venue['city']['name'] ?></a></li>
+                        <li class="breadcrumb-item"><a href="/city/<?= $venue['city']['slug'] ?>"><?= $venue['city']['name'] ?></a></li>
                         <li class="breadcrumb-item active" aria-current="page"><?= "{$venue['name']} {$venue['sub_name']}" ?></li>
                     </ol>
                 </nav>

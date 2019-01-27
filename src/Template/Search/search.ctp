@@ -28,6 +28,9 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <?php if ($searchParamCity) {
+                        echo "<li class=\"breadcrumb-item\"><a href=\"/city/{$searchParamCity['slug']}\">{$searchParamCity['name']}</a></li>";
+                    }; ?>
                     <li class="breadcrumb-item active" aria-current="page">Search</li>
                 </ol>
             </nav>
