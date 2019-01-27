@@ -55,6 +55,9 @@ class PagesController extends AppController
         if (!empty($path[1])) {
             $subpage = $path[1];
         }
+
+        $this->viewBuilder()->setLayout('default-public');
+
         $this->set(compact('page', 'subpage'));
 
         try {
