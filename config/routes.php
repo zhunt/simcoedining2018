@@ -81,6 +81,12 @@ Router::scope('/', function (RouteBuilder $routes) {
         ->setPass([ 'slug', 'citySlug']);
 
 
+    // blog posts go to: posts/display
+    $routes->connect('/blog/:slug', ['controller' => 'Blogs', 'action' => 'display'])
+        ->setPatterns([
+            'slug' => '[a-z0-9\-]{4,50}'
+        ])
+        ->setPass(['slug']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.

@@ -29,8 +29,15 @@
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 
+
+    <?= $this->fetch('headerCss') ?>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
+
+    <?php if ( $this->fetch('canonical')) {
+        echo $this->Html->meta('canonical', $this->fetch('canonical'), ['rel'=>'canonical', 'type'=>null, 'title'=>null, 'inline' => false] );
+    } ?>
 
 </head>
 <body class="bg-light">

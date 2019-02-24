@@ -65,7 +65,7 @@ class HomepageLatestBlogCell extends Cell
                     'slug' => $row['slug'],
                     'date_gmt' => $row['date_gmt'],
                     'image_url' => $row['acf']['home_page_image'],
-                    'excerpt' => $row['excerpt']['rendered'] // => Text::stripLinks($row['excerpt']['rendered']) // a href=\"http://blog.simcoedining.com/simcoe-hospitality-awards-2015/\">Continue reading <span class=\"meta-nav\">&rarr;</span></a>
+                    'excerpt' => strip_tags($row['excerpt']['rendered']) // => Text::stripLinks($row['excerpt']['rendered']) // a href=\"http://blog.simcoedining.com/simcoe-hospitality-awards-2015/\">Continue reading <span class=\"meta-nav\">&rarr;</span></a>
                 ];
             }
         } else {

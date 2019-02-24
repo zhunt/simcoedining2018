@@ -13,6 +13,7 @@
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace App\Controller;
+use Cake\Event\Event; // needed for beforeFilter
 
 use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
@@ -28,6 +29,12 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
+
+    public function beforeFilter(Event $event)
+    {
+        // allow these actions to run without being logged-in
+        $this->Auth->allow('display');
+    }
 
     /**
      * Displays a view
