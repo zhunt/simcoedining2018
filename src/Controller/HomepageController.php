@@ -62,6 +62,10 @@ class HomepageController extends AppController {
             'contain' => ['Regions' => [ 'Provinces' ] ]
         ])->first(); //debug($cityData);
 
+        /*
+         * API point: http://localhost:8090/webroot/admin-wordpress/wp-json/wp/v2/posts?filter[category]=city_barrie-on
+         */
+
         $this->viewBuilder()->setLayout('default-public');
         $this->set( compact( 'city', 'cuisinesList') );
     }
