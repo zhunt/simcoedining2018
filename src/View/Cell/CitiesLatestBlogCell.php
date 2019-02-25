@@ -33,29 +33,28 @@ class CitiesLatestBlogCell extends Cell
      *
      * @return void
      */
-    public function display()
+    public function display( $city, $cityId)
     {
         $http = new Client();
 
-        // http://localhost:8090/webroot/admin-wordpress/wp-json/wp/v2/posts?_embed=1&per_page=2 <-- get latest 2 posts with extra data
-        // http://localhost:8090/webroot/admin-wordpress/wp-json/wp/v2/posts?categories=2&_embed=1 <-- get latest posts in category 2
-        // http://localhost:8090/webroot/admin-wordpress/wp-json/wp/v2/posts?tags=9 <-- get latest posts with tag
-        // http://localhost:8090/webroot/admin-wordpress/wp-json/wp/v2/posts?tags=9,10 <-- get latest posts with tags
-        // http://localhost:8090/webroot/admin-wordpress/wp-json/wp/v2/posts?tags_slug=barrie
-        // http://localhost:8090/webroot/admin-wordpress/wp-json/acf/v3/posts/12 <-- ACF fields for a post
-        // http://localhost:8090/webroot/admin-wordpress/wp-json/wp/v2/posts?orderby=modified <-- get most recently updated (incl. ACF fields)
-        // http://localhost:8090/webroot/admin-wordpress/wp-json/wp/v2/posts?orderby=modified&order=asc <-- order by asc/desc (desc is default)
+        $wpCategoryId = 0;
 
-        // new: http://www.blog.simcoedining.com/wp-json/wp/v2/posts
+        // TODO: move this value into database later (in $city table)
+        switch($cityId) {
+            case 33:
+                $wpCategoryId = 9; // BARRIE_ONTARIO
+                break;
 
-        //$url = 'http://www.blog.simcoedining.com/wp-json/wp/v2/posts/?per_page=3';
+            default:
+                $wpCategoryId = 10; // VENUE_REVIEW
+        }
 
-        $response = $http->get('http://www.blog.simcoedining.com/wp-json/wp/v2/posts/', ['per_page' => 4 ]);
+        $response = $http->get('http://www.blog.simcoedining.com/wp-json/wp/v2/posts/', ['per_page' => 4, 'categories' => $wpCategoryId ]);
 
         if ( $response->isOk() ) {
             $json = $response->getJson();
 
-            //debug($json);
+           // debug($json);
             $wpPosts = [];
             foreach ($json as $row ) {
                 $wpPosts[] = [

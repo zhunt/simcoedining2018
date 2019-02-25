@@ -31,26 +31,83 @@ class HomepageCitiesListCell extends Cell
      *
      * @return void
      */
-    public function display()
+    public function display($provinceIds = [4,1] ) // 1, 4 = BC, Ontario
     {
         // load list of cities for a province
 
         $this->loadModel('Cities');
+        $this->loadModel('Provinces');
 
-        // note: cities are not linked directly to province
-        $citiesList = $this->Cities->find('list', [
-            'keyField' => 'slug',
-            'valueField' => 'name',
-                'conditions' => [
-                   // 'Cities.region_id' => 1
-                ],
-                'order' => 'name ASC']
-        )->toArray();
+        $provincesList = [];
 
-        $totalCities = sizeof($citiesList);
-        $citiesList = $this->partition($citiesList, 3);
+        foreach ( $provinceIds as $provinceId) {
+            $regions = $this->Provinces->Regions->find('all', [
+                'conditions' => ['province_id' => $provinceId] ] )
+                ->contain( ['Provinces' => ['fields' => ['name'] ] ] );
 
-        $this->set('citiesList', $citiesList, 'totalCities', $totalCities );
+            //debug( $regions);
+
+            foreach( $regions as $region) { // debug($region);
+
+                $regionId = $region->id;
+
+                $provinceId = $region->province_id;
+
+                $provinceName = $region->province->name;
+
+                // get current list of regions
+                $regionsList = [];
+                if ( isset($provincesList[$provinceId]['regions'] ) ) {
+                    $regionsList = $provincesList[$provinceId]['regions'];
+                    array_push( $regionsList, $regionId );
+                } else {
+                    $regionsList[] = $regionId;
+                }
+
+                $provincesList[ $provinceId] = [
+                    'id' => $provinceId,
+                    'name' => $provinceName,
+                    'regions' => $regionsList
+                ];
+            }
+
+
+
+        }
+
+        //debug($provincesList);
+
+        //debug($region->toArray() );
+
+        $citiesList = []; $fullCitiesList =[];
+
+        foreach ( $provincesList as $province ) { // debug($province);
+
+            $regionsList = $province['regions']; //debug($regionsList);
+
+            // note: cities are not linked directly to province
+            $citiesList = $this->Cities->find('list', [
+                    'keyField' => 'slug',
+                    'valueField' => 'name',
+                    'conditions' => [
+                        'Cities.region_id IN' => $regionsList
+                    ],
+                    'order' => 'name ASC']
+            )->toArray();
+
+
+            $totalCities = sizeof($citiesList);
+            $citiesList = $this->partition($citiesList, 3);
+
+            $fullCitiesList[$province['name']] = $citiesList;
+            $citiesList = [];
+
+        }
+
+
+//debug($fullCitiesList);
+
+        $this->set( compact( 'citiesList', 'totalCities', 'fullCitiesList') );// , $citiesList, 'totalCities', $totalCities, $fullCitiesList );
     }
 
     // from: http://php.net/manual/en/function.array-chunk.php#75022

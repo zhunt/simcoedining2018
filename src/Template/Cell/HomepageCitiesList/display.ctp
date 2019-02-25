@@ -14,97 +14,65 @@
 
             <div class="card-body">
 
-                <div class="row">
-                    <div class="col">
-                        <h3>ONTARIO</h3>
-                    </div>
-                </div>
-
-                <!-- citis in Ontario start -->
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
-                        <ul class="list-unstyled">
-
-                            <?php foreach( $citiesList[0] as $key => $val  ):  ?>
-                            <li>
-                                <div class="ui segment d-flex p-1">
-                                    <a class="pl-2" href="/city/<?= $key ?>"><?= $val ?> Restaurants</a>
-                                    <i class="material-icons icon float-right">keyboard_arrow_right</i>
-                                </div>
-                            </li>
-                            <?php endforeach; ?>
-
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
-                        <ul class="list-unstyled">
-                            <?php foreach( $citiesList[1] as $key => $val  ):  ?>
-                                <li>
-                                    <div class="ui segment d-flex p-1">
-                                        <a class="pl-2" href="/city/<?= $key ?>"><?= $val ?> Restaurants</a>
-                                        <i class="material-icons icon float-right">keyboard_arrow_right</i>
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-4">
-                        <ul class="list-unstyled">
-                            <?php foreach( $citiesList[2] as $key => $val  ):  ?>
-                                <li>
-                                    <div class="ui segment d-flex p-1">
-                                        <a class="pl-2" href="/city/<?= $key ?>"><?= $val ?> Restaurants</a>
-                                        <i class="material-icons icon float-right">keyboard_arrow_right</i>
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
-
-                        </ul>
-                    </div>
-                </div>
-
                 <!--  city row -->
-                <div class="row mt-2">
-                    <div class="col">
-                        <h3>QUEBEC</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
-                        <ul class="list-unstyled">
-                            <li>Toronto Restaurants</li>
+                <?php foreach ($fullCitiesList as $province => $cities ): ?>
 
-                            <li>Kingston, Ontario Restaurants</li>
-
-                            <li>Cambridge, Ontario Restaurants</li>
-
-                            <li>London, Ontario Restaurants</li>
-
-                            <li>Brantford Restaurants</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
-                        <ul class="list-unstyled">
-                            <li>Toronto Restaurants</li>
-
-                            <li>Kingston, Ontario Restaurants</li>
-
-                            <li>Cambridge, Ontario Restaurants</li>
-
-                            <li>London, Ontario Restaurants</li>
-
-                            <li>Brantford Restaurants</li>
-                        </ul>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <h3><?= $province ?></h3>
+                        </div>
                     </div>
 
-                </div> <!--  city row end -->
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
+                                <ul class="list-unstyled">
+
+                                    <?php foreach( $cities[0] as $key => $val  ):  ?>
+                                        <li>
+                                            <div class="ui segment d-flex p-1">
+                                                <a class="pl-2" href="/city/<?= $key ?>"><?= $val ?> Restaurants</a>
+                                                <i class="material-icons icon float-right">keyboard_arrow_right</i>
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
+
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
+                                <ul class="list-unstyled">
+                                    <?php foreach( $cities[1] as $key => $val  ):  ?>
+                                        <li>
+                                            <div class="ui segment d-flex p-1">
+                                                <a class="pl-2" href="/city/<?= $key ?>"><?= $val ?> Restaurants</a>
+                                                <i class="material-icons icon float-right">keyboard_arrow_right</i>
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+                                <ul class="list-unstyled">
+                                    <?php foreach( $cities[2] as $key => $val  ):  ?>
+                                        <li>
+                                            <div class="ui segment d-flex p-1">
+                                                <a class="pl-2" href="/city/<?= $key ?>"><?= $val ?> Restaurants</a>
+                                                <i class="material-icons icon float-right">keyboard_arrow_right</i>
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                <?php endforeach; ?>
+            </div>
 
             </div> <!-- card body -->
 
         </div> <!-- end of cities list -->
         <!-- -->
-
-
+    
 
     </div> <!-- end of row -->
 
