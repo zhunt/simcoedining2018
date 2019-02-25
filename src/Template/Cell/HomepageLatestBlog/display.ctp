@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
         <div class="col">
             <h2 class="display-4 section-header">The Latest</h2>
-            <h5>From All Accross SimcoeDining</h5>
+            <h5>From All Across SimcoeDining</h5>
         </div>
     </div>
 
