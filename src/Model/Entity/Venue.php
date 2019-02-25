@@ -13,6 +13,7 @@ use Cake\ORM\Entity;
  * @property string $address
  * @property float $geo_lat
  * @property float $geo_lng
+ * @property string|null $main_image_url
  * @property string $phone
  * @property int $region_id
  * @property int $city_id
@@ -21,12 +22,18 @@ use Cake\ORM\Entity;
  * @property int $intersection_id
  * @property int $publish_state_id
  * @property int $chain_id
+ * @property \Cake\I18n\FrozenTime|null $last_verified
+ * @property string|null $hours_sun
+ * @property string|null $hours_mon
+ * @property string|null $hours_tue
+ * @property string|null $hours_wed
+ * @property string|null $hours_thu
+ * @property string|null $hours_fri
+ * @property string|null $hours_sat
  * @property int $client_type_id
  * @property \Cake\I18n\FrozenTime|null $created
  * @property \Cake\I18n\FrozenTime|null $modified
  *
- * @property \App\Model\Entity\VenueDetail $venue_detail
- * @property \App\Model\Entity\RestaurantHour $restaurant_hour
  * @property \App\Model\Entity\Region $region
  * @property \App\Model\Entity\City $city
  * @property \App\Model\Entity\CityRegion $city_region
@@ -35,15 +42,10 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\PublishState $publish_state
  * @property \App\Model\Entity\Chain $chain
  * @property \App\Model\Entity\ClientType $client_type
- * @property \App\Model\Entity\Comment[] $comments
- * @property \App\Model\Entity\VenueMeta[] $venue_metas
- * @property \App\Model\Entity\VenueRating[] $venue_ratings
- * @property \App\Model\Entity\VenueView[] $venue_views
- * @property \App\Model\Entity\VssPage[] $vss_pages
  * @property \App\Model\Entity\VenueAmenity[] $venue_amenities
  * @property \App\Model\Entity\VenueProduct[] $venue_products
  * @property \App\Model\Entity\VenueService[] $venue_services
- * @property \App\Model\Entity\VenueSubtype[] $venue_subtypes
+ * @property \App\Model\Entity\VenueSubType[] $venue_subtypes
  * @property \App\Model\Entity\VenueType[] $venue_types
  */
 class Venue extends Entity
@@ -65,6 +67,7 @@ class Venue extends Entity
         'address' => true,
         'geo_lat' => true,
         'geo_lng' => true,
+        'main_image_url' => true,
         'phone' => true,
         'region_id' => true,
         'city_id' => true,
@@ -73,11 +76,17 @@ class Venue extends Entity
         'intersection_id' => true,
         'publish_state_id' => true,
         'chain_id' => true,
+        'last_verified' => true,
+        'hours_sun' => true,
+        'hours_mon' => true,
+        'hours_tue' => true,
+        'hours_wed' => true,
+        'hours_thu' => true,
+        'hours_fri' => true,
+        'hours_sat' => true,
         'client_type_id' => true,
         'created' => true,
         'modified' => true,
-        'venue_detail' => true,
-        'restaurant_hour' => true,
         'region' => true,
         'city' => true,
         'city_region' => true,
@@ -86,11 +95,6 @@ class Venue extends Entity
         'publish_state' => true,
         'chain' => true,
         'client_type' => true,
-        'comments' => true,
-        'venue_metas' => true,
-        'venue_ratings' => true,
-        'venue_views' => true,
-        'vss_pages' => true,
         'venue_amenities' => true,
         'venue_products' => true,
         'venue_services' => true,

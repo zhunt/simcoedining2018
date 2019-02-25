@@ -20,7 +20,7 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\VenueAmenitiesTable|\Cake\ORM\Association\BelongsToMany $VenueAmenities
  * @property \App\Model\Table\VenueProductsTable|\Cake\ORM\Association\BelongsToMany $VenueProducts
  * @property \App\Model\Table\VenueServicesTable|\Cake\ORM\Association\BelongsToMany $VenueServices
- * @property \App\Model\Table\VenueSubtypesTable|\Cake\ORM\Association\BelongsToMany $VenueSubtypes
+ * @property \App\Model\Table\VenueSubTypesTable|\Cake\ORM\Association\BelongsToMany $VenueSubtypes
  * @property \App\Model\Table\VenueTypesTable|\Cake\ORM\Association\BelongsToMany $VenueTypes
  *
  * @method \App\Model\Entity\Venue get($primaryKey, $options = [])
@@ -67,24 +67,20 @@ class VenuesTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('CityRegions', [
-            'foreignKey' => 'city_region_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'city_region_id'
         ]);
         $this->belongsTo('CityNeighbourhoods', [
-            'foreignKey' => 'city_neighbourhood_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'city_neighbourhood_id'
         ]);
         $this->belongsTo('Intersections', [
-            'foreignKey' => 'intersection_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'intersection_id'
         ]);
         $this->belongsTo('PublishStates', [
             'foreignKey' => 'publish_state_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Chains', [
-            'foreignKey' => 'chain_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'chain_id'
         ]);
         $this->belongsTo('ClientTypes', [
             'foreignKey' => 'client_type_id',
@@ -163,10 +159,54 @@ class VenuesTable extends Table
             ->allowEmptyString('geo_lng', false);
 
         $validator
+            ->scalar('main_image_url')
+            ->maxLength('main_image_url', 255)
+            ->allowEmptyFile('main_image_url');
+
+        $validator
             ->scalar('phone')
             ->maxLength('phone', 20)
             ->requirePresence('phone', 'create')
             ->allowEmptyString('phone', false);
+
+        $validator
+            ->dateTime('last_verified')
+            ->allowEmptyDateTime('last_verified');
+
+        $validator
+            ->scalar('hours_sun')
+            ->maxLength('hours_sun', 255)
+            ->allowEmptyString('hours_sun');
+
+        $validator
+            ->scalar('hours_mon')
+            ->maxLength('hours_mon', 255)
+            ->allowEmptyString('hours_mon');
+
+        $validator
+            ->scalar('hours_tue')
+            ->maxLength('hours_tue', 255)
+            ->allowEmptyString('hours_tue');
+
+        $validator
+            ->scalar('hours_wed')
+            ->maxLength('hours_wed', 255)
+            ->allowEmptyString('hours_wed');
+
+        $validator
+            ->scalar('hours_thu')
+            ->maxLength('hours_thu', 255)
+            ->allowEmptyString('hours_thu');
+
+        $validator
+            ->scalar('hours_fri')
+            ->maxLength('hours_fri', 255)
+            ->allowEmptyString('hours_fri');
+
+        $validator
+            ->scalar('hours_sat')
+            ->maxLength('hours_sat', 255)
+            ->allowEmptyString('hours_sat');
 
         return $validator;
     }

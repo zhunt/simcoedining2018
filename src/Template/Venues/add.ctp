@@ -22,14 +22,16 @@
         <li><?= $this->Html->link(__('New Publish State'), ['controller' => 'PublishStates', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Chains'), ['controller' => 'Chains', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Chain'), ['controller' => 'Chains', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Client Types'), ['controller' => 'ClientTypes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Client Type'), ['controller' => 'ClientTypes', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Venue Amenities'), ['controller' => 'VenueAmenities', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Venue Amenity'), ['controller' => 'VenueAmenities', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Venue Products'), ['controller' => 'VenueProducts', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Venue Product'), ['controller' => 'VenueProducts', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Venue Services'), ['controller' => 'VenueServices', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Venue Service'), ['controller' => 'VenueServices', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Venue Subtypes'), ['controller' => 'VenueSubtypes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Venue Subtype'), ['controller' => 'VenueSubtypes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Venue Subtypes'), ['controller' => 'VenueSubTypes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Venue Subtype'), ['controller' => 'VenueSubTypes', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Venue Types'), ['controller' => 'VenueTypes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Venue Type'), ['controller' => 'VenueTypes', 'action' => 'add']) ?></li>
     </ul>
@@ -45,6 +47,7 @@
             echo $this->Form->control('address');
             echo $this->Form->control('geo_lat');
             echo $this->Form->control('geo_lng');
+            echo $this->Form->control('main_image_url');
             echo $this->Form->control('phone');
             echo $this->Form->control('region_id', ['options' => $regions]);
             echo $this->Form->control('city_id', ['options' => $cities]);
@@ -53,7 +56,15 @@
             echo $this->Form->control('intersection_id', ['options' => $intersections]);
             echo $this->Form->control('publish_state_id', ['options' => $publishStates]);
             echo $this->Form->control('chain_id', ['options' => $chains]);
-            echo $this->Form->control('client_type_id');
+            echo $this->Form->control('last_verified', ['empty' => true]);
+            echo $this->Form->control('hours_sun');
+            echo $this->Form->control('hours_mon');
+            echo $this->Form->control('hours_tue');
+            echo $this->Form->control('hours_wed');
+            echo $this->Form->control('hours_thu');
+            echo $this->Form->control('hours_fri');
+            echo $this->Form->control('hours_sat');
+            echo $this->Form->control('client_type_id', ['options' => $clientTypes]);
             echo $this->Form->control('venue_amenities._ids', ['options' => $venueAmenities]);
             echo $this->Form->control('venue_products._ids', ['options' => $venueProducts]);
             echo $this->Form->control('venue_services._ids', ['options' => $venueServices]);

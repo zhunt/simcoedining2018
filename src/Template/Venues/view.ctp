@@ -25,14 +25,16 @@
         <li><?= $this->Html->link(__('New Publish State'), ['controller' => 'PublishStates', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Chains'), ['controller' => 'Chains', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Chain'), ['controller' => 'Chains', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Client Types'), ['controller' => 'ClientTypes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Client Type'), ['controller' => 'ClientTypes', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Venue Amenities'), ['controller' => 'VenueAmenities', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Venue Amenity'), ['controller' => 'VenueAmenities', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Venue Products'), ['controller' => 'VenueProducts', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Venue Product'), ['controller' => 'VenueProducts', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Venue Services'), ['controller' => 'VenueServices', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Venue Service'), ['controller' => 'VenueServices', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Venue Subtypes'), ['controller' => 'VenueSubtypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Venue Subtype'), ['controller' => 'VenueSubtypes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Venue Subtypes'), ['controller' => 'VenueSubTypes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Venue Subtype'), ['controller' => 'VenueSubTypes', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Venue Types'), ['controller' => 'VenueTypes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Venue Type'), ['controller' => 'VenueTypes', 'action' => 'add']) ?> </li>
     </ul>
@@ -55,6 +57,10 @@
         <tr>
             <th scope="row"><?= __('Address') ?></th>
             <td><?= h($venue->address) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Main Image Url') ?></th>
+            <td><?= h($venue->main_image_url) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Phone') ?></th>
@@ -89,6 +95,38 @@
             <td><?= $venue->has('chain') ? $this->Html->link($venue->chain->name, ['controller' => 'Chains', 'action' => 'view', $venue->chain->id]) : '' ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Hours Sun') ?></th>
+            <td><?= h($venue->hours_sun) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Hours Mon') ?></th>
+            <td><?= h($venue->hours_mon) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Hours Tue') ?></th>
+            <td><?= h($venue->hours_tue) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Hours Wed') ?></th>
+            <td><?= h($venue->hours_wed) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Hours Thu') ?></th>
+            <td><?= h($venue->hours_thu) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Hours Fri') ?></th>
+            <td><?= h($venue->hours_fri) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Hours Sat') ?></th>
+            <td><?= h($venue->hours_sat) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Client Type') ?></th>
+            <td><?= $venue->has('client_type') ? $this->Html->link($venue->client_type->name, ['controller' => 'ClientTypes', 'action' => 'view', $venue->client_type->id]) : '' ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($venue->id) ?></td>
         </tr>
@@ -101,8 +139,8 @@
             <td><?= $this->Number->format($venue->geo_lng) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Client Type Id') ?></th>
-            <td><?= $this->Number->format($venue->client_type_id) ?></td>
+            <th scope="row"><?= __('Last Verified') ?></th>
+            <td><?= h($venue->last_verified) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>
@@ -195,7 +233,7 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Venue Subtypes') ?></h4>
+        <h4><?= __('Related Venue Sub Types') ?></h4>
         <?php if (!empty($venue->venue_subtypes)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
@@ -212,9 +250,9 @@
                 <td><?= h($venueSubtypes->slug) ?></td>
                 <td><?= h($venueSubtypes->venue_type_id) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'VenueSubtypes', 'action' => 'view', $venueSubtypes->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'VenueSubtypes', 'action' => 'edit', $venueSubtypes->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'VenueSubtypes', 'action' => 'delete', $venueSubtypes->id], ['confirm' => __('Are you sure you want to delete # {0}?', $venueSubtypes->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'VenueSubTypes', 'action' => 'view', $venueSubtypes->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'VenueSubTypes', 'action' => 'edit', $venueSubtypes->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'VenueSubTypes', 'action' => 'delete', $venueSubtypes->id], ['confirm' => __('Are you sure you want to delete # {0}?', $venueSubtypes->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
