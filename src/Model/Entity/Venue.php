@@ -17,11 +17,11 @@ use Cake\ORM\Entity;
  * @property string $phone
  * @property int $region_id
  * @property int $city_id
- * @property int $city_region_id
- * @property int $city_neighbourhood_id
- * @property int $intersection_id
+ * @property int|null $city_region_id
+ * @property int|null $city_neighbourhood_id
+ * @property int|null $intersection_id
  * @property int $publish_state_id
- * @property int $chain_id
+ * @property int|null $chain_id
  * @property \Cake\I18n\FrozenTime|null $last_verified
  * @property string|null $hours_sun
  * @property string|null $hours_mon
@@ -68,6 +68,7 @@ class Venue extends Entity
         'geo_lat' => true,
         'geo_lng' => true,
         'main_image_url' => true,
+        'venue_description' => true,
         'phone' => true,
         'region_id' => true,
         'city_id' => true,

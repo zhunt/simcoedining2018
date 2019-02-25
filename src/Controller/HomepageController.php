@@ -60,18 +60,14 @@ class HomepageController extends AppController {
         $city = $this->Cities->find('all', [
             'conditions' => ['Cities.slug' => $slug],
             'contain' => ['Regions' => [ 'Provinces' ] ]
-        ])->first(); //debug($cityData);
-
-        /*
-         * API point: http://localhost:8090/webroot/admin-wordpress/wp-json/wp/v2/posts?filter[category]=city_barrie-on
-         */
+        ])->first(); // debug($cityData);
 
         $this->viewBuilder()->setLayout('default-public');
         $this->set( compact( 'city', 'cuisinesList') );
     }
 
 
-    public function viewVenue($slug, $citySlug) {  debug($slug); debug($citySlug);
+    public function viewVenue($slug, $citySlug) {  // debug($slug); debug($citySlug);
 
         $slug = filter_var($slug, FILTER_SANITIZE_STRING, FILTER_FLAG_ENCODE_LOW|FILTER_FLAG_ENCODE_HIGH );
 

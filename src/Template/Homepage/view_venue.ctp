@@ -44,6 +44,9 @@
                         <h1 class="h1"><?= "{$venue['name']} <small>{$venue['sub_name']}" ?></small></h1>
                         <h5 class="venue-address"><?= $venue['address'] ?>, <?= $venue['city']['name'] ?></h5>
                     </div>
+                    <div class="card-body">
+                        <img class="img-fluid" style="width: -webkit-fill-available;" src="<?= $venue['main_image_url'] ?>" alt="<?= "image of {$venue['name']}" ?>" />
+                    </div>
                     <div>
                         <div id="map" style="background-color: transparent; height: 10rem; margin-bottom: 1rem;"><?= $venue['geo_lat'] . ',' . $venue['geo_lat'] ?></div>
                     </div>
@@ -51,7 +54,7 @@
                     <div class="card-body">
                         <h5 class="card-title">About <?= $venue['name'] ?>:</h5>
 
-                        <?= $venue['venue_detail']['description'] ?>
+                        <?= $venue['venue_description'] ?>
 
                         <p><?= $venue['venue_detail']['last_verified'] ?></p>
 
@@ -80,7 +83,8 @@
                             <div class="col">
                                 <p>
                                     <?= $venue['address'] ?><br>
-                                    <?= $venue['city']['name'] ?>	<?= $venue['venue_detail']['postal_code'] ?><br>
+                                    <?= $venue['city']['name'] ?>
+                                    <?= $venue['venue_detail']['postal_code'] ?><br>
 
                                 </p>
                             </div>
@@ -122,19 +126,19 @@
                                 </thead>
                                 <tbody>
                                 <tr >
-                                    <th scope="row">Mon.</td><td> <?= $venue['restaurant_hour']['hours_mon'] ?> </td></tr>
+                                    <th scope="row">Mon.</td><td> <?= $venue['hours_mon'] ?> </td></tr>
                                 <tr>
-                                    <th scope="row">Tues.</td><td><?= $venue['restaurant_hour']['hours_tue'] ?></td></tr>
+                                    <th scope="row">Tues.</td><td><?= $venue['hours_tue'] ?></td></tr>
                                 <tr>
-                                    <th scope="row">Wed.</td><td><?= $venue['restaurant_hour']['hours_wed'] ?></td></tr>
+                                    <th scope="row">Wed.</td><td><?= $venue['hours_wed'] ?></td></tr>
                                 <tr>
-                                    <th scope="row">Thur.</td><td><?= $venue['restaurant_hour']['hours_thu'] ?></td></tr>
+                                    <th scope="row">Thur.</td><td><?= $venue['hours_thu'] ?></td></tr>
                                 <tr >
-                                    <th scope="row">Fri.</td><td><?= $venue['restaurant_hour']['hours_fri'] ?></td></tr>
+                                    <th scope="row">Fri.</td><td><?= $venue['hours_fri'] ?></td></tr>
                                 <tr>
-                                    <th scope="row">Sat.</td><td><?= $venue['restaurant_hour']['hours_sat'] ?></td></tr>
+                                    <th scope="row">Sat.</td><td><?= $venue['hours_sat'] ?></td></tr>
                                 <tr>
-                                    <th scope="row">Sun.</td><td><?= $venue['restaurant_hour']['hours_sun'] ?></td></tr>
+                                    <th scope="row">Sun.</td><td><?= $venue['hours_sun'] ?></td></tr>
                                 </tbody>
                             </table>
 
