@@ -61,7 +61,7 @@ class VenuesController extends AppController
             }
             $this->Flash->error(__('The venue could not be saved. Please, try again.'));
         }
-        $regions = $this->Venues->Regions->find('list', ['limit' => 200]);
+        $regions = $this->Venues->Regions->find('list', ['limit' => 200, 'groupField' => 'province.name' ])->contain(['Provinces']);
         $cities = $this->Venues->Cities->find('list', ['limit' => 200]);
         $cityRegions = $this->Venues->CityRegions->find('list', ['limit' => 200]);
         $cityNeighbourhoods = $this->Venues->CityNeighbourhoods->find('list', ['limit' => 200]);
@@ -98,7 +98,7 @@ class VenuesController extends AppController
             }
             $this->Flash->error(__('The venue could not be saved. Please, try again.'));
         }
-        $regions = $this->Venues->Regions->find('list', ['limit' => 200]);
+        $regions = $this->Venues->Regions->find('list', ['limit' => 200, 'groupField' => 'province.name' ])->contain(['Provinces']);
         $cities = $this->Venues->Cities->find('list', ['limit' => 200]);
         $cityRegions = $this->Venues->CityRegions->find('list', ['limit' => 200]);
         $cityNeighbourhoods = $this->Venues->CityNeighbourhoods->find('list', ['limit' => 200]);

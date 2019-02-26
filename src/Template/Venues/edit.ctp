@@ -4,6 +4,15 @@
  * @var \App\Model\Entity\Venue $venue
  */
 ?>
+<?php $this->Html->scriptStart(['block' => true]); ?>
+$(document).ready(function() {
+    $('.select2').select2();
+});
+
+$(function() { $('textarea').froalaEditor() });
+<?php $this->Html->scriptEnd(); ?>
+
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -56,13 +65,13 @@
             echo $this->Form->control('main_image_url');
             echo $this->Form->control('venue_description');
             echo $this->Form->control('phone');
-            echo $this->Form->control('region_id', ['options' => $regions, 'empty' => true]);
-            echo $this->Form->control('city_id', ['options' => $cities]);
-            echo $this->Form->control('city_region_id', ['options' => $cityRegions, 'empty' => true]);
-            echo $this->Form->control('city_neighbourhood_id', ['options' => $cityNeighbourhoods, 'empty' => true]);
-            echo $this->Form->control('intersection_id', ['options' => $intersections, 'empty' => true]);
+            echo $this->Form->control('region_id', ['options' => $regions, 'empty' => true, 'class' => 'select2']);
+            echo $this->Form->control('city_id', ['options' => $cities, 'class' => 'select2']);
+            echo $this->Form->control('city_region_id', ['options' => $cityRegions, 'empty' => true, 'class' => 'select2']);
+            echo $this->Form->control('city_neighbourhood_id', ['options' => $cityNeighbourhoods, 'empty' => true, 'class' => 'select2']);
+            echo $this->Form->control('intersection_id', ['options' => $intersections, 'empty' => true, 'class' => 'select2' ]);
             echo $this->Form->control('publish_state_id', ['options' => $publishStates]);
-            echo $this->Form->control('chain_id', ['options' => $chains, 'empty' => true ]);
+            echo $this->Form->control('chain_id', ['options' => $chains, 'empty' => true, 'class' => 'select2' ]);
             echo $this->Form->control('last_verified', ['empty' => true]);
             echo $this->Form->control('hours_sun');
             echo $this->Form->control('hours_mon');
@@ -72,11 +81,11 @@
             echo $this->Form->control('hours_fri');
             echo $this->Form->control('hours_sat');
             echo $this->Form->control('client_type_id', ['options' => $clientTypes]);
-            echo $this->Form->control('venue_amenities._ids', ['options' => $venueAmenities]);
-            echo $this->Form->control('venue_products._ids', ['options' => $venueProducts]);
-            echo $this->Form->control('venue_services._ids', ['options' => $venueServices]);
-            echo $this->Form->control('venue_subtypes._ids', ['options' => $venueSubtypes]);
-            echo $this->Form->control('venue_types._ids', ['options' => $venueTypes]);
+            echo $this->Form->control('venue_amenities._ids', ['options' => $venueAmenities, 'class' => 'select2']);
+            echo $this->Form->control('venue_products._ids', ['options' => $venueProducts, 'class' => 'select2']);
+            echo $this->Form->control('venue_services._ids', ['options' => $venueServices, 'class' => 'select2']);
+            echo $this->Form->control('venue_subtypes._ids', ['options' => $venueSubtypes, 'class' => 'select2']);
+            echo $this->Form->control('venue_types._ids', ['options' => $venueTypes, 'class' => 'select2']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

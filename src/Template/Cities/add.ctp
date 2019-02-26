@@ -4,6 +4,12 @@
  * @var \App\Model\Entity\City $city
  */
 ?>
+<?php $this->Html->scriptStart(['block' => true]); ?>
+$(document).ready(function() {
+    $('.select2').select2();
+});
+<?php $this->Html->scriptEnd(); ?>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -28,7 +34,7 @@
             echo $this->Form->control('name');
             echo $this->Form->control('slug');
             echo $this->Form->control('venue_count');
-            echo $this->Form->control('region_id', ['options' => $regions]);
+            echo $this->Form->control('region_id', ['options' => $regions, 'class' => 'select2']);
             echo $this->Form->control('locality');
         ?>
     </fieldset>

@@ -61,7 +61,7 @@ class CitiesController extends AppController
             }
             $this->Flash->error(__('The city could not be saved. Please, try again.'));
         }
-        $regions = $this->Cities->Regions->find('list', ['limit' => 200]);
+        $regions = $this->Cities->Regions->find('list', ['limit' => 200, 'groupField' => 'province.name' ])->contain(['Provinces']);
         $this->set(compact('city', 'regions'));
     }
 
@@ -86,7 +86,7 @@ class CitiesController extends AppController
             }
             $this->Flash->error(__('The city could not be saved. Please, try again.'));
         }
-        $regions = $this->Cities->Regions->find('list', ['limit' => 200]);
+        $regions = $this->Cities->Regions->find('list', ['limit' => 200, 'groupField' => 'province.name' ])->contain(['Provinces']);
         $this->set(compact('city', 'regions'));
     }
 

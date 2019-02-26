@@ -4,6 +4,12 @@
  * @var \App\Model\Entity\Region $region
  */
 ?>
+<?php $this->Html->scriptStart(['block' => true]); ?>
+$(document).ready(function() {
+    $('.select2').select2();
+});
+<?php $this->Html->scriptEnd(); ?>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -29,7 +35,7 @@
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('slug');
-            echo $this->Form->control('province_id', ['options' => $provinces]);
+            echo $this->Form->control('province_id', ['options' => $provinces, 'class' => 'select2']);
             echo $this->Form->control('administrative_area_level_2');
         ?>
     </fieldset>
