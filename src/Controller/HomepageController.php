@@ -89,7 +89,7 @@ class HomepageController extends AppController {
 
         $newVenues = $this->Venues->getNewestVenues();
 
-        $canonical = Configure::read('siteUrlFull') . '/' . $venue->slug;
+        $canonical = Configure::read('siteUrlFull') . '/' . $citySlug . '/' . $venue->slug;
 
         $this->set( compact(  'newVenues', 'venue', 'nearbyVenues', 'canonical') );
 
