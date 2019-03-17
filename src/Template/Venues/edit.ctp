@@ -62,6 +62,7 @@ $(function() { $('textarea').froalaEditor() });
             echo $this->Form->control('address');
             echo $this->Form->control('geo_lat');
             echo $this->Form->control('geo_lng');
+            echo $this->Form->control( 'venue_closed');
             echo $this->Form->control('main_image_url');
             echo $this->Form->control('venue_description');
             echo $this->Form->control('phone');

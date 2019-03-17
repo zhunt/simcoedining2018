@@ -94,6 +94,7 @@ class Venue extends Entity
         'city_neighbourhood' => true,
         'intersection' => true,
         'publish_state' => true,
+        'venue_closed' => true,
         'chain' => true,
         'client_type' => true,
         'venue_amenities' => true,

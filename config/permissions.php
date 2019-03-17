@@ -137,6 +137,38 @@ return [
             'controller' => 'Venues',
             'action' => '*'
         ],
+        [
+            'role' => 'author',
+            'prefix' => '*',
+            'extension' => '*',
+            'plugin' => '*',
+            'controller' => 'VenueTypes',
+            'action' => '*'
+        ],
+        [
+            'role' => 'author',
+            'prefix' => '*',
+            'extension' => '*',
+            'plugin' => '*',
+            'controller' => 'VenueServices',
+            'action' => '*'
+        ],
+        [
+            'role' => 'author',
+            'prefix' => '*',
+            'extension' => '*',
+            'plugin' => '*',
+            'controller' => 'VenueAmenities',
+            'action' => '*'
+        ],
+        [
+            'role' => 'author',
+            'prefix' => '*',
+            'extension' => '*',
+            'plugin' => '*',
+            'controller' => 'VenueProducts',
+            'action' => '*'
+        ],
 
 
         // test for a user of type author

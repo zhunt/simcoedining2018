@@ -21,7 +21,9 @@ class VenuesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Regions', 'Cities', 'CityRegions', 'CityNeighbourhoods', 'Intersections', 'PublishStates', 'Chains', 'ClientTypes']
+            'contain' => ['Regions', 'Cities', 'CityRegions', 'CityNeighbourhoods', 'Intersections', 'PublishStates', 'Chains', 'ClientTypes'],
+            'limit' => 200,
+            'maxLimit' => 200
         ];
         $venues = $this->paginate($this->Venues);
 

@@ -35,7 +35,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
                         <li class="breadcrumb-item"><a href="/city/<?= $venue['city']['slug'] ?>"><?= $venue['city']['name'] ?></a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?= "{$venue['name']} {$venue['sub_name']}" ?></li>
+                        <li class="breadcrumb-item active" aria-current="page"><?= "{$venue['name']}" ?></li>
                     </ol>
                 </nav>
 
@@ -44,9 +44,11 @@
                         <h1 class="h1"><?= "{$venue['name']} <small>{$venue['sub_name']}" ?></small></h1>
                         <h5 class="venue-address"><?= $venue['address'] ?>, <?= $venue['city']['name'] ?></h5>
                     </div>
-                    <div class="card-body">
-                        <img class="img-fluid" style="width: -webkit-fill-available;" src="<?= $venue['main_image_url'] ?>" alt="<?= "image of {$venue['name']}" ?>" />
+                    <?php if ($venue['main_image_url']): ?>
+                    <div class="card-body" style="padding-left: 0; padding-right: 0">
+                        <img class="img-fluid" style="width: -webkit-fill-available;" src="<?= $venue['main_image_url'] ?>" alt="<?= "Image of {$venue['name']}" ?>" />
                     </div>
+                    <?php endif; ?>
                     <div>
                         <div id="map" style="background-color: transparent; height: 10rem; margin-bottom: 1rem;"><?= $venue['geo_lat'] . ',' . $venue['geo_lat'] ?></div>
                     </div>
