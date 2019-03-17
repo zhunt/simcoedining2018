@@ -12,7 +12,7 @@
 <div class="jumbotron jumbotron-fluid title-banner">
     <div class="container ">
         <h1 class="display-4 text-center">Simcoe Dining</h1>
-        <p class="lead text-center pb-2">Searching...</p>
+        <p class="lead text-center pb-2">Searching for <?= $this->Text->toList($seoTags); ?></p>
         <!-- search form -->
     </div>
 </div>
@@ -59,7 +59,7 @@
                                     <td><?= h($venue->address) ?></td>
                                     <td><?= h($venue->city->name) ?></td>
                                 </tr>
-                                <?php $mapData[] = [ 'name'  => $venue->name,  'slug' => $venue->slug, 'lat' => $venue->geo_lat, 'lng' => $venue->geo_lng, 'address' => $venue->address ]; ?>
+                                <?php $mapData[] = [ 'name'  => $venue->name,  'slug' => $venue->city->slug . '/' . $venue->slug, 'lat' => $venue->geo_lat, 'lng' => $venue->geo_lng, 'address' => $venue->address ]; ?>
                             <?php endforeach; ?>
                         </table>
 

@@ -1,4 +1,6 @@
-<div class="jumbotron jumbotron-fluid title-banner">
+<?php $this->assign('title', "Places to Eat in {$city['name']}, {$city['region']['province']['name']}"); ?>
+
+    <div class="jumbotron jumbotron-fluid title-banner">
     <div class="container ">
         <h1 class="display-4 text-center"><?= $city['name'] ?> Dining</h1>
         <p class="lead text-center pb-2">Places to Eat in <?= $city['name'] ?>, <?= $city['region']['province']['name'] ?></p>

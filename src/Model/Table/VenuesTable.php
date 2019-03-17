@@ -240,7 +240,7 @@ class VenuesTable extends Table
 
         $query->select(['Venues.id', 'Venues.slug', 'Venues.name', 'Venues.sub_name',
             'Venues.address', 'Cities.name', 'Venues.last_verified'])
-            ->where([ 'Venues.publish_state_id' => 3 ])
+            ->where([ 'Venues.publish_state_id' => 3, 'Venues.venue_closed' => false ])
             ->contain([
                 //'VenueDetails' => ['fields' => ['VenueDetails.last_verified']],
                 'Cities' => ['fields' => [ 'id', 'name', 'slug'] ]
@@ -276,6 +276,7 @@ class VenuesTable extends Table
             ->contain(['Cities' => ['fields' => [ 'id', 'name', 'slug']]])
             ->where([
                 'Venues.publish_state_id' => 3,
+                'Venues.venue_closed' => false,
                 'Venues.id !=' => $venueId ])
             ->group('Venues.id')
             ->having( ['distance <=' => $distance ] )

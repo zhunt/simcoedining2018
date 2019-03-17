@@ -68,7 +68,7 @@ class SearchController extends AppController
 
         $this->set( compact( 'cities', 'productsList', 'servicesList', 'newVenues') );
 
-        $conditions = ['Venues.publish_state_id' => 3 ]; // store our where conditions
+        $conditions = ['Venues.publish_state_id' => 3, 'Venues.venue_closed' => false ]; // store our where conditions
 
         $seoTags = [];
 
@@ -81,12 +81,12 @@ class SearchController extends AppController
 */
         // check if city/city_region/neighbourhood/etc passed in
         if ( $this->request->getQuery('city') ) {
-            $slug = $this->request->getQuery('city'); debug('$slug: ' . $slug);
+            $slug = $this->request->getQuery('city'); // debug('$slug: ' . $slug);
             $result = $this->Venues->Cities->find()->where(['slug' => $slug])->first();
-            $cityId = $result->id; debug( $cityId);
+            $cityId = $result->id; // debug( $cityId);
             $seoTags[] = $result['name'];
 
-            $searchParamCity = [ 'name' => $result['name'],  'slug' => $slug ];
+            $searchParamCity = [ 'name' => $result['name'], 'slug' => $slug ];
 
             $conditions[] = ['Venues.city_id' => $cityId];
         }
@@ -94,7 +94,7 @@ class SearchController extends AppController
         if ( $this->request->getQuery('chain') ) {
             $slug = $this->request->getQuery('chain');
             $result = $this->Venues->Chains->find()->where(['slug' => $slug])->first();
-            $chainId = $result->id; debug( $chainId);
+            $chainId = $result->id; // debug( $chainId);
             $seoTags[] = $result['name'];
 
             $conditions[] = ['Venues.chain_id' => $chainId];
@@ -111,7 +111,7 @@ class SearchController extends AppController
         }
 
         if ( $this->request->getQuery('service') ) {
-            $slug = $this->request->getQuery('service'); debug($slug);
+            $slug = $this->request->getQuery('service'); // debug($slug);
             $result = $this->Venues->VenueServices->find()->where(['slug' => $slug])->first();
             $seoTags[] = $result['name'];
 
@@ -119,19 +119,28 @@ class SearchController extends AppController
                 return $q->where(['VenueServices.slug' => $slug] );  // http://localhost:8085/search/service=pc-repair
             });
         }
-
-        if ( $this->request->getQuery('store-type') ) {
-            $slug = $this->request->getQuery('store-type'); debug($slug);
-            $result = $this->Venues->VenueSubtypes->find()->where(['slug' => $slug])->first();
+        if ( $this->request->getQuery('amenity') ) {
+            $slug = $this->request->getQuery('amenity'); // debug($slug);
+            $result = $this->Venues->VenueAmenities->find()->where(['slug' => $slug])->first();
             $seoTags[] = $result['name'];
 
-            $query->matching('VenueSubtypes', function ($q) use ($slug){
-                return $q->where(['VenueSubtypes.slug' => $slug] );  // http://localhost:8085/search/service=pc-repair
+            $query->matching('VenueAmenities', function ($q) use ($slug){
+                return $q->where(['VenueAmenities.slug' => $slug] );  // http://localhost:8085/search/service=pc-repair
+            });
+        }
+
+        if ( $this->request->getQuery('store-type') ) {
+            $slug = $this->request->getQuery('store-type'); // debug($slug);
+            $result = $this->Venues->VenueTypes->find()->where(['slug' => $slug])->first();
+            $seoTags[] = $result['name'];
+
+            $query->matching('VenueTypes', function ($q) use ($slug){
+                return $q->where(['VenueTypes.slug' => $slug] );  // http://localhost:8085/search/service=pc-repair
             });
         }
 
         if ( $this->request->getQuery('neighbourhood') ) {
-            $slug = $this->request->getQuery('neighbourhood'); debug($slug);
+            $slug = $this->request->getQuery('neighbourhood'); // debug($slug);
             $result = $this->Venues->CityNeighbourhoods->find()->where(['slug' => $slug])->first();
             $seoTags[] = $result['name'];
 

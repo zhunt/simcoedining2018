@@ -1,4 +1,12 @@
-<?php $this->assign('title', $venue['venue_detail']['seo_title']); ?>
+
+<?php // debug($venue);
+$pageTitle = ($venue['seo_title']) ? $venue['seo_title'] : trim("{$venue['name']} {$venue['sub_name']}") . ", {$venue['city']['name']}";
+
+if ($venue['venue_closed']) $pageTitle .= ' (Closed)';
+
+$this->assign('title', trim($pageTitle) ) ?>
+
+
 <?php $this->assign('canonical', $canonical ); ?>
 <!-- navbar -->
 
@@ -12,17 +20,20 @@
 
 
 
+
+<?php // debug($venue); ?>
 <!-- main site starts -->
 <main role="main">
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
+<!--
     <div class="jumbotron title-background">
         <div class="container">
 
 
         </div>
     </div>
-
+-->
     <!-- body of page -->
     <div class="container">
 
@@ -42,7 +53,7 @@
                 <div class="card">
                     <div class="card-body venue-title">
                         <h1 class="h1"><?= "{$venue['name']} <small>{$venue['sub_name']}" ?></small></h1>
-                        <h5 class="venue-address"><?= $venue['address'] ?>, <?= $venue['city']['name'] ?></h5>
+                        <h5 class="venue-address"><?= $venue['address'] ?> <!-- , <?= $venue['city']['name'] ?> --></h5>
                     </div>
                     <?php if ($venue['main_image_url']): ?>
                     <div class="card-body" style="padding-left: 0; padding-right: 0">
@@ -56,18 +67,28 @@
                     <div class="card-body">
                         <h5 class="card-title">About <?= $venue['name'] ?>:</h5>
 
+                        <?php if ( $venue['venue_closed'] ): ?>
+
+                        <h4 class="text-center closed" style="color: #f44336">This <?= $venue['name'] ?> Location Has Been Reported Closed.</h4>
+
+                        <?php endif; ?>
+
+
                         <?= $venue['venue_description'] ?>
 
-                        <p><?= $venue['venue_detail']['last_verified'] ?></p>
+                        <p><?= $venue['venue']['last_verified'] ?></p>
 
-                        <b class="category-title">Store Type:</b>
-                        <?= $this->Homepage->listOfSubcategories($venue['venue_subtypes'], $venue['city']['slug'], 'store-type') ?>
+                        <b class="category-title">Type:</b>
+                        <?= $this->Homepage->listOfSubcategories($venue['venue_types'], $venue['city']['slug'], 'store-type') ?>
 
-                        <b class="category-title">Products:</b>
+                        <b class="category-title">Cuisines:</b>
                         <?= $this->Homepage->listOfSubcategories($venue['venue_products'], $venue['city']['slug'], 'product') ?>
 
                         <b class="category-title">Services:</b>
                         <?= $this->Homepage->listOfSubcategories($venue['venue_services'], $venue['city']['slug'], 'service') ?>
+
+                        <b class="category-title">Amenities:</b>
+                        <?= $this->Homepage->listOfSubcategories($venue['venue_amenities'], $venue['city']['slug'], 'amenity') ?>
 
 
                     </div>
@@ -85,22 +106,23 @@
                             <div class="col">
                                 <p>
                                     <?= $venue['address'] ?><br>
-                                    <?= $venue['city']['name'] ?>
-                                    <?= $venue['venue_detail']['postal_code'] ?><br>
+                                   <!--  <?= $venue['city']['name'] ?>
+                                    <?= $venue['venue_detail']['postal_code'] ?><br> -->
 
                                 </p>
                             </div>
+                            <!--
                             <div class="col">
                                 <p><b>Intersection:</b><br>
                                     <?= $venue['intersection']['name']?></p>
                             </div>
-
+-->
                             <div class="col">
-                                <p><b>Chain:</b> <?= "<a href=\"/search/?chain={$venue['chain']['slug']}&city={$venue['city']['slug']}\">{$venue['chain']['name']}</a>"; ?></p>
+                                <!-- <p><b>Chain:</b> <?= "<a href=\"/search/?chain={$venue['chain']['slug']}&city={$venue['city']['slug']}\">{$venue['chain']['name']}</a>"; ?></p> -->
 
                                 <p><b>Phone:</b>  <?= $venue['phone']?></p>
 
-                                <p><b>Website <?= $venue['venue_detail']['website_url'] ?> </b></p>
+                                <p><b>Website: <?= $venue['venue_detail']['website_url'] ?> </b></p>
 
                             </div>
                         </div>
@@ -112,10 +134,9 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
+                <div class="card" >
+                    <div class="card-body" <?php echo $venue['venue_closed'] ? 'style="display: none"' : ''; ?> >
                         <h5 class="card-title">Hours Of Operation</h5>
-
 
                         <div class="table-responsive">
                             <table class="table table-hover">

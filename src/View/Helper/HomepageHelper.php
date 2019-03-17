@@ -82,9 +82,9 @@ class HomepageHelper extends Helper
         foreach ($venues as $venue) {
             $html .= "
                         <a href=\"/{$venue['city']['slug']}/{$venue['slug']}\"><b>{$venue['name']} {$venue['sub_name']}</b></a><br>
-                                    {$venue['address']},<br>
-                                    {$venue['city']['name']}<br>
-                                    {$venue['venue_detail']['last_verified']}
+                                    {$venue['address']}<br>
+                                    <!-- {$venue['city']['name']}<br> -->
+                                    {$venue['last_verified']}
                                     <hr />
                         ";
         }
@@ -106,8 +106,8 @@ class HomepageHelper extends Helper
 
             $html .= "
                         <a href=\"/{$venue['city']['slug']}/{$venue['slug']}\"><b>{$venue['name']} {$venue['sub_name']}</b></a><br>
-                                    {$venue['address']},<br>
-                                    {$venue['city']['name']}<br>
+                                    {$venue['address']}<br>
+                                    <!-- {$venue['city']['name']}<br> -->
                                     {$distanceText}
                                     <hr />
                         ";
