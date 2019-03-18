@@ -31,7 +31,7 @@ class HomepageCitiesListCell extends Cell
      *
      * @return void
      */
-    public function display($provinceIds = [4,1] ) // 1, 4 = BC, Ontario
+    public function display($provinceIds = [4] ) // [4,1], 4 = BC, Ontario
     {
         // load list of cities for a province
 
@@ -90,7 +90,8 @@ class HomepageCitiesListCell extends Cell
                     'keyField' => 'slug',
                     'valueField' => 'name',
                     'conditions' => [
-                        'Cities.region_id IN' => $regionsList
+                        'Cities.region_id IN' => $regionsList,
+                        'Cities.venue_count >' => 0
                     ],
                     'order' => 'name ASC']
             )->toArray();

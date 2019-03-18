@@ -69,7 +69,7 @@ $this->assign('title', trim($pageTitle) ) ?>
 
                         <?php if ( $venue['venue_closed'] ): ?>
 
-                        <h4 class="text-center closed" style="color: #f44336">This <?= $venue['name'] ?> Location Has Been Reported Closed.</h4>
+                        <h4 class="text-center closed" style="color: #f44336">Sorry, This <?= $venue['name'] ?> Location Has Been Reported Closed.</h4>
 
                         <?php endif; ?>
 

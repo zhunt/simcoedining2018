@@ -1,12 +1,13 @@
 <div class="container">
 
+    <!--
     <div class="row">
-        <!--  city row -->
         <div class="col">
             <h3 class="mt-4 section-header">Cuisines and Best Of <?= $city ?>, <?= $province ?></h3>
             <p>Explore restaurants, bars, and cafés by locality</p>
         </div>
     </div>
+
 
     <div class="row">
 
@@ -55,4 +56,7 @@
             </div>
         </div>
     </div>
+
+    -->
+
 </div>

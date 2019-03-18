@@ -4,7 +4,10 @@
         <!--  city row -->
         <div class="col">
             <h2 class="mt-4 display-4 section-header">Popular locations in Canada</h2>
-            <p class="section-header">From swanky upscale restaurants to the cosiest hidden gems serving the most incredible food, Zomato covers it all. Explore menus, and millions of restaurant photos and reviews from users just like you, to find your next great meal.</p>
+            <p class="section-header">
+                From swanky upscale restaurants to the cosiest hidden gems serving the most
+                incredible food, SimcoeDining covers it all.
+            </p>
         </div>
     </div>
 

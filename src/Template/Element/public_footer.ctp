@@ -10,22 +10,26 @@
             <h5>Features</h5>
             <ul class="list-unstyled text-small">
                 <li><a class="text-muted" href="/pages/about">About</a></li>
+                <!--
                 <li><a class="text-muted" href="#">Random feature</a></li>
                 <li><a class="text-muted" href="#">Team feature</a></li>
                 <li><a class="text-muted" href="#">Stuff for developers</a></li>
                 <li><a class="text-muted" href="#">Another one</a></li>
                 <li><a class="text-muted" href="#">Last time</a></li>
+                -->
             </ul>
         </div>
         <div class="col-6 col-md">
-            <h5>Resources</h5>
+            <h5>Social</h5>
             <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Resource</a></li>
-                <li><a class="text-muted" href="#">Resource name</a></li>
-                <li><a class="text-muted" href="#">Another resource</a></li>
-                <li><a class="text-muted" href="#">Final resource</a></li>
+                <li><a class="text-muted" href="https://twitter.com/simcoedining" target="_blank" >Twitter</a></li>
+                <li><a class="text-muted" href="https://www.facebook.com/simcoedine/" target="_blank">Facebook</a></li>
+                <li><a class="text-muted" href="https://www.instagram.com/simcoedining/" target="_blank">Instagram</a></li>
+
+
             </ul>
         </div>
+        <!--
         <div class="col-6 col-md">
             <h5>Resources</h5>
             <ul class="list-unstyled text-small">
@@ -44,6 +48,7 @@
                 <li><a class="text-muted" href="#">Terms</a></li>
             </ul>
         </div>
+        -->
     </div>
     </footer>
 </div>

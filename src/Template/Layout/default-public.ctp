@@ -41,7 +41,8 @@
 <body class="bg-light">
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow">
-    <a class="navbar-brand mr-auto mr-lg-0" href="/">SimcoeDining</a>
+    <a class="navbar-brand mr-auto mr-lg-0" href="https://www.simcoedining.com/">SimcoeDining</a>
+    <!--
     <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -63,6 +64,7 @@
         </ul>
 
     </div>
+    -->
 </nav>
 
 <!-- end nav bar -->

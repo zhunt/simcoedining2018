@@ -1,4 +1,6 @@
+<?php $this->assign('title', 'SimcoeDining'); ?>
 
+<?php $this->assign('canonical', 'https://www.simcoedining.com/' ); ?>
 
 <div class="jumbotron jumbotron-fluid title-banner">
     <div class="container ">
@@ -13,6 +15,5 @@
 <?php echo $this->cell('HomepageLatestBlog'); ?>
 
 <?php echo $this->cell('HomepageCitiesList'); ?>
-
 
 <?php echo $this->element('public_footer'); ?>
