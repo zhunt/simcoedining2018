@@ -204,3 +204,5 @@ Type::build('timestamp')
 
 Configure::write('siteUrlFull', 'https://www.simcoedining.com');
 
+Configure::write('gmapApiKey', 'AIzaSyDoAxSn-EXf2vJSj3LRH9FIFNyz7JuGf8U');
+

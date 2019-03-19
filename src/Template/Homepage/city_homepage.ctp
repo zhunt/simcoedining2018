@@ -83,14 +83,14 @@
 
 <!-- Neighbourhoods and regions list section -->
 
-<?php echo $this->cell('HomepageCityProducts', [$city, $city->id] ); // cuisines in this case ?>
+<?php echo $this->cell('HomepageCityProducts', [$city, $city->id], ['cache' => [ 'key' => 'city_products_' . $city->id] ] ); // cuisines in this case ?>
 
     <!-- Neighbourhoods and regions list section end -->
 
-<?php echo $this->cell('HomepageCityVenueTypes', [$city, $city->id] );  ?>
+<?php echo $this->cell('HomepageCityVenueTypes', [$city, $city->id], ['cache' => [ 'key' => 'city_venues_' . $city->id] ] );  ?>
 
 
-<?php echo $this->cell('HomepageCityNeighbourhoods', [$city, $city->id] );  ?>
+<?php echo $this->cell('HomepageCityNeighbourhoods', [$city, $city->id], ['cache' => [ 'key' => 'city_neighbourhoods_' . $city->id] ] );  ?>
 
 <!-- blog entries -->
 

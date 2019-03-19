@@ -12,8 +12,8 @@
     </div>
 </div>
 
-<?php echo $this->cell('HomepageLatestBlog'); ?>
+<?php echo $this->cell('HomepageLatestBlog', [], [ 'cache' => true ]); ?>
 
-<?php echo $this->cell('HomepageCitiesList'); ?>
+<?php echo $this->cell('HomepageCitiesList', [], [ 'cache' => true ]); ?>
 
-<?php echo $this->element('public_footer'); ?>
+<?php echo $this->element('public_footer', [ 'cache' => true ]); ?>

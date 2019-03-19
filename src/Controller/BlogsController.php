@@ -167,6 +167,10 @@ class BlogsController extends AppController
 
         $wpPost = $wpPosts[0];
 
+        // replace any http with https
+
+        $wpPost = str_replace( 'http://www.blog.simcoedining.com/wp-content/uploads', 'https://www.blog.simcoedining.com/wp-content/uploads', $wpPost);
+
         $datetime = $wpPost['date_gmt'];
 
          $time = Time::createFromFormat(
