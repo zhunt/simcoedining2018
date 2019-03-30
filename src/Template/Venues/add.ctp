@@ -59,6 +59,7 @@ $(function() { $('textarea').froalaEditor() });
             echo $this->Form->control('main_image_url');
             echo $this->Form->control('venue_description');
             echo $this->Form->control('phone');
+            echo $this->Form->control('website_url', ['type' => 'url']);
             echo $this->Form->control('region_id', ['options' => $regions, 'empty' => true, 'class' => 'select2']);
             echo $this->Form->control('city_id', ['options' => $cities, 'class' => 'select2']);
             echo $this->Form->control('city_region_id', ['options' => $cityRegions, 'empty' => true]);

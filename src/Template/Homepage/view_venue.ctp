@@ -78,18 +78,23 @@ $this->assign('title', trim($pageTitle) ) ?>
 
                         <p><?= $venue['venue']['last_verified'] ?></p>
 
-                        <b class="category-title">Type:</b>
+                        <!-- <b class="category-title">Type:</b> -->
                         <?= $this->Homepage->listOfSubcategories($venue['venue_types'], $venue['city']['slug'], 'store-type') ?>
 
+                        <?php if ($venue['venue_products']): ?>
                         <b class="category-title">Cuisines:</b>
                         <?= $this->Homepage->listOfSubcategories($venue['venue_products'], $venue['city']['slug'], 'product') ?>
+                        <?php endif; ?>
 
-                        <b class="category-title">Services:</b>
+                        <?php if ($venue['venue_services']): ?>
+                        <b class="category-title">Features:</b>
                         <?= $this->Homepage->listOfSubcategories($venue['venue_services'], $venue['city']['slug'], 'service') ?>
+                        <?php endif; ?>
 
+                        <?php if ($venue['venue_amenities']): ?>
                         <b class="category-title">Amenities:</b>
                         <?= $this->Homepage->listOfSubcategories($venue['venue_amenities'], $venue['city']['slug'], 'amenity') ?>
-
+                        <?php endif; ?>
 
                     </div>
 
@@ -122,8 +127,9 @@ $this->assign('title', trim($pageTitle) ) ?>
 
                                 <p><b>Phone:</b>  <?= $venue['phone']?></p>
 
-                                <p><b>Website: <?= $venue['venue_detail']['website_url'] ?> </b></p>
-
+                                <?php if ($venue['website_url']): ?>
+                                <p><b><?= "<a href=\"{$venue['website_url']}\" target=\"_blank\">Website</a>"; ?> </b></p>
+                                <?php endif; ?>
                             </div>
                         </div>
 

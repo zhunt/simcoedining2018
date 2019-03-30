@@ -84,7 +84,7 @@ class HomepageHelper extends Helper
                         <a href=\"/{$venue['city']['slug']}/{$venue['slug']}\"><b>{$venue['name']} {$venue['sub_name']}</b></a><br>
                                     {$venue['address']}<br>
                                     <!-- {$venue['city']['name']}<br> -->
-                                    {$venue['last_verified']}
+                                    <!-- {$venue['last_verified']} -->
                                     <hr />
                         ";
         }
@@ -130,7 +130,7 @@ class HomepageHelper extends Helper
     // return a list of items as a link
     public function listOfSubcategories( $category, $citySlug, $urlBase = null) {
         if ( is_array($category) ) {
-            $html = '<ul class="list-inline">';
+            $html = '<ul class="list-inline mt-2">';
             foreach ( $category as $i => $row) {
                 if ( !empty($urlBase)) {
                     $html .= "<li class=\"list-inline-item\"><a href=\"/search/?{$urlBase}={$row['slug']}&city={$citySlug}\">{$row['name']}</a></li>";

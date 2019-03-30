@@ -70,6 +70,7 @@ class Venue extends Entity
         'main_image_url' => true,
         'venue_description' => true,
         'phone' => true,
+        'website_url' => true,
         'region_id' => true,
         'city_id' => true,
         'city_region_id' => true,

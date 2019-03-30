@@ -170,6 +170,11 @@ class VenuesTable extends Table
             ->allowEmptyString('phone', false);
 
         $validator
+            ->scalar('website_url')
+            ->maxLength('main_image_url', 255)
+            ->allowEmptyString('website_url');
+
+        $validator
             ->dateTime('last_verified')
             ->allowEmptyDateTime('last_verified');
 
@@ -245,7 +250,7 @@ class VenuesTable extends Table
                 //'VenueDetails' => ['fields' => ['VenueDetails.last_verified']],
                 'Cities' => ['fields' => [ 'id', 'name', 'slug'] ]
             ])
-            ->orderDesc('Venues.last_verified')
+            ->order('Venues.created DESC, Venues.last_verified DESC')
             ->limit(5); // ->enableAutoFields(true);
 
         // debug($query->toArray());
