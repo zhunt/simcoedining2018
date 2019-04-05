@@ -1,4 +1,13 @@
-<?php $this->assign('title', "Places to Eat in {$city['name']}, {$city['region']['province']['name']}"); ?>
+<?php
+
+if ($city['seo_title']) {
+    $this->assign('title', $city['seo_title']);
+    $this->Html->meta('description', $city['seo_description'],['block' => true]);
+} else {
+    $this->assign('title', "Places to Eat in {$city['name']}, {$city['region']['province']['name']}");
+}
+
+ ?>
 
     <div class="jumbotron jumbotron-fluid title-banner">
     <div class="container ">

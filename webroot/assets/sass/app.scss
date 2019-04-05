@@ -214,6 +214,7 @@ h3.section-header small { opacity: .5; color: #000; }
     background: tint($primary,95);
     border-radius: 0;
     border: 1px solid rgba($primaryDark,0.1);
+    box-shadow: 1px 1px 4px rgba($primaryDark,0.1);
 }
 .title-banner {
     background-color: $secondary;
@@ -391,11 +392,15 @@ h3.section-header small { opacity: .5; color: #000; }
     border: 1px solid #82abc5;
 }
 
-.list-inline-item a {
-    background-color: rgba(13, 71, 161, 0.05);
-    padding: .25rem .5rem;
-    border-radius: .5rem;
+.venue-card .list-inline-item {
+    margin-bottom: 1rem;
 }
+
+.venue-card .list-inline-item a {
+        background-color: rgba(13, 71, 161, 0.05);
+        padding: .25rem .5rem;
+}
+
 
 
 

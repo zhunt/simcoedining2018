@@ -20,7 +20,7 @@ Redirect 301 /beaver-bulldog-collingwood 	/collingwood-ontario/beaver-bulldog-co
 Redirect 301 /beavertails-barrie 			/barrie-ontario/beavertails-barrie
 Redirect 301 /bistro-seven-seven 			/city/new-tecumseth-ontario
 Redirect 301 /bluewater-fish-chips 			/stayner-ontario/bluewater-fish-chips
-Redirect 301 /bohemia 						/city/barrie-ontario
+Redirect 301 /bohemia 						/barrie-ontario/bohemia-barrie
 Redirect 301 /bos-authentic-thai 			/city/barrie-ontario
 Redirect 301 /boston-pizza-bryne 			/city/barrie-ontario
 Redirect 301 /boston-pizza-wasaga 			/city/wasaga-beach-ontario
@@ -61,7 +61,7 @@ Redirect 301 /davidsons-country-dining 	/barrie-ontario/davidsons-country-dining
 Redirect 301 /debbs-place-barrie 		/barrie-ontario/debbs-place-barrie
 Redirect 301 /diamond-sushi 			/city/barrie-ontario
 Redirect 301 /doc-malones 				/barrie-ontario/malones-pint-house-barrie
-Redirect 301 /donaleighs 				/barrie-ontario/donaleighs
+Redirect 301 /donaleighs 				/barrie-ontario/donaleighs-barrie
 Redirect 301 /downtown-pizza 			/city/barrie-ontario
 Redirect 301 /dragon 					/barrie-ontario/dragon-barrie
 Redirect 301 /dr-computer-logick 		/city/barrie-ontario
@@ -123,6 +123,7 @@ Redirect 301 /monsoon-lounge-barrie         /barrie-ontario/monsoon-lounge-barri
 Redirect 301 /muddy-water                   /new-tecumseth-ontario/muddy-water-beeton
 Redirect 301 /mulholland-catering           /barrie-ontario/mulholland-catering-barrie
 Redirect 301 /ninos                         /barrie-ontario/ninos-italian-barrie
+Redirect 301 /north                         /barrie-ontario/north-barrie
 Redirect 301 /olde-town-terrace             /city/collingwood-ontario/
 Redirect 301 /old-red-hen                   /collingwood-ontario/old-red-hen-collingwood
 Redirect 301 /old-time-retro-candy          /city/barrie-ontario
@@ -169,7 +170,9 @@ Redirect 301 /super-panda                   /city/collingwood-ontario
 Redirect 301 /tap-cue                       /barrie-ontario/tap-cue-barrie
 Redirect 301 /tattingers-restaurant-lounge  /barrie-ontario/tattingers-restaurant-lounge
 Redirect 301 /tesoro                        /collingwood-ontario/tesoro-collingwood
+Redirect 301 /tara                          /barrie-ontario/tara-indian-barrie
 Redirect 301 /the-italian-bakery            /barrie-ontario/italian-bakery-barrie
+Redirect 301 /the-farmhouse                 /barrie-ontario/farmhouse-barrie
 Redirect 301 /theos-eatery                  /orillia-ontario/theos-eatery-orillia
 Redirect 301 /tholos                        /blue-mountains-ontario/tholos-blue-mountain
 Redirect 301 /tlc-bistro                    /city/barrie-ontario

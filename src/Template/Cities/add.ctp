@@ -36,6 +36,9 @@ $(document).ready(function() {
             echo $this->Form->control('venue_count');
             echo $this->Form->control('region_id', ['options' => $regions, 'class' => 'select2']);
             echo $this->Form->control('locality');
+
+            echo $this->Form->control('seo_title');
+            echo $this->Form->control('seo_description');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -8,6 +8,19 @@ $this->assign('title', trim($pageTitle) ) ?>
 
 
 <?php $this->assign('canonical', $canonical ); ?>
+
+
+<?php if ($venue['main_image_url']) {
+
+     $this->Html->meta('twitter:card', 'summary_large_image',['block' => true]);
+    $this->Html->meta('twitter:site', '@simcoedining',['block' => true]);
+    $this->Html->meta('twitter:creator', '@simcoedining',['block' => true]);
+    $this->Html->meta('twitter:title', $pageTitle,['block' => true]);
+    $this->Html->meta('twitter:description',  substr( strip_tags($venue['venue_description']), 0, strpos( $venue['venue_description'], '.') ) ,['block' => true]);
+    $this->Html->meta('twitter:image', $venue['main_image_url'],['block' => true]);
+}
+?>
+
 <!-- navbar -->
 
 <style xmlns="http://www.w3.org/1999/html">
@@ -64,7 +77,7 @@ $this->assign('title', trim($pageTitle) ) ?>
                         <div id="map" style="background-color: transparent; height: 10rem; margin-bottom: 1rem;"><?= $venue['geo_lat'] . ',' . $venue['geo_lat'] ?></div>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body venue-card">
                         <h5 class="card-title">About <?= $venue['name'] ?>:</h5>
 
                         <?php if ( $venue['venue_closed'] ): ?>

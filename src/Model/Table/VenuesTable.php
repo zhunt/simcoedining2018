@@ -76,8 +76,7 @@ class VenuesTable extends Table
             'foreignKey' => 'intersection_id'
         ]);
         $this->belongsTo('PublishStates', [
-            'foreignKey' => 'publish_state_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'publish_state_id'
         ]);
         $this->belongsTo('Chains', [
             'foreignKey' => 'chain_id'
@@ -251,7 +250,7 @@ class VenuesTable extends Table
                 'Cities' => ['fields' => [ 'id', 'name', 'slug'] ]
             ])
             ->order('Venues.created DESC, Venues.last_verified DESC')
-            ->limit(5); // ->enableAutoFields(true);
+            ->limit(10); // ->enableAutoFields(true);
 
         // debug($query->toArray());
 
