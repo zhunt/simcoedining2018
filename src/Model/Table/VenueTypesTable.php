@@ -90,12 +90,13 @@ class VenueTypesTable extends Table
     // ------------- Custom functions
 
     public function getVenueTypesWithVenues($cityId = 0 ) { // $cityId
-        $query = $this->find();
+        $query = $this->find()->enableHydration(false);
         $query->select(['total_venues' => $query->func()->count('Venues.id'), 'VenueTypes.name', 'VenueTypes.slug', 'Venues.city_id'])
             ->leftJoinWith('Venues')
             ->group(['VenueTypes.id'])
             ->having('total_venues > 0 ' )
             // ->where(['Venues.city_id' => $cityId]) // remove this if not by city
+            ->where(['Venues.publish_state_id' => 3, 'Venues.venue_closed !=' => true ])
             ->order('total_venues DESC');
 
         if ( $cityId > 0) {

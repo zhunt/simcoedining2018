@@ -76,7 +76,7 @@ class HomepageController extends AppController {
 
         $venue = $this->Venues->find('all',
             ['conditions' => [ 'Venues.slug' => $slug, 'Venues.publish_state_id' => 3 ] ])
-           ->contain([ 'VenueSubtypes', 'VenueTypes', 'VenueAmenities', 'VenueProducts', 'VenueServices', 'Cities']) //  fix these: 'Intersections', 'Chains' 'CityRegions', 'CityNeighbourhoods'
+           ->contain([ 'VenueSubtypes', 'VenueTypes', 'VenueAmenities', 'VenueProducts', 'VenueServices', 'Cities', 'Chains']) //  fix these: 'Intersections', 'Chains' 'CityRegions', 'CityNeighbourhoods'
             ->first(); // debug($venue->toArray() );
 
         if (!$venue) {

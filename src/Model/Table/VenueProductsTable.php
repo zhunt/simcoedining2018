@@ -93,12 +93,13 @@ class VenueProductsTable extends Table
     // custom functions
 
     public function getProductsWithVenues($cityId = 0 ) { // $cityId
-        $query = $this->find();
+        $query = $this->find()->enableHydration(false);
         $query->select(['total_venues' => $query->func()->count('Venues.id'), 'VenueProducts.name', 'VenueProducts.slug', 'Venues.city_id'])
             ->leftJoinWith('Venues')
             ->group(['VenueProducts.id'])
             ->having('total_venues > 0 ' )
            // ->where(['Venues.city_id' => $cityId]) // remove this if not by city
+           ->where(['Venues.publish_state_id' => 3, 'Venues.venue_closed !=' => true ])
             ->order('total_venues DESC');
 
         if ( $cityId > 0) {

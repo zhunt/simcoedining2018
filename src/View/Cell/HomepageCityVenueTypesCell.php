@@ -36,6 +36,20 @@ class HomepageCityVenueTypesCell extends Cell
 
         $venueTypeList = $this->VenueTypes->getVenueTypesWithVenues($cityId = $id )->toArray();
 
+        // get the first 5
+        $top5 = array_slice($venueTypeList, 0, 5);
+
+        $rest = array_slice($venueTypeList, 5);
+
+        // sort the 2nd array alphabetically
+        usort($rest, function($a, $b) {
+            return strcmp ($a['name'], $b['name']);
+        });
+
+        // ... and recombine the 2 arrays
+        $venueTypeList = array_merge($top5,$rest);
+
+        // get city and province name for header
         $city = $data['name'];  $citySlug = $data['slug'];
         $province = $data['region']['province']['name'];
 

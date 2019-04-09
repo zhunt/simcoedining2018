@@ -36,7 +36,20 @@ class HomepageCityProductsCell extends Cell
         $this->loadModel('VenueProducts');
        // $this->loadModel('VenueServices');
 
-        $cuisinesList = $this->VenueProducts->getProductsWithVenues($cityId = $id )->toArray();
+        $cuisinesList = $this->VenueProducts->getProductsWithVenues($cityId = $id )->toArray(); //debug($cuisinesList);
+
+        // get the first 5
+        $top5 = array_slice($cuisinesList, 0, 5);
+
+        $rest = array_slice($cuisinesList, 5);
+
+        // sort the 2nd array alphabetically
+        usort($rest, function($a, $b) {
+            return strcmp ($a['name'], $b['name']);
+        });
+
+        // ... and recombine the 2 arrays
+        $cuisinesList = array_merge($top5,$rest);
 
         $city = $data['name'];  $citySlug = $data['slug'];
         $province = $data['region']['province']['name'];

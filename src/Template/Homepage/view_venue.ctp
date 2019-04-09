@@ -69,7 +69,7 @@ $this->assign('title', trim($pageTitle) ) ?>
                         <h5 class="venue-address"><?= $venue['address'] ?> <!-- , <?= $venue['city']['name'] ?> --></h5>
                     </div>
                     <?php if ($venue['main_image_url']): ?>
-                    <div class="card-body" style="padding-left: 0; padding-right: 0">
+                    <div class="card-body pt-0" style="padding-left: 0; padding-right: 0">
                         <img class="img-fluid" style="width: -webkit-fill-available;" src="<?= $venue['main_image_url'] ?>" alt="<?= "Image of {$venue['name']}" ?>" />
                     </div>
                     <?php endif; ?>
@@ -136,8 +136,9 @@ $this->assign('title', trim($pageTitle) ) ?>
                             </div>
 -->
                             <div class="col">
-                                <!-- <p><b>Chain:</b> <?= "<a href=\"/search/?chain={$venue['chain']['slug']}&city={$venue['city']['slug']}\">{$venue['chain']['name']}</a>"; ?></p> -->
-
+                                <?php if ($venue['chain']): ?>
+                                <p><b>Chain:</b> <?= "<a href=\"/search/?chain={$venue['chain']['slug']}&city={$venue['city']['slug']}\">{$venue['chain']['name']}</a>"; ?></p>
+                                <?php endif; ?>
                                 <p><b>Phone:</b>  <?= $venue['phone']?></p>
 
                                 <?php if ($venue['website_url']): ?>

@@ -22,9 +22,10 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-4 ">
                         <ul class="list-unstyled">
-                            <?php foreach ($cuisinesList[0] as $cuisine): ?>
+                            <?php foreach ($cuisinesList[0] as $i => $cuisine): ?>
                                 <li>
                                     <a title="<?= $cuisine['name'] ?> Restaurants in <?= $city ?>" href="/search/?product=<?= $cuisine['slug'] ?>&city=<?= $citySlug ?>"><?= $cuisine['name'] ?> <small class="text-muted d-none d-md-block">(<?= $cuisine['total_venues'] ?> places)</small></a>
+                                    <?php if ( $i == 5) echo '<hr>'; ?>
                                 </li>
                             <?php endforeach; ?>
                         </ul>

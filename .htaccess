@@ -10,7 +10,7 @@ Redirect 301 /akira 					/barrie-ontario/akira-barrie
 Redirect 301 /andys-place 				/barrie-ontario/andys-place
 Redirect 301 /arabesque 				/barrie-ontario/arabesque
 Redirect 301 /avalanche-blue 			/city/blue-mountains-ontario
-Redirect 301 /azzurra 					/barrie-ontario/azzurra
+Redirect 301 /azzurra 					/collingwood-ontario/azzurra-collingwood
 Redirect 301 /bamboo-terrace 			/collingwood-ontario/bamboo-terrace-collingwood
 Redirect 301 /bananas 					/city/wasaga-beach-ontario
 Redirect 301 /barcelos-restaurant-grill /barrie-ontario/barcelos-restaurant-grill
@@ -68,6 +68,7 @@ Redirect 301 /dr-computer-logick 		/city/barrie-ontario
 Redirect 301 /duncans-cafe 				/collinwood-ontario/duncans-cafe-collingwood
 Redirect 301 /east-side-marios-bryne 	/barrie-ontario/east-side-marios-bryne
 Redirect 301 /edge-wine-bar-grille 		/orangeville-ontario/edge-wine-bar-orangeville
+Redirect 301 /white-truffle 		    /orangeville-ontario/edge-wine-bar-orangeville
 Redirect 301 /espresso-post 			/collingwood-ontario/espresso-post-collingwood
 Redirect 301 /euro-lex-bistro-deli 		/wasaga-beach-ontario/euro-lex-bistro-deli
 Redirect 301 /fernandos 				/barrie-ontario/fernandos-barrie
@@ -88,7 +89,7 @@ Redirect 301 /hamleys 					/barrie-ontario/hamleys-barrie
 Redirect 301 /happy-mango 				/barrie-ontario/happy-mango-barrie
 Redirect 301 /harbour-house-grill 		/city/innisfil-ontario
 Redirect 301 /harbour-view-inn 			/barrie-ontario/harbour-view-inn-barrie
-Redirect 301 /herb-n-sage 				/city/barrie-ontario
+Redirect 301 /herb-n-sage 				/barrie-ontario/simmering-kettle-essa
 Redirect 301 /holiday-inn-barrie 		/barrie-ontario/holiday-inn-barrie
 Redirect 301 /holiday-inn-express-barrie 	/barrie-ontario/holiday-inn-express-barrie
 Redirect 301 /hooters 						/city/barrie-ontario
@@ -108,7 +109,7 @@ Redirect 301 /local-gastropub               /barrie-ontario/local-gastropub
 Redirect 301 /lockeroom                     /barrie-ontario/lockeroom-barrie
 Redirect 301 /mansion                       /barrie-ontario/the-johnsons-residence
 Redirect 301 /man-yorke                     /city/new-tecumseth-ontario
-Redirect 301 /market-buffet-grill           /barrie-ontario/mmarket-buffet-grill-barrie
+Redirect 301 /market-buffet-grill           /barrie-ontario/market-buffet-grill-barrie
 Redirect 301 /marty-s-coffee-bistro         /barrie-ontario/martys-coffee-bistro-barrie
 Redirect 301 /mary-browns-barrie            /barrie-ontario/mary-browns-barrie-essa
 Redirect 301 /mcreillys                     /barrie-ontario/mcreillys-barrie
@@ -161,6 +162,7 @@ Redirect 301 /springwater-cafe-catering     /barrie-ontario/springwater-cafe-cat
 Redirect 301 /sticky-fingers                /city/barrie-ontario
 Redirect 301 /stone-grille-innisfil         /innisfil-ontario/stone-grille-innisfil
 Redirect 301 /stuffed-peasant               /collingwood-ontario/stuffed-peasant-collingwood
+Redirect 301 /steelers                      /elmvale-ontario/steelers-restaurant-and-pub
 Redirect 301 /sugar-city-cupcakes           /city/barrie-ontario
 Redirect 301 /sunrise-caribbean             /city/barrie-ontario
 Redirect 301 /sunset-grill                  /city/barrie-ontario
@@ -175,6 +177,7 @@ Redirect 301 /the-italian-bakery            /barrie-ontario/italian-bakery-barri
 Redirect 301 /the-farmhouse                 /barrie-ontario/farmhouse-barrie
 Redirect 301 /theos-eatery                  /orillia-ontario/theos-eatery-orillia
 Redirect 301 /tholos                        /blue-mountains-ontario/tholos-blue-mountain
+Redirect 301 /tiffs                         /barrie-ontario/tiffs-restaurant-barrie
 Redirect 301 /tlc-bistro                    /city/barrie-ontario
 Redirect 301 /travelodge-barrie-hart        /barrie-ontario/travelodge-barrie-hart
 Redirect 301 /tux-nightclub                 /orillia-ontario/tux-nightclub-orillia
@@ -187,7 +190,10 @@ Redirect 301 /williams-coffee-barrie        /barrie-ontario/williams-coffee-barr
 Redirect 301 /windy-oneills                 /city/blue-mountains-ontario
 Redirect 301 /yammas                        /wasaga-beach-ontario/yammas-wasaga
 Redirect 301 /yukyuks-barrie                /barrie-ontario/yukyuks-barrie
+Redirect 301 /landings/venue_type/bar       /search/?store-type=bar&city=barrie-ontario
 RewriteRule  ^news_events/(.*)$             /blog/$1 [R=301,NC,L]
+
+
 
 
 <IfModule mod_rewrite.c>
