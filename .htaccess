@@ -5,6 +5,7 @@
 #</IfModule>
 Redirect 301 /kenzington                /barrie-ontario/kenzington-dunlop
 Redirect 301 /55-special 				/barrie-ontario/55-special
+Redirect 301 /applebees-barrie          /barrie-ontario/applebees-barrie
 Redirect 301 /admirals-post 			/barrie-ontario/admirals-post
 Redirect 301 /akira 					/barrie-ontario/akira-barrie
 Redirect 301 /andys-place 				/barrie-ontario/andys-place
@@ -191,9 +192,8 @@ Redirect 301 /windy-oneills                 /city/blue-mountains-ontario
 Redirect 301 /yammas                        /wasaga-beach-ontario/yammas-wasaga
 Redirect 301 /yukyuks-barrie                /barrie-ontario/yukyuks-barrie
 Redirect 301 /landings/venue_type/bar       /search/?store-type=bar&city=barrie-ontario
+Redirect 301 /places/view/tara              /barrie-ontario/tara-indian-barrie
 RewriteRule  ^news_events/(.*)$             /blog/$1 [R=301,NC,L]
-
-
 
 
 <IfModule mod_rewrite.c>
