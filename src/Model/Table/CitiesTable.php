@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\Rule\IsUnique;
 
 /**
  * Cities Model
@@ -106,7 +107,7 @@ class CitiesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['region_id'], 'Regions'));
-
+        $rules->add($rules->isUnique(['slug']));
         return $rules;
     }
 

@@ -232,7 +232,7 @@ class VenuesTable extends Table
         $rules->add($rules->existsIn(['publish_state_id'], 'PublishStates'));
         $rules->add($rules->existsIn(['chain_id'], 'Chains'));
         $rules->add($rules->existsIn(['client_type_id'], 'ClientTypes'));
-
+        $rules->add($rules->isUnique(['slug']));
         return $rules;
     }
 
