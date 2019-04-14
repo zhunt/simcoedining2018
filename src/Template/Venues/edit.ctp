@@ -3,8 +3,12 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Venue $venue
  */
-?>
+
+use Cake\Core\Configure; ?>
 <?php $this->Html->scriptStart(['block' => true]); ?>
+
+window.googlemapKey = '<?= Configure::read('gmapApiKey'); ?>';
+
 $(document).ready(function() {
     $('.select2').select2();
 });
@@ -93,3 +97,5 @@ $(function() { $('textarea').froalaEditor() });
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
+
+<script src="/js/admin_app.js"></script>
