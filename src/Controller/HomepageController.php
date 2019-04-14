@@ -62,6 +62,10 @@ class HomepageController extends AppController {
             'contain' => ['Regions' => [ 'Provinces' ] ]
         ])->first(); // debug($cityData);
 
+        if (!$city) {
+            return $this->redirect('/');
+        }
+
         $this->viewBuilder()->setLayout('default-public');
         $this->set( compact( 'city', 'cuisinesList') );
     }
@@ -80,7 +84,7 @@ class HomepageController extends AppController {
             ->first(); // debug($venue->toArray() );
 
         if (!$venue) {
-            $this->redirect('/');
+            return $this->redirect('/');
         }
 //debug($venue);
 //        debug( " $venue->geo_lat, $venue->geo_lat, $venue->id");
