@@ -107,8 +107,8 @@
                 <td><?= h($venue->modified) ?></td>
                 -->
                 <td class="actions">
+                    <?= $this->Html->link(__('Clone'), ['action' => 'duplicate', $venue->id]) ?>
                     <?= $this->Html->link(__('View'), ['action' => 'view', $venue->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $venue->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $venue->id], ['confirm' => __('Are you sure you want to delete # {0}?', $venue->id)]) ?>
                 </td>
             </tr>

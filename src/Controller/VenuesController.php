@@ -135,4 +135,40 @@ class VenuesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function duplicate( $id = null ) {
+        $venue = $this->Venues->get($id, [
+            'contain' => ['VenueAmenities', 'VenueProducts', 'VenueServices', 'VenueSubtypes', 'VenueTypes']
+        ]);
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $venue2 = $this->Venues->newEntity();
+            $venue->id = null;
+            $venue2 = $this->Venues->patchEntity($venue2, $this->request->getData());
+
+            if ($this->Venues->save($venue2)) {
+                $this->Flash->success(__('The venue has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The venue could not be saved. Please, try again.'));
+
+        }
+
+        $regions = $this->Venues->Regions->find('list', ['limit' => 200, 'groupField' => 'province.name' ])->contain(['Provinces']);
+        $cities = $this->Venues->Cities->find('list', ['limit' => 200]);
+        $cityRegions = $this->Venues->CityRegions->find('list', ['limit' => 200]);
+        $cityNeighbourhoods = $this->Venues->CityNeighbourhoods->find('list', ['limit' => 200]);
+        $intersections = $this->Venues->Intersections->find('list', ['limit' => 200]);
+        $publishStates = $this->Venues->PublishStates->find('list', ['limit' => 200]);
+        $chains = $this->Venues->Chains->find('list', ['limit' => 200]);
+        $clientTypes = $this->Venues->ClientTypes->find('list', ['limit' => 200]);
+        $venueAmenities = $this->Venues->VenueAmenities->find('list', ['limit' => 200]);
+        $venueProducts = $this->Venues->VenueProducts->find('list', ['limit' => 200]);
+        $venueServices = $this->Venues->VenueServices->find('list', ['limit' => 200]);
+        $venueSubtypes = $this->Venues->VenueSubtypes->find('list', ['limit' => 200]);
+        $venueTypes = $this->Venues->VenueTypes->find('list', ['limit' => 200]);
+        $this->set(compact('venue', 'regions', 'cities', 'cityRegions', 'cityNeighbourhoods', 'intersections', 'publishStates', 'chains', 'clientTypes', 'venueAmenities', 'venueProducts', 'venueServices', 'venueSubtypes', 'venueTypes'));
+
+    }
 }
