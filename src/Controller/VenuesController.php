@@ -151,6 +151,7 @@ class VenuesController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
+
             $this->Flash->error(__('The venue could not be saved. Please, try again.'));
 
         }

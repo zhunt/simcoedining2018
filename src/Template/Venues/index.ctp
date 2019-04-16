@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Venue[]|\Cake\Collection\CollectionInterface $venues
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="large-2 medium-3 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Venue'), ['action' => 'add']) ?></li>
@@ -34,7 +34,7 @@
         <li><?= $this->Html->link(__('New Venue Type'), ['controller' => 'VenueTypes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="venues index large-9 medium-8 columns content">
+<div class="venues index large-10 medium-9 columns content">
     <h3><?= __('Venues') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
@@ -42,12 +42,12 @@
                 <!--
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 -->
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                <th scope="col" style="width: 15%"><?= $this->Paginator->sort('name') ?></th>
                 <!--
                 <th scope="col"><?= $this->Paginator->sort('slug') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('sub_name') ?></th>
                 -->
-                <th scope="col"><?= $this->Paginator->sort('address') ?></th>
+                <th scope="col" style="width: 15%"><?= $this->Paginator->sort('address') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('geo_lat') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('geo_lng') ?></th>
                 <!--
@@ -61,9 +61,9 @@
                 <th scope="col"><?= $this->Paginator->sort('intersection_id') ?></th>
                 -->
                 <th scope="col"><?= $this->Paginator->sort('publish_state_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('venue_closed') ?></th>
+                <th scope="col" style="width: 5%;"><?= $this->Paginator->sort('venue_closed', 'Closed') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('chain_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('client_type_id') ?></th>
+                <!-- <th scope="col"><?= $this->Paginator->sort('client_type_id') ?></th> -->
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <!--
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
@@ -78,7 +78,7 @@
                 <td><?= $this->Number->format($venue->id) ?></td>
                 -->
                 <td>
-                    <?= $this->Html->link( $venue->name , ['action' => 'edit', $venue->id]) ?>
+                    <?= $this->Html->link( "{$venue->name} {$venue->sub_name}" , ['action' => 'edit', $venue->id]) ?>
                 </td>
                 <!--
                 <td><?= h($venue->slug) ?></td>
@@ -91,7 +91,7 @@
                 <td><?= h($venue->phone) ?></td>
                 <td><?= $venue->has('region') ? $this->Html->link($venue->region->name, ['controller' => 'Regions', 'action' => 'view', $venue->region->id]) : '' ?></td>
                 -->
-                <td><?= $venue->has('city') ? $this->Html->link($venue->city->name, ['controller' => 'Cities', 'action' => 'view', $venue->city->id]) : '' ?></td>
+                <td><?= $venue->has('city') ? $this->Html->link( $venue->city->name, ['controller' => 'Cities', 'action' => 'view', $venue->city->id]) : '' ?></td>
                 <!--
                 <td><?= $venue->has('city_region') ? $this->Html->link($venue->city_region->name, ['controller' => 'CityRegions', 'action' => 'view', $venue->city_region->id]) : '' ?></td>
                 <td><?= $venue->has('city_neighbourhood') ? $this->Html->link($venue->city_neighbourhood->name, ['controller' => 'CityNeighbourhoods', 'action' => 'view', $venue->city_neighbourhood->id]) : '' ?></td>
@@ -101,7 +101,7 @@
                 <td> <?= $venue->venue_closed ?> </td>
 
                 <td><?= $venue->has('chain') ? $this->Html->link($venue->chain->name, ['controller' => 'Chains', 'action' => 'view', $venue->chain->id]) : '' ?></td>
-                <td><?= $this->Number->format($venue->client_type_id) ?></td>
+                <!-- <td><?= $this->Number->format($venue->client_type_id) ?></td> -->
                 <td><?= h($venue->created) ?></td>
                 <!--
                 <td><?= h($venue->modified) ?></td>
