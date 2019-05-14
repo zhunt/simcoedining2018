@@ -1,18 +1,20 @@
-
 <?php // debug($venue);
+
+// set page title
 $pageTitle = ($venue['seo_title']) ? $venue['seo_title'] : trim("{$venue['name']} {$venue['sub_name']}") . ", {$venue['city']['name']}";
-
 if ($venue['venue_closed']) $pageTitle .= ' (Closed)';
+$this->assign('title', trim($pageTitle) );
 
-$this->assign('title', trim($pageTitle) ) ?>
+// set meta description
+$seoDesc = ($venue['seo_description']) ? $venue['seo_description'] : trim( strtok ( strip_tags($venue['venue_description']), '.' ) );
+$this->Html->meta('description',$seoDesc,['block' => true]);
 
+// set canonical link
+$this->assign('canonical', $canonical );
 
-<?php $this->assign('canonical', $canonical ); ?>
-
-
-<?php if ($venue['main_image_url']) {
-
-     $this->Html->meta('twitter:card', 'summary_large_image',['block' => true]);
+// set Twitter card meta
+if ($venue['main_image_url']) {
+    $this->Html->meta('twitter:card', 'summary_large_image',['block' => true]);
     $this->Html->meta('twitter:site', '@simcoedining',['block' => true]);
     $this->Html->meta('twitter:creator', '@simcoedining',['block' => true]);
     $this->Html->meta('twitter:title', $pageTitle,['block' => true]);

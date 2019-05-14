@@ -63,6 +63,8 @@ $(function() { $('textarea').froalaEditor() });
             echo $this->Form->control('name');
             echo $this->Form->control('slug');
             echo $this->Form->control('sub_name');
+            echo $this->Form->control('seo_title');
+            echo $this->Form->control('seo_description');
             echo $this->Form->control('address');
             echo $this->Form->control('geo_lat');
             echo $this->Form->control('geo_lng');

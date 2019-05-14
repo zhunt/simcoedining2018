@@ -64,6 +64,8 @@ class Venue extends Entity
         'name' => true,
         'slug' => true,
         'sub_name' => true,
+        'seo_title' => true,
+        'seo_description' => true,
         'address' => true,
         'geo_lat' => true,
         'geo_lng' => true,
