@@ -12,20 +12,18 @@
     <div class="row">
         <div class="col-12 col-md-8">
 
-            <p>1985 is the year things seized to be the same for writers of business books. Who would have thought that from the ideologies of humankind, shall rise the greatest ideas of all, to bring together great minds and rate their works according to various criteria and thus be able to establish the best among them all and in so doing, appreciate the work of their hands?</p>
+           <h2>About SimcoeDining.com</h2>
+            <p>Originally launched around 2005, SimcoeDining was one of the orginal websites covering the restauant scene in Barrie and the Simcoe County area.</p>
 
-            <p>Business books have since entered the limelight, and so have their writers, bagging home the joy of having their works recognized and even awarded for those who have been appearing at the top over the years.</p>
-
-            <h2>The National Business Books Award, 1985</h2>
-            <p>Since its launch in 1985, the National Business Books Award has served the sole purpose of rewarding the best of business writers, sieved on various criteria to determine, not just the best, but also the most reasonable writings among all.</p>
-
+            <p>In 2018/2019 work started on complete re-write of the orginal website.</p>
         </div>
 
         <div class="col-12 col-md-4">
             <div class="panel">
+                <!--
                 <h4>Side column content goes here</h4>
                 <p>Business books have since entered the limelight, and so have their writers, bagging home the joy of having their works recognized and even awarded for those who have been appearing at the top over the years.</p>
-
+                -->
             </div>
 
         </div>
