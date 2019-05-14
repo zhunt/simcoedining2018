@@ -179,9 +179,11 @@ Redirect 301 /the-farmhouse                 /barrie-ontario/farmhouse-barrie
 Redirect 301 /theos-eatery                  /orillia-ontario/theos-eatery-orillia
 Redirect 301 /tholos                        /blue-mountains-ontario/tholos-blue-mountain
 Redirect 301 /tiffs                         /barrie-ontario/tiffs-restaurant-barrie
+Redirect 301 /tiffins                       /barrie-ontario/tjs-pizza-barrie
 Redirect 301 /tlc-bistro                    /city/barrie-ontario
 Redirect 301 /travelodge-barrie-hart        /barrie-ontario/travelodge-barrie-hart
 Redirect 301 /tux-nightclub                 /orillia-ontario/tux-nightclub-orillia
+Redirect 301 /twist-blue-moutain            /blue-mountains-ontario/twist-martini-blue-mountain
 Redirect 301 /urban-dish                    /barrie-ontario/urban-dish-barrie
 Redirect 301 /whistle-stop                  /new-tecumseth-ontario/whistle-stop-beeton
 Redirect 301 /wild-wings-barrie             /barrie-ontario/wild-wings-mulcaster
@@ -194,6 +196,9 @@ Redirect 301 /yukyuks-barrie                /barrie-ontario/yukyuks-barrie
 Redirect 301 /landings/venue_type/bar       /search/?store-type=bar&city=barrie-ontario
 Redirect 301 /places/view/tara              /barrie-ontario/tara-indian-barrie
 RewriteRule  ^news_events/(.*)$             /blog/$1 [R=301,NC,L]
+
+
+
 
 
 <IfModule mod_rewrite.c>

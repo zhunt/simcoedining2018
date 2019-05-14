@@ -160,7 +160,7 @@
 </url>
 <url>
   <loc>https://www.simcoedining.com/blue-mountains-ontario/tholos-blue-mountain</loc>
-  <lastmod>2019-03-18T03:48:37+00:00</lastmod>
+  <lastmod>2019-05-06T03:48:37+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
@@ -372,7 +372,7 @@
 </url>
 <url>
   <loc>https://www.simcoedining.com/collingwood-ontario/duncans-cafe-collingwood</loc>
-  <lastmod>2019-03-18T03:48:37+00:00</lastmod>
+  <lastmod>2019-05-10T03:48:37+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
@@ -677,19 +677,16 @@
     <lastmod>2019-03-31T03:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/orillia-ontario/era-67-orillia</loc>
     <lastmod>2019-03-31T03:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/richmond-hill-ontario/mandala-cafe-richmond-hill</loc>
     <lastmod>2019-04-01T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/newmarket-ontario/lobo-iberico-restaurant</loc>
     <lastmod>2019-04-01T01:50:37+00:00</lastmod>
@@ -705,13 +702,11 @@
     <lastmod>2019-04-01T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/orillia-ontario/grape-and-olive-orillia</loc>
     <lastmod>2019-04-01T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/bradford-ontario/wimpys-diner-bradford</loc>
     <lastmod>2019-04-01T01:50:37+00:00</lastmod>
@@ -738,27 +733,21 @@
     <lastmod>2019-04-04T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/orillia-ontario/apple-annies-orillia</loc>
     <lastmod>2019-04-04T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/brampton-ontario/rejeannes-brampton</loc>
     <lastmod>2019-04-04T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/barrie-ontario/tiffs-restaurant-barrie</loc>
     <lastmod>2019-04-04T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
-
-
   <url>
       <loc>https://www.simcoedining.com/elmvale-ontario/steelers-restaurant-and-pub</loc>
       <lastmod>2019-05-04T01:50:37+00:00</lastmod>
@@ -769,19 +758,16 @@
     <lastmod>2019-05-04T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/collingwood-ontario/azzurra-collingwood</loc>
     <lastmod>2019-05-04T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/barrie-ontario/redline-brewhouse-barrie</loc>
     <lastmod>2019-05-04T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/barrie-ontario/applebees-barrie</loc>
     <lastmod>2019-04-07T01:50:37+00:00</lastmod>
@@ -797,7 +783,6 @@
     <lastmod>2019-04-07T01:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-
   <url>
     <loc>https://www.simcoedining.com/barrie-ontario/tjs-pizza-barrie</loc>
     <lastmod>2019-04-07T01:50:37+00:00</lastmod>
@@ -912,18 +897,106 @@
   </url>
   <url>
     <loc>https://www.simcoedining.com/brampton-ontario/tracks-brampton</loc>
-    <lastmod>2019-04-013T012:50:37+00:00</lastmod>
+    <lastmod>2019-04-013T012:50:37+01:00</lastmod>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://www.simcoedining.com/brampton-ontario/52nd-street-brampton</loc>
-    <lastmod>2019-04-013T012:50:37+00:00</lastmod>
+    <lastmod>2019-04-013T012:50:37+01:00</lastmod>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://www.simcoedining.com/richmond-hill-ontario/restoran-malaysia-richmond-hill</loc>
+    <lastmod>2019-04-013T012:50:37+01:00</lastmod>
+    <priority>0.41</priority>
+  </url>
+
+  <url>
+    <loc>https://www.simcoedining.com/richmond-hill-ontario/citro-richmond-hill</loc>
     <lastmod>2019-04-013T012:50:37+00:00</lastmod>
     <priority>0.41</priority>
   </url>
-  
+
+  <url>
+    <loc>https://www.simcoedining.com/brampton-ontario/wendel-clarks-brampton</loc>
+    <lastmod>2019-04-013T012:50:37+00:00</lastmod>
+    <priority>0.41</priority>
+  </url>
+
+  <url>
+    <loc>https://www.simcoedining.com/mississauga-ontario/coopers-mississauga</loc>
+    <lastmod>2019-04-15T03:48:37+00:00</lastmod>.a
+    <priority>0.51</priority>
+  </url>
+
+  <url>
+  <loc>https://www.simcoedining.com/new-tecumseth-ontario/champ-burger-alliston</loc>
+  <lastmod>2019-04-15T03:48:37+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+  <url>
+    <loc>https://www.simcoedining.com/mississauga-ontario/central-nightclub-mississauga</loc>
+    <lastmod>2019-04-15T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+
+  <url>
+    <loc>https://www.simcoedining.com/richmond-hill-ontario/nonnas-oven-richmond-hill</loc>
+    <lastmod>2019-04-17T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+  <url>
+    <loc>https://www.simcoedining.com/mississauga-ontario/company-resto-mississauga</loc>
+    <lastmod>2019-04-17T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+
+
+  <url>
+    <loc>https://www.simcoedining.com/blue-mountains-ontario/twist-martini-blue-mountain</loc>
+    <lastmod>2019-04-19T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+  <url>
+    <loc>https://www.simcoedining.com/richmond-hill-ontario/haru-richmond-hill</loc>
+    <lastmod>2019-04-18T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+
+  <url>
+    <loc>https://www.simcoedining.com/richmond-hill-ontario/jim-chai-kee-richmond-hill</loc>
+    <lastmod>2019-04-30T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+
+  <url>
+    <loc>https://www.simcoedining.com/vaughan-ontario/boom-breakfast-vaughan</loc>
+    <lastmod>2019-05-05T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+
+  <url>
+    <loc>https://www.simcoedining.com/markham-ontario/wooffles-cream-markham</loc>
+    <lastmod>2019-05-07T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+  <url>
+    <loc>https://www.simcoedining.com/richmond-hill-ontario/northern-dumpling-richmond-hill</loc>
+    <lastmod>2019-05-07T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+  <url>
+    <loc>https://www.simcoedining.com/newmarket-ontario/arch-brewing-newmarket</loc>
+    <lastmod>2019-05-07T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+  <url>
+    <loc>https://www.simcoedining.com//brampton-ontario/maguires-brampton</loc>
+    <lastmod>2019-05-10T03:48:37+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+
+
+
 </urlset>
