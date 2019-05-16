@@ -3,11 +3,20 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\City $city
  */
-?>
+use Cake\Core\Configure; ?>
+
 <?php $this->Html->scriptStart(['block' => true]); ?>
 $(document).ready(function() {
-    $('.select2').select2();
+$('.select2').select2();
 });
+
+//window.googlemapKey = '<?= Configure::read('gmapApiKey'); ?>';
+
+$(document).ready(function() {
+$('.select2').select2();
+});
+
+$(function() { $('textarea').froalaEditor() });
 <?php $this->Html->scriptEnd(); ?>
 
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -36,9 +45,10 @@ $(document).ready(function() {
             echo $this->Form->control('venue_count');
             echo $this->Form->control('region_id', ['options' => $regions, 'class' => 'select2']);
             echo $this->Form->control('locality');
-
+            echo $this->Form->control('newest_venue_types');
             echo $this->Form->control('seo_title');
             echo $this->Form->control('seo_description');
+            echo $this->Form->control('city_text');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

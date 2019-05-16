@@ -43,6 +43,13 @@ if ($city['seo_title']) {
 
 </div>
 
+<php if ( $city['city_text']) : ?>
+    <div class="container">
+        <h3>About <?= $city['name'] ?></h3>
+        <?= $city['city_text']; ?>
+    </div>
+</php endif; ?>
+
 
 <!-- Popular Searches -->
 <!--

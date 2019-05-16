@@ -43,6 +43,9 @@ class City extends Entity
         'intersections' => true,
         'venues' => true,
         'seo_title' => true,
-        'seo_description' => true
+        'seo_description' => true,
+        'city_text' => true,
+        'newest_venue_types' => true,
+
     ];
 }
