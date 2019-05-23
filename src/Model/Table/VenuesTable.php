@@ -258,6 +258,42 @@ class VenuesTable extends Table
 
     }
 
+    // used for right column, hardcoded to 5 for now
+    public function getNewestVenuesForCity($cityId, $venueTypeId = 4) {
+        $query = $this->find();
+
+        $query->select(['Venues.id', 'Venues.slug', 'Venues.name', 'Venues.sub_name',
+            'Venues.address', 'Cities.name', 'Venues.last_verified'])
+            ->where([ 'Venues.publish_state_id' => 3, 'Venues.venue_closed' => false, 'Venues.city_id' => $cityId  ])
+            ->contain([
+                //'VenueDetails' => ['fields' => ['VenueDetails.last_verified']],
+                'Cities' => ['fields' => [ 'id', 'name', 'slug'] ],
+                //'VenueTypes' => , // => ['fields' => [ 'id', 'name', 'slug'] ], //  => [  'id' => $venueTypeId ]
+            ])
+            ->order('Venues.created DESC, Venues.last_verified DESC')
+            ->limit(10); // ->enableAutoFields(true);
+
+
+            $query->matching('VenueTypes', function ($q) use($venueTypeId) {
+                return $q->where(['VenueTypes.id' => $venueTypeId ]);
+            });
+
+
+        // debug($query->toArray());
+
+        return $query;
+
+    }
+
+    /*
+     *      $slug = 'bar';
+     *      $query = $this->Venues->find();
+     *      $query->matching('VenueTypes', function ($q) use ($slug){
+                return $q->where(['VenueTypes.slug' => $slug] );  // http://localhost:8085/search/service=pc-repair
+            });
+     */
+
+
     /* based on the latt/long passed in, get a list of venues a distance from that point
      * function returns distance in Km (i.e. 0.162 = 162 metres )
      */

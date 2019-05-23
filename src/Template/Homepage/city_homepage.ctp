@@ -97,6 +97,10 @@ if ($city['seo_title']) {
 </div>
 -->
 
+
+<?php echo $this->cell('CitiesLatestVenues', [$city, $city->id] );  ?>
+
+
 <!-- Neighbourhoods and regions list section -->
 
 <?php echo $this->cell('HomepageCityProducts', [$city, $city->id], ['cache' => [ 'key' => 'city_products_' . $city->id] ] ); // cuisines in this case ?>
@@ -122,6 +126,8 @@ if ($city['seo_title']) {
 
     <?php echo $this->cell('CitiesLatestBlog', [$city, $city->id] );  ?>
 </div>
+
+
 
 
 
