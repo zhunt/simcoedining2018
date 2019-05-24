@@ -76,29 +76,34 @@ class CitiesLatestVenuesCell extends Cell
                 case 4:
                     $headerImages = $this->getHeaderImage('restaurant');
                     $title = 'Restaurants';
+                    $venueTypeSlug = 'restaurant';
                     $venues = $this->Venues->getNewestVenuesForCity($id, 4)->toArray();
                     break;
                 case 5:
                     $headerImages = $this->getHeaderImage('bar');
                     $title = 'Bars';
+                    $venueTypeSlug = 'bar';
                     $venues = $this->Venues->getNewestVenuesForCity($id, 5)->toArray();
                     break;
 
                 case 10:
                     $headerImages = $this->getHeaderImage('cafe');
                     $title = 'Cafes';
+                    $venueTypeSlug = 'cafe';
                     $venues = $this->Venues->getNewestVenuesForCity($id, 10)->toArray();
                     break;
 
                 case 8:
                     $headerImages = $this->getHeaderImage('nightclub');
                     $title = 'Nightclubs';
+                    $venueTypeSlug = 'night-club';
                     $venues = $this->Venues->getNewestVenuesForCity($id, 8)->toArray();
                     break;
 
                 case 6:
                     $headerImages = $this->getHeaderImage('hotel');
                     $title = 'Hotels';
+                    $venueTypeSlug = 'hotel';
                     $venues = $this->Venues->getNewestVenuesForCity($id, 6)->toArray();
                     break;
 
@@ -129,7 +134,9 @@ class CitiesLatestVenuesCell extends Cell
             $newVenues[] = [
                 'title' => $title,
                 'srcset_images' => $headerImages,
-                'venues' => $venuesList
+                'venues' => $venuesList,
+                'city_slug' => $citySlug,
+                'venue_type' => $venueTypeSlug
                 ];
 
             //debug($newVenues);

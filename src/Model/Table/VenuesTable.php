@@ -271,7 +271,7 @@ class VenuesTable extends Table
                 //'VenueTypes' => , // => ['fields' => [ 'id', 'name', 'slug'] ], //  => [  'id' => $venueTypeId ]
             ])
             ->order('Venues.created DESC, Venues.last_verified DESC')
-            ->limit(10); // ->enableAutoFields(true);
+            ->limit(5); // ->enableAutoFields(true);
 
 
             $query->matching('VenueTypes', function ($q) use($venueTypeId) {

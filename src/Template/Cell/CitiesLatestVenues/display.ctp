@@ -27,7 +27,7 @@
 
                         </ul>
                     </p>
-                   <!-- <p><a href="" class="card-text float-right">More</a></p> -->
+                   <p><a href="/search/?store-type=<?= $venue['venue_type'] ?>&city=<?= $venue['city_slug']; ?>" class="card-text">More</a></p>
                 </div>
             </div>
         </div>
