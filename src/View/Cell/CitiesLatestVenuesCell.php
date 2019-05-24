@@ -117,7 +117,9 @@ class CitiesLatestVenuesCell extends Cell
             $venuesList = [];
             if ($venues) {
                 foreach ($venues as $venue) {
-                    $venuesList[ $venue['id'] ] = "<a href=\"/{$venue['city']['slug']}/{$venue['slug']}\">{$venue['name']}</a>";
+                    $venuesList[ $venue['id'] ] = "
+                        <a href=\"/{$venue['city']['slug']}/{$venue['slug']}\">{$venue['name']}</a><br>
+                        <small class=\"text-muted\">{$venue['address']}</small>";
                 }
             } else {
                 $venuesList = [0 => 'No Venues'];

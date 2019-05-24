@@ -13,7 +13,8 @@
         <div class="col-sm col-md-6 col-lg-4">
             <div class="card mt-2">
                 <img class="card-img-top"
-                     srcset = "<?php foreach ($venue['srcset_images'] as $size => $filename ) { echo " {$filename} {$size}, ";} ?>"
+                     src="<?= $venue['srcset_images']['400w'] ?>"
+                     srcset = "<?php foreach ($venue['srcset_images'] as $size => $filename ) { echo "{$filename} {$size},\n";} ?>"
                      alt="picture of <?= h($venue['title']) ?>" loading="auto" >
                 <div class="card-body">
                     <h5 class="card-title"><?= h($venue['title']) ?></h5>
@@ -21,7 +22,7 @@
                     <p class="card-text">
                         <ul class="list-unstyled">
                         <?php foreach ($venue['venues'] as $singleVenue): ?>
-                        <li><?= $singleVenue ?></li>
+                        <li class="mb-1"><?= $singleVenue ?></li>
                         <?php endforeach; ?>
 
                         </ul>
