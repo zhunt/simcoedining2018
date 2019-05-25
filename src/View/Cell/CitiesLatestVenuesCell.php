@@ -116,14 +116,24 @@ class CitiesLatestVenuesCell extends Cell
 */
             }
 
-            //debug($headerImages);
-            //debug($venues);
+
+            /* add this code after venue title when built:
+             <small class="text-muted newest-venues-types" style="
+    background-color: #0d47a1;
+    color: white !important;
+    padding: 0.125rem .25rem;
+    opacity: .5;
+">Italian</small>
+
+             * */
 
             $venuesList = [];
             if ($venues) {
                 foreach ($venues as $venue) {
                     $venuesList[ $venue['id'] ] = "
-                        <a href=\"/{$venue['city']['slug']}/{$venue['slug']}\">{$venue['name']}</a><br>
+                        <a class=\"newest-venues-title\" href=\"/{$venue['city']['slug']}/{$venue['slug']}\">{$venue['name']}</a>
+                        
+                        <br>
                         <small class=\"text-muted\">{$venue['address']}</small>";
                 }
             } else {

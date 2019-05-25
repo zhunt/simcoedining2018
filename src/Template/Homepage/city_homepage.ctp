@@ -98,7 +98,7 @@ if ($city['seo_title']) {
 -->
 
 
-<?php echo $this->cell('CitiesLatestVenues', [$city, $city->id] );  ?>
+<?php echo $this->cell('CitiesLatestVenues', [$city, $city->id], ['cache' => [ 'key' => 'city_newest_' . $city->id] ]  );  ?>
 
 
 <!-- Neighbourhoods and regions list section -->
