@@ -17,8 +17,8 @@
     <h3><?= h($blog->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Guid') ?></th>
-            <td><?= h($blog->guid) ?></td>
+            <th scope="row"><?= __('Wordpress Guid') ?></th>
+            <td><?= h($blog->wordpress_guid) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

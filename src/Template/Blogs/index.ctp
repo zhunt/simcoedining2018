@@ -16,7 +16,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('guid') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('wordpress_guid') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date_modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -25,7 +25,7 @@
             <?php foreach ($blogs as $blog): ?>
             <tr>
                 <td><?= $this->Number->format($blog->id) ?></td>
-                <td><?= h($blog->guid) ?></td>
+                <td><?= h($blog->wordpress_guid) ?></td>
                 <td><?= h($blog->date_modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $blog->id]) ?>

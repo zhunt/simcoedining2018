@@ -21,7 +21,7 @@
     <fieldset>
         <legend><?= __('Edit Blog') ?></legend>
         <?php
-            echo $this->Form->control('guid');
+            echo $this->Form->control('wordpress_guid');
             echo $this->Form->control('date_modified', ['empty' => true]);
         ?>
     </fieldset>
