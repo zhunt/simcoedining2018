@@ -169,7 +169,22 @@ return [
             'controller' => 'VenueProducts',
             'action' => '*'
         ],
-
+        [
+            'role' => 'author',
+            'prefix' => '*',
+            'extension' => '*',
+            'plugin' => '*',
+            'controller' => 'Blogs',
+            'action' => '*'
+        ],
+        [
+            'role' => 'author',
+            'prefix' => '*',
+            'extension' => '*',
+            'plugin' => '*',
+            'controller' => 'BlogCategories',
+            'action' => '*'
+        ],
 
         // test for a user of type author
         [
