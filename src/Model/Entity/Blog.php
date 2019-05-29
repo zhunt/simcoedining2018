@@ -7,12 +7,17 @@ use Cake\ORM\Entity;
  * Blog Entity
  *
  * @property int $id
- * @property string $guid
+ * @property string $name
+ * @property string $title_image_url
+ * @property string $home_page_description
+ * @property string $wordpress_guid
  * @property \Cake\I18n\FrozenTime|null $date_modified
+ *
+ * @property \App\Model\Entity\BlogCategory[] $blog_categories
+ * @property \App\Model\Entity\Venue[] $venues
  */
 class Blog extends Entity
 {
-
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -23,7 +28,12 @@ class Blog extends Entity
      * @var array
      */
     protected $_accessible = [
-        'guid' => true,
-        'date_modified' => true
+        'name' => true,
+        'title_image_url' => true,
+        'home_page_description' => true,
+        'wordpress_guid' => true,
+        'date_modified' => true,
+        'blog_categories' => true,
+        'venues' => true
     ];
 }

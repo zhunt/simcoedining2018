@@ -8,6 +8,10 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Blog'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Blog Categories'), ['controller' => 'BlogCategories', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Blog Category'), ['controller' => 'BlogCategories', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Venues'), ['controller' => 'Venues', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Venue'), ['controller' => 'Venues', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="blogs index large-9 medium-8 columns content">
@@ -16,6 +20,8 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('title_image_url') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('wordpress_guid') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date_modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -25,6 +31,8 @@
             <?php foreach ($blogs as $blog): ?>
             <tr>
                 <td><?= $this->Number->format($blog->id) ?></td>
+                <td><?= h($blog->name) ?></td>
+                <td><?= h($blog->title_image_url) ?></td>
                 <td><?= h($blog->wordpress_guid) ?></td>
                 <td><?= h($blog->date_modified) ?></td>
                 <td class="actions">

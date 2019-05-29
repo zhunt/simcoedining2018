@@ -9,18 +9,20 @@ use Cake\Validation\Validator;
 /**
  * Blogs Model
  *
+ * @property \App\Model\Table\BlogCategoriesTable|\Cake\ORM\Association\BelongsToMany $BlogCategories
+ * @property \App\Model\Table\VenuesTable|\Cake\ORM\Association\BelongsToMany $Venues
+ *
  * @method \App\Model\Entity\Blog get($primaryKey, $options = [])
  * @method \App\Model\Entity\Blog newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Blog[] newEntities(array $data, array $options = [])
  * @method \App\Model\Entity\Blog|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Blog|bool saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Blog saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
  * @method \App\Model\Entity\Blog patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Blog[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Blog findOrCreate($search, callable $callback = null, $options = [])
  */
 class BlogsTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -34,6 +36,17 @@ class BlogsTable extends Table
         $this->setTable('blogs');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        $this->belongsToMany('BlogCategories', [
+            'foreignKey' => 'blog_id',
+            'targetForeignKey' => 'blog_category_id',
+            'joinTable' => 'blogs_blog_categories'
+        ]);
+        $this->belongsToMany('Venues', [
+            'foreignKey' => 'blog_id',
+            'targetForeignKey' => 'venue_id',
+            'joinTable' => 'blogs_venues'
+        ]);
     }
 
     /**
@@ -49,10 +62,27 @@ class BlogsTable extends Table
             ->allowEmptyString('id', 'create');
 
         $validator
-            ->scalar('guid')
-            ->maxLength('guid', 255)
-            ->requirePresence('guid', 'create')
-            ->allowEmptyString('guid', false);
+            ->scalar('name')
+            ->maxLength('name', 255)
+            ->requirePresence('name', 'create')
+            ->allowEmptyString('name', false);
+
+        $validator
+            ->scalar('title_image_url')
+            ->maxLength('title_image_url', 255)
+            ->requirePresence('title_image_url', 'create')
+            ->allowEmptyFile('title_image_url', false);
+
+        $validator
+            ->scalar('home_page_description')
+            ->requirePresence('home_page_description', 'create')
+            ->allowEmptyString('home_page_description', false);
+
+        $validator
+            ->scalar('wordpress_guid')
+            ->maxLength('wordpress_guid', 255)
+            ->requirePresence('wordpress_guid', 'create')
+            ->allowEmptyString('wordpress_guid', false);
 
         $validator
             ->dateTime('date_modified')

@@ -46,7 +46,7 @@ class BlogsController extends AppController
     public function view($id = null)
     {
         $blog = $this->Blogs->get($id, [
-            'contain' => []
+            'contain' => ['BlogCategories', 'Venues']
         ]);
 
         $this->set('blog', $blog);
@@ -69,7 +69,9 @@ class BlogsController extends AppController
             }
             $this->Flash->error(__('The blog could not be saved. Please, try again.'));
         }
-        $this->set(compact('blog'));
+        $blogCategories = $this->Blogs->BlogCategories->find('list', ['limit' => 200]);
+        $venues = $this->Blogs->Venues->find('list', ['limit' => 200]);
+        $this->set(compact('blog', 'blogCategories', 'venues'));
     }
 
     /**
@@ -82,7 +84,7 @@ class BlogsController extends AppController
     public function edit($id = null)
     {
         $blog = $this->Blogs->get($id, [
-            'contain' => []
+            'contain' => ['BlogCategories', 'Venues']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $blog = $this->Blogs->patchEntity($blog, $this->request->getData());
@@ -93,7 +95,9 @@ class BlogsController extends AppController
             }
             $this->Flash->error(__('The blog could not be saved. Please, try again.'));
         }
-        $this->set(compact('blog'));
+        $blogCategories = $this->Blogs->BlogCategories->find('list', ['limit' => 200]);
+        $venues = $this->Blogs->Venues->find('list', ['limit' => 200]);
+        $this->set(compact('blog', 'blogCategories', 'venues'));
     }
 
     /**
@@ -116,7 +120,7 @@ class BlogsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-
+    ///
     // -----------------
 
     /**
@@ -148,7 +152,7 @@ class BlogsController extends AppController
         if ( $response->isOk() ) {
             $json = $response->getJson();
 
-          // debug($json);
+            // debug($json);
             $wpPosts = [];
             foreach ($json as $row ) {
                 $wpPosts[] = [
@@ -173,7 +177,7 @@ class BlogsController extends AppController
 
         $datetime = $wpPost['date_gmt'];
 
-         $time = Time::createFromFormat(
+        $time = Time::createFromFormat(
             'Y-m-d\TH:i:s', // \T is from WordPress GMT format
             $datetime,
             'UTC'
