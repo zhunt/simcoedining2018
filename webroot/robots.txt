@@ -1,4 +1,4 @@
 User-Agent: *
-Disallow:
+Disallow: /search/
 
 Sitemap: https://www.simcoedining.com/sitemap.xml

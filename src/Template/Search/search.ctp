@@ -1,5 +1,7 @@
-<?php $this->assign('title', 'Search for: ' . $this->Text->toList($seoTags) ) ?>
-
+<?php
+$this->assign('title', 'Search for: ' . $this->Text->toList($seoTags) . ', page ' . $this->Paginator->counter('{{page}} of {{pages}}') );
+$this->Html->meta('robots','noindex,follow', ['block' => true]);
+?>
 <style xmlns="http://www.w3.org/1999/html">
 
     #map {
