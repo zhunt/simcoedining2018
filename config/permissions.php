@@ -171,11 +171,11 @@ return [
         ],
         [
             'role' => 'author',
-            'prefix' => '*',
+            'prefix' => 'Admin',
             'extension' => '*',
             'plugin' => '*',
             'controller' => 'Blogs',
-            'action' => '*'
+            'action' => ['index', 'add', 'edit']
         ],
         [
             'role' => 'author',

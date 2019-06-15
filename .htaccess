@@ -39,6 +39,7 @@ Redirect 301 /cha-cha-cha 				/city/barrie-ontario
 Redirect 301 /chaopaya-thai 			/barrie-ontario/chaopaya-thai-barrie
 Redirect 301 /chavo-crepes-barrie 		/city/barrie-ontario
 Redirect 301 /chef-chan 				/city/barrie-ontario
+Redirect 301 /ciboulette-et-cie         /midland/ciboulette-midland
 Redirect 301 /cocos-burger 				/city/barrie-ontario
 Redirect 301 /coffee-culture-stayner 	/city/stayner-ontario
 Redirect 301 /collier-cafe 				/city/barrie-ontario
@@ -130,6 +131,7 @@ Redirect 301 /olde-town-terrace             /city/collingwood-ontario/
 Redirect 301 /old-red-hen                   /collingwood-ontario/old-red-hen-collingwood
 Redirect 301 /old-time-retro-candy          /city/barrie-ontario
 Redirect 301 /ol-west-wing-hurst            /barrie-ontario/ol-west-wing-hurst
+Redirect 301 /ol-west-wing                  /city/barrie-ontario
 Redirect 301 /oscars                        /barrie-ontario/oscars-barrie
 Redirect 301 /painters-hall                 /barrie-ontario/painters-hall-barrie
 Redirect 301 /palace-tavern                 /elmvale-ontario/palace-tavern-elmvale
@@ -195,12 +197,10 @@ Redirect 301 /williams-coffee-barrie        /barrie-ontario/williams-coffee-barr
 Redirect 301 /windy-oneills                 /city/blue-mountains-ontario
 Redirect 301 /yammas                        /wasaga-beach-ontario/yammas-wasaga
 Redirect 301 /yukyuks-barrie                /barrie-ontario/yukyuks-barrie
+Redirect 301 /zats-restaurant               /orillia-ontario/zats-orillia
 Redirect 301 /landings/venue_type/bar       /search/?store-type=bar&city=barrie-ontario
 Redirect 301 /places/view/tara              /barrie-ontario/tara-indian-barrie
 RewriteRule  ^news_events/(.*)$             /blog/$1 [R=301,NC,L]
-
-
-
 
 
 <IfModule mod_rewrite.c>

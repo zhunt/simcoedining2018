@@ -8,6 +8,7 @@ $this->assign('title', trim($pageTitle) );
 // set meta description
 $seoDesc = ($venue['seo_description']) ? $venue['seo_description'] : trim( strtok ( strip_tags($venue['venue_description']), '.' ) );
 $this->Html->meta('description',$seoDesc,['block' => true]);
+$this->Html->meta('robots','index,follow', ['block' => true]);
 
 // set canonical link
 $this->assign('canonical', $canonical );
@@ -15,12 +16,25 @@ $this->assign('canonical', $canonical );
 // set Twitter card meta
 if ($venue['main_image_url']) {
     $this->Html->meta('twitter:card', 'summary_large_image',['block' => true]);
+    $this->Html->meta('og:image', $venue['main_image_url'],['block' => true]);
+    $this->Html->meta('twitter:image', $venue['main_image_url'],['block' => true]);
+}else{
+    $this->Html->meta('twitter:card', 'summary',['block' => true]);
+}
+
+// other mete items are common to image and non-image cards
+
     $this->Html->meta('twitter:site', '@simcoedining',['block' => true]);
     $this->Html->meta('twitter:creator', '@simcoedining',['block' => true]);
+
+    $this->Html->meta('og:title', $pageTitle,['block' => true]);
     $this->Html->meta('twitter:title', $pageTitle,['block' => true]);
+
+    $this->Html->meta('og:description',  substr( strip_tags($venue['venue_description']), 0, strpos( $venue['venue_description'], '.') ) ,['block' => true]);
     $this->Html->meta('twitter:description',  substr( strip_tags($venue['venue_description']), 0, strpos( $venue['venue_description'], '.') ) ,['block' => true]);
-    $this->Html->meta('twitter:image', $venue['main_image_url'],['block' => true]);
-}
+
+    $this->Html->meta('og:url', $canonical,['block' => true]);
+
 ?>
 
 <!-- navbar -->

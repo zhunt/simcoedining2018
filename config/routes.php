@@ -115,6 +115,28 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->fallbacks(DashedRoute::class);
 });
 
+Router::prefix('admin', function ($routes) {
+    Router::scope('/', function ($routes) {
+
+        $routes->registerMiddleware('csrf', new CsrfProtectionMiddleware([
+            'httpOnly' => true
+        ]));
+
+        /**
+         * Apply a middleware to the current route scope.
+         * Requires middleware to be registered via `Application::routes()` with `registerMiddleware()`
+         */
+        $routes->applyMiddleware('csrf');
+
+
+
+    });
+    $routes->fallbacks('InflectedRoute');
+});
+
+
+
+
 /**
  * If you need a different set of middleware or none at all,
  * open new scope and define routes there.
