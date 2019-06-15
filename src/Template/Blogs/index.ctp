@@ -10,6 +10,8 @@
         <li><?= $this->Html->link(__('New Blog'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Blog Categories'), ['controller' => 'BlogCategories', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Blog Category'), ['controller' => 'BlogCategories', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Blog Locations'), ['controller' => 'BlogLocations', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Blog Location'), ['controller' => 'BlogLocations', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Venues'), ['controller' => 'Venues', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Venue'), ['controller' => 'Venues', 'action' => 'add']) ?></li>
     </ul>
@@ -23,6 +25,8 @@
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('title_image_url') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('wordpress_guid') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('seo_desc') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('date_created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date_modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -34,6 +38,8 @@
                 <td><?= h($blog->name) ?></td>
                 <td><?= h($blog->title_image_url) ?></td>
                 <td><?= h($blog->wordpress_guid) ?></td>
+                <td><?= h($blog->seo_desc) ?></td>
+                <td><?= h($blog->date_created) ?></td>
                 <td><?= h($blog->date_modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $blog->id]) ?>

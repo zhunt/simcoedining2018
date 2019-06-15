@@ -2,12 +2,14 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+
 use Cake\Event\Event; // needed for beforeFilter
 use Cake\Core\Configure;
 
 use Cake\Http\Client;
 use Cake\Utility\Text;
 use Cake\I18n\Time;
+
 
 /**
  * Blogs Controller
@@ -18,10 +20,11 @@ use Cake\I18n\Time;
  */
 class BlogsController extends AppController
 {
+
     public function beforeFilter(Event $event)
     {
         // allow these actions to run without being logged-in
-        $this->Auth->allow(['index', 'display']);
+        $this->Auth->allow(['index', 'edit', 'add', 'delete', 'view']);
     }
 
     /**
@@ -46,7 +49,7 @@ class BlogsController extends AppController
     public function view($id = null)
     {
         $blog = $this->Blogs->get($id, [
-            'contain' => ['BlogCategories', 'Venues']
+            'contain' => ['BlogCategories', 'BlogLocations', 'Venues']
         ]);
 
         $this->set('blog', $blog);
@@ -70,8 +73,9 @@ class BlogsController extends AppController
             $this->Flash->error(__('The blog could not be saved. Please, try again.'));
         }
         $blogCategories = $this->Blogs->BlogCategories->find('list', ['limit' => 200]);
+        $blogLocations = $this->Blogs->BlogLocations->find('list', ['limit' => 200]);
         $venues = $this->Blogs->Venues->find('list', ['limit' => 200]);
-        $this->set(compact('blog', 'blogCategories', 'venues'));
+        $this->set(compact('blog', 'blogCategories', 'blogLocations', 'venues'));
     }
 
     /**
@@ -84,7 +88,7 @@ class BlogsController extends AppController
     public function edit($id = null)
     {
         $blog = $this->Blogs->get($id, [
-            'contain' => ['BlogCategories', 'Venues']
+            'contain' => ['BlogCategories', 'BlogLocations', 'Venues']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $blog = $this->Blogs->patchEntity($blog, $this->request->getData());
@@ -96,8 +100,9 @@ class BlogsController extends AppController
             $this->Flash->error(__('The blog could not be saved. Please, try again.'));
         }
         $blogCategories = $this->Blogs->BlogCategories->find('list', ['limit' => 200]);
+        $blogLocations = $this->Blogs->BlogLocations->find('list', ['limit' => 200]);
         $venues = $this->Blogs->Venues->find('list', ['limit' => 200]);
-        $this->set(compact('blog', 'blogCategories', 'venues'));
+        $this->set(compact('blog', 'blogCategories', 'blogLocations', 'venues'));
     }
 
     /**

@@ -13,6 +13,8 @@
         <li><?= $this->Html->link(__('New Blog'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Blog Categories'), ['controller' => 'BlogCategories', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Blog Category'), ['controller' => 'BlogCategories', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Blog Locations'), ['controller' => 'BlogLocations', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Blog Location'), ['controller' => 'BlogLocations', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Venues'), ['controller' => 'Venues', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Venue'), ['controller' => 'Venues', 'action' => 'add']) ?> </li>
     </ul>
@@ -33,8 +35,16 @@
             <td><?= h($blog->wordpress_guid) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Seo Desc') ?></th>
+            <td><?= h($blog->seo_desc) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($blog->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Date Created') ?></th>
+            <td><?= h($blog->date_created) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Date Modified') ?></th>
@@ -44,6 +54,14 @@
     <div class="row">
         <h4><?= __('Home Page Description') ?></h4>
         <?= $this->Text->autoParagraph(h($blog->home_page_description)); ?>
+    </div>
+    <div class="row">
+        <h4><?= __('Blog Content') ?></h4>
+        <?= $this->Text->autoParagraph(h($blog->blog_content)); ?>
+    </div>
+    <div class="row">
+        <h4><?= __('Blog Lead') ?></h4>
+        <?= $this->Text->autoParagraph(h($blog->blog_lead)); ?>
     </div>
     <div class="related">
         <h4><?= __('Related Blog Categories') ?></h4>
@@ -64,6 +82,31 @@
                     <?= $this->Html->link(__('View'), ['controller' => 'BlogCategories', 'action' => 'view', $blogCategories->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'BlogCategories', 'action' => 'edit', $blogCategories->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['controller' => 'BlogCategories', 'action' => 'delete', $blogCategories->id], ['confirm' => __('Are you sure you want to delete # {0}?', $blogCategories->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Blog Locations') ?></h4>
+        <?php if (!empty($blog->blog_locations)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Slug') ?></th>
+                <th scope="col"><?= __('Name') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($blog->blog_locations as $blogLocations): ?>
+            <tr>
+                <td><?= h($blogLocations->id) ?></td>
+                <td><?= h($blogLocations->slug) ?></td>
+                <td><?= h($blogLocations->name) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'BlogLocations', 'action' => 'view', $blogLocations->]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'BlogLocations', 'action' => 'edit', $blogLocations->]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'BlogLocations', 'action' => 'delete', $blogLocations->], ['confirm' => __('Are you sure you want to delete # {0}?', $blogLocations->)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

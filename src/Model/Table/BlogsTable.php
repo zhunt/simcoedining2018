@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Blogs Model
  *
  * @property \App\Model\Table\BlogCategoriesTable|\Cake\ORM\Association\BelongsToMany $BlogCategories
+ * @property \App\Model\Table\BlogLocationsTable|\Cake\ORM\Association\BelongsToMany $BlogLocations
  * @property \App\Model\Table\VenuesTable|\Cake\ORM\Association\BelongsToMany $Venues
  *
  * @method \App\Model\Entity\Blog get($primaryKey, $options = [])
@@ -41,6 +42,11 @@ class BlogsTable extends Table
             'foreignKey' => 'blog_id',
             'targetForeignKey' => 'blog_category_id',
             'joinTable' => 'blogs_blog_categories'
+        ]);
+        $this->belongsToMany('BlogLocations', [
+            'foreignKey' => 'blog_id',
+            'targetForeignKey' => 'blog_location_id',
+            'joinTable' => 'blogs_blog_locations'
         ]);
         $this->belongsToMany('Venues', [
             'foreignKey' => 'blog_id',
@@ -83,6 +89,24 @@ class BlogsTable extends Table
             ->maxLength('wordpress_guid', 255)
             ->requirePresence('wordpress_guid', 'create')
             ->allowEmptyString('wordpress_guid', false);
+
+        $validator
+            ->scalar('blog_content')
+            ->allowEmptyString('blog_content');
+
+        $validator
+            ->scalar('blog_lead')
+            ->allowEmptyString('blog_lead');
+
+        $validator
+            ->scalar('seo_desc')
+            ->maxLength('seo_desc', 200)
+            ->requirePresence('seo_desc', 'create')
+            ->allowEmptyString('seo_desc', false);
+
+        $validator
+            ->dateTime('date_created')
+            ->allowEmptyDateTime('date_created');
 
         $validator
             ->dateTime('date_modified')

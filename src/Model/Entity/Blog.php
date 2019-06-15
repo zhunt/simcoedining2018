@@ -11,9 +11,14 @@ use Cake\ORM\Entity;
  * @property string $title_image_url
  * @property string $home_page_description
  * @property string $wordpress_guid
+ * @property string|null $blog_content
+ * @property string|null $blog_lead
+ * @property string $seo_desc
+ * @property \Cake\I18n\FrozenTime|null $date_created
  * @property \Cake\I18n\FrozenTime|null $date_modified
  *
  * @property \App\Model\Entity\BlogCategory[] $blog_categories
+ * @property \App\Model\Entity\BlogLocation[] $blog_locations
  * @property \App\Model\Entity\Venue[] $venues
  */
 class Blog extends Entity
@@ -32,8 +37,14 @@ class Blog extends Entity
         'title_image_url' => true,
         'home_page_description' => true,
         'wordpress_guid' => true,
+        'flag_published' => true,
+        'blog_content' => true,
+        'blog_lead' => true,
+        'seo_desc' => true,
+        'date_created' => true,
         'date_modified' => true,
         'blog_categories' => true,
+        'blog_locations' => true,
         'venues' => true
     ];
 }
