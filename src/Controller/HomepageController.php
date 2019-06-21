@@ -67,7 +67,11 @@ class HomepageController extends AppController {
         }
 
         $this->viewBuilder()->setLayout('default-public');
-        $this->set( compact( 'city', 'cuisinesList') );
+
+        // https://www.simcoedining.com/city/barrie-ontario
+        $canonical = Configure::read('siteUrlFull') . '/city/' . $slug;
+
+        $this->set( compact( 'city', 'cuisinesList', 'canonical') );
     }
 
 

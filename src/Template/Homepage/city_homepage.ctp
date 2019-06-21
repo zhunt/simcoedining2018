@@ -7,6 +7,9 @@ if ($city['seo_title']) {
     $this->assign('title', "Places to Eat in {$city['name']}, {$city['region']['province']['name']}");
 }
 
+// set canonical link
+$this->assign('canonical', $canonical );
+
  ?>
 
     <div class="jumbotron jumbotron-fluid title-banner">

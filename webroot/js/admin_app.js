@@ -9,7 +9,7 @@ $("#wordpress-guid").after("<a href='#' id='wordpress-guid-link'>Get Content</a>
 function processGeocodeResponse(response) {
     var json = JSON.parse(response);
 
-    if (json.statusText == 'OK' && Array.isArray(json.results)) {
+    if (json.status == 'OK' && Array.isArray(json.results)) {
         var data = json.results;
         var address = data[0]['formatted_address'];
         var lat = data[0].geometry.location.lat;

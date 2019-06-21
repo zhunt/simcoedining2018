@@ -24,7 +24,7 @@ class BlogsController extends AppController
     public function beforeFilter(Event $event)
     {
         // allow these actions to run without being logged-in
-        $this->Auth->allow(['index', 'edit', 'add', 'delete', 'view']);
+        $this->Auth->allow(['index', 'edit', 'add', 'delete', 'view', 'display']);
     }
 
     /**
