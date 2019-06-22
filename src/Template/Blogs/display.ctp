@@ -10,6 +10,8 @@
 // $this->set('meta', $wpPost['slug'] );
 $this->assign('canonical', $canonicalPath );
 $this->assign('title',  $wpPost['title'] );
+$this->Html->meta('description',$wpPost['seo_desc'],['block' => true]);
+//$this->assign('title',  $wpPost['title'] );
 ?>
 
 <?php $this->append('headerCss');;?>
@@ -29,6 +31,10 @@ $this->assign('title',  $wpPost['title'] );
         <div class="col-12 col-md-8">
             <h1><?php echo $wpPost['title'] ?></h1>
               <p><small><?php echo $blogTime ?></small></p>
+
+            <h3 class="h5"><?php echo $wpPost['blog_lead']; ?></h3>
+
+
            <?php echo $wpPost['content'] ?>
         </div>
 
@@ -46,4 +52,7 @@ $this->assign('title',  $wpPost['title'] );
 
     </div>
 </div>
+
+<?php echo $this->element('public_footer'); ?>
+
 

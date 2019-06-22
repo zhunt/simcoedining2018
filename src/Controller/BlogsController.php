@@ -190,8 +190,25 @@ class BlogsController extends AppController
 
         $blogTime = $time->nice('America/Toronto', 'en-EN');
 
+        // grab the rest from the blog table
 
-        //debug($wpPosts);
+        $this->loadModel('Blogs');
+
+        $result =  $this->Blogs->findByWordpress_guid($slug)->first()->toArray(); // should check for flag_published
+
+
+        if ($result) {
+           $wpPost['blog_lead'] = $result['blog_lead'];
+            $wpPost['seo_desc'] = $result['seo_desc'];
+
+            $wpPost['title'] = $result['name']; // overrights WP title
+            // title_image_url -> use on homepage
+        }
+
+
+
+
+       // debug($wpPosts); exit();
 
         // 1. get http://localhost:8090/webroot/admin-wordpress/wp-json/wp/v2/posts?orderby=date&order=desc&per_page=4&category=2 (2= barrie, 4 results, incl. acf fields)
 
