@@ -23,6 +23,7 @@
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('title_image_url');
+            echo $this->Form->control('social_image_url');
             echo $this->Form->control('home_page_description');
             echo $this->Form->control('wordpress_guid');
             echo $this->Form->control('flag_published');

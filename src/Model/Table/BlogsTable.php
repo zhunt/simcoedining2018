@@ -78,6 +78,12 @@ class BlogsTable extends Table
             ->maxLength('title_image_url', 255)
             ->requirePresence('title_image_url', 'create')
             ->allowEmptyFile('title_image_url', false);
+        
+        $validator
+            ->scalar('social_image_url')
+            ->maxLength('social_image_url', 255)
+            ->requirePresence('social_image_url', 'create')
+            ->allowEmptyFile('social_image_url', false);
 
         $validator
             ->scalar('home_page_description')

@@ -12,7 +12,34 @@ $this->assign('canonical', $canonicalPath );
 $this->assign('title',  $wpPost['title'] );
 $this->Html->meta('description',$wpPost['seo_desc'],['block' => true]);
 //$this->assign('title',  $wpPost['title'] );
+
+// insert Twitter feed here
+
+// social_image_url
+
+// set Twitter card meta
+
+$this->Html->meta('twitter:card', 'summary_large_image',['block' => true]);
+$this->Html->meta('og:image', $wpPost['social_image_url'],['block' => true]);
+$this->Html->meta('twitter:image', $wpPost['social_image_url'],['block' => true]);
+
+// other mete items are common to image and non-image cards
+
+$this->Html->meta('twitter:site', '@simcoedining',['block' => true]);
+$this->Html->meta('twitter:creator', '@simcoedining',['block' => true]);
+
+$this->Html->meta('og:title', $wpPost['title'],['block' => true]);
+$this->Html->meta('twitter:title', $wpPost['title'],['block' => true]);
+
+$this->Html->meta('og:description',  $wpPost['seo_desc'] ,['block' => true]);
+$this->Html->meta('twitter:description',  $wpPost['seo_desc'] ,['block' => true]);
+
+$this->Html->meta('og:url', $canonicalPath,['block' => true]);
+
+
+
 ?>
+
 
 <?php $this->append('headerCss');;?>
 <style>
@@ -54,5 +81,9 @@ $this->Html->meta('description',$wpPost['seo_desc'],['block' => true]);
 </div>
 
 <?php echo $this->element('public_footer'); ?>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=zedhun"></script>
+
 
 

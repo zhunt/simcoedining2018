@@ -35,6 +35,7 @@ class Blog extends Entity
     protected $_accessible = [
         'name' => true,
         'title_image_url' => true,
+        'social_image_url' => true,
         'home_page_description' => true,
         'wordpress_guid' => true,
         'flag_published' => true,

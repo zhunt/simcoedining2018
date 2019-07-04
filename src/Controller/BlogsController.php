@@ -24,7 +24,7 @@ class BlogsController extends AppController
     public function beforeFilter(Event $event)
     {
         // allow these actions to run without being logged-in
-        $this->Auth->allow(['index', 'edit', 'add', 'delete', 'view', 'display']);
+        $this->Auth->allow(['index', 'view', 'display']);
     }
 
     /**
@@ -198,8 +198,14 @@ class BlogsController extends AppController
 
 
         if ($result) {
-           $wpPost['blog_lead'] = $result['blog_lead'];
+            $wpPost['blog_lead'] = $result['blog_lead'];
             $wpPost['seo_desc'] = $result['seo_desc'];
+
+            if ( $result['social_image_url'] ) {
+                $wpPost['social_image_url'] = $result['social_image_url'];
+            } else {
+                $wpPost['social_image_url'] = $result['title_image_url'];
+            }
 
             $wpPost['title'] = $result['name']; // overrights WP title
             // title_image_url -> use on homepage

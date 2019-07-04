@@ -19,7 +19,7 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
         <tr>
-            <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+
             <th scope="col"><?= $this->Paginator->sort('name') ?></th>
             <th scope="col"><?= $this->Paginator->sort('title_image_url') ?></th>
             <th scope="col"><?= $this->Paginator->sort('wordpress_guid') ?></th>
@@ -30,14 +30,12 @@
         <tbody>
         <?php foreach ($blogs as $blog): ?>
             <tr>
-                <td><?= $this->Number->format($blog->id) ?></td>
-                <td><?= h($blog->name) ?></td>
+
+                <td><?= $this->Html->link( $blog->name , ['action' => 'edit', $blog->id]) ?></td>
                 <td><?= h($blog->title_image_url) ?></td>
                 <td><?= h($blog->wordpress_guid) ?></td>
                 <td><?= h($blog->date_modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $blog->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $blog->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $blog->id], ['confirm' => __('Are you sure you want to delete # {0}?', $blog->id)]) ?>
                 </td>
             </tr>
